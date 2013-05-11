@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright 2002 - 2013  MantisBT Team - mantisbt-dev@lists.sourceforge.
+ * @copyright Copyright 2002  MantisBT Team - mantisbt-dev@lists.sourceforge.net
  */
  
 /**
