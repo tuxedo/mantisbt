@@ -108,6 +108,10 @@ if( !$g_failed_test ) {
 }
 
 if( !$g_failed_test ) {
+	require_api( 'obsolete.php' );
+}
+
+if( !$g_failed_test ) {
 	define( 'CHECK_CRYPTO_INC_ALLOW', true );
 	include( 'check_crypto_inc.php' );
 

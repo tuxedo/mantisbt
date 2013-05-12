@@ -551,33 +551,6 @@ function config_flush_cache( $p_option = '', $p_user = ALL_USERS, $p_project = A
 	}
 }
 
-/** 
- * Checks if an obsolete configuration variable is still in use.  If so, an error
- * will be generated and the script will exit.  This is called from admin_check.php.
- *
- * @param string $p_var old config option
- * @param string $p_replace new config option
- */
-function config_obsolete( $p_var, $p_replace ) {
-	if( config_is_set( $p_var ) ) {
-		$t_description = '<p><strong>Warning:</strong> The configuration option <tt>$g_' . $p_var . '</tt> is obsolete</p>';
-		if( is_array( $p_replace ) ) {
-			$t_info = 'please see the following options: <ul>';
-			foreach( $p_replace as $t_option ) {
-				$t_info .= '<li>$g_' . $t_option . '</li>';
-			}
-			$t_info .= '</ul>';
-		}
-		else if( !is_blank( $p_replace ) ) {
-			$t_info = 'please use <tt>$g_' . $p_replace . '</tt> instead.';
-		} else {
-			$t_info = '';
-		}
-
-		print_test_warn_row( $t_description, false, $t_info );
-	}
-}
-
 /**
  * check for recursion in defining config variables
  * If there is a %text% in the returned value, re-evaluate the "text" part and replace the string
@@ -664,4 +637,58 @@ function config_is_private( $p_config_var ) {
 	}
 
 	return false;
+}
+
+/**
+ * Checks if an obsolete configuration variable is still in use.  If so, an error
+ * will be generated and the script will exit.
+ *
+ * @param string $p_var old config option
+ * @param string $p_replace new config option
+ */
+function config_obsolete( $p_var, $p_replace ) {
+	global $g_cache_config;
+
+	$t_description = 'The configuration option $g_' . $p_var . ' is obsolete';
+	if( is_array( $p_replace ) ) {
+		$t_info = 'please see the following options: <ul>';
+		foreach( $p_replace as $t_option ) {
+			$t_info .= '<li>' . $t_option . '</li>';
+		}
+		$t_info .= '</ul><br/>';
+	}
+	else if( !is_blank( $p_replace ) ) {
+		$t_info = 'please use ' . $p_replace . ' instead.<br/>';
+	} else {
+		$t_info = '';
+	}
+
+	try {
+		config_get_global( $p_var );
+
+		$t_info2 = $t_info . "It is currently defined in config_inc.php";
+		check_print_test_warn_row( $t_description, false, $t_info2 );
+	} catch (MantisBT\Exception\Configuration\OptionNotFound $e ) {	}
+
+	// ensure that we have populated config cache
+	config_get('database_version');
+
+	if( isset( $g_cache_config[$p_var] ) ) {
+		foreach( $g_cache_config[$p_var] as $t_user_id => $t_config ) {
+			$t_info2 = $t_info . '<li>User: ' . $t_user_id . " ";
+			try {
+				$t_info2 .= (($t_user_id == 0)? _('all_users') : user_get_name( $t_user_id ));
+			} catch (Exception $e) {}
+			$t_info2 .= '</li><li>Projects: ';
+			foreach ( $t_config as $t_project_id => $t_value ) {
+				$t_info2 .= $t_project_id . ' ';
+				try {
+					$t_info2 .= '(' . project_get_name( $t_project_id ) . ')';
+				} catch (Exception $e) {}
+				$t_info2 .= ', ';
+			}
+			$t_info2 = rtrim( $t_info2, ', ') . '</li>';
+			check_print_test_warn_row( $t_description, false, $t_info2 );
+		}
+	}
 }
