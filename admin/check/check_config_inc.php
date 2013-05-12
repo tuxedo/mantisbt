@@ -42,11 +42,11 @@ check_print_test_row( 'config_inc.php configuration file exists',
 );
 
 check_print_test_warn_row( 'Check whether diagnostic logging is enabled',
-	$g_log_level == LOG_NONE,
+	config_get_global( 'log_level' ) == LOG_NONE,
 	array( false => 'Global Log Level should usually be set to LOG_NONE for production use' )
 );
 
 check_print_test_warn_row( 'Check whether log output is sent to end user',
-	!($g_log_destination == 'firebug' || $g_log_destination == 'page'),
+	!(config_get_global( 'log_destination' ) == 'firebug' || config_get_global( 'log_destination' ) == 'page'),
 	array( false => 'Diagnostic output destination is currently sent to end users browser' )
 );
