@@ -269,7 +269,7 @@ function bugnote_delete( $p_bugnote_id ) {
  */
 function bugnote_delete_all( $p_bug_id ) {
 	$t_query = 'DELETE FROM {bugnote} WHERE bug_id=%d';
-	$result = db_query( $t_query, array( (int)$p_bug_id ) );
+	db_query( $t_query, array( (int)$p_bug_id ) );
 
 	# db_query errors on failure so:
 	return true;

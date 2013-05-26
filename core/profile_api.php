@@ -144,7 +144,7 @@ function profile_update( $p_user_id, $p_profile_id, $p_platform, $p_os, $p_os_bu
 	# Add item
 	$query = "UPDATE {user_profile} SET platform=%s, os=%s, os_build=%s, description=%s
 				  WHERE id=%d AND user_id=%d";
-	$result = db_query( $query, array( $p_platform, $p_os, $p_os_build, $p_description, $p_profile_id, $p_user_id ) );
+	db_query( $query, array( $p_platform, $p_os, $p_os_build, $p_description, $p_profile_id, $p_user_id ) );
 }
 
 /**

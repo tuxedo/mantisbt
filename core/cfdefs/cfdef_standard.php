@@ -198,6 +198,7 @@ function cfdef_prepare_date_value_for_email($p_value) {
 	if ($p_value != null) {
 		return date( config_get( 'short_date_format' ), $p_value) ;
 	}
+    return '';
 }
 
 /**
