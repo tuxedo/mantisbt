@@ -463,7 +463,12 @@ function string_insert_hrefs( $p_string ) {
 		$t_url_protocol = '([[:alpha:]][-+.[:alnum:]]*):\/\/';
 
 		$s_url_regex = "/(${t_url_protocol}(${t_url_part1}*?${t_url_part2}+))/sue";
-		$s_mail_regex = email_regex_simple();
+
+		// Use a simple perl regex for valid email addresses.  This is not a complete regex,
+		// as it does not cover quoted addresses or domain literals, but it is simple and
+		// covers the vast majority of all email addresses without being overly complex.
+		$s_mail_regex = "/([a-z0-9!#*+\/=?^_{|}~-]+(?:\.[a-z0-9!#*+\/=?^_{|}~-]+)*)" . 				# recipient
+						"\@((?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/i";	# @domain
 	}
 
 	$p_string = preg_replace( $s_url_regex, "'<a href=\"'.rtrim('\\1','.').'\">\\1</a>'", $p_string );

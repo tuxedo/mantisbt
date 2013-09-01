@@ -70,18 +70,6 @@ require_api( 'utility_api.php' );
 require_lib( 'ezc/Base/src/base.php' );
 
 /**
- *
- * Use a simple perl regex for valid email addresses.  This is not a complete regex,
- * as it does not cover quoted addresses or domain literals, but it is simple and
- * covers the vast majority of all email addresses without being overly complex.
- * @return string
- */
-function email_regex_simple() {
-	return "/([a-z0-9!#*+\/=?^_{|}~-]+(?:\.[a-z0-9!#*+\/=?^_{|}~-]+)*)" . 				# recipient
-			"\@((?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/i";	# @domain
-}
-
-/**
  * check to see that the format is valid and that the mx record exists
  * @param string $p_email
  * @return bool
