@@ -116,7 +116,31 @@ function auth_is_user_authenticated() {
 	if( $g_cache_cookie_valid == true ) {
 		return $g_cache_cookie_valid;
 	}
-	$g_cache_cookie_valid = auth_is_cookie_valid( auth_get_current_user_cookie( $g_login_anonymous ) );
+
+	# fail if DB isn't accessible
+	if( !db_is_connected() ) {
+		return false;
+	}
+
+	$p_cookie_string = auth_get_current_user_cookie( $g_login_anonymous );
+
+	# fail if cookie is blank
+	if( '' === $p_cookie_string ) {
+		return false;
+	}
+
+	# look up cookie in the database to see if it is valid
+	$t_query = 'SELECT * FROM {user} WHERE cookie_string=%s';
+	$t_result = db_query( $t_query, array( $p_cookie_string ) );
+
+	# return true if a matching cookie was found
+	$row = db_fetch_array( $t_result );
+	if( !db_fetch_array( $t_result ) ) {
+		$g_cache_cookie_valid = true;
+	} else {
+		$g_cache_cookie_valid = false;
+	}
+
 	return $g_cache_cookie_valid;
 }
 
@@ -705,36 +729,6 @@ function auth_reauthenticate_page( $p_user_id, $p_username ) {
 <?php
 	html_page_bottom();
 	exit;
-}
-
-/**
- * is cookie valid?
- * @param string $p_cookie_string
- * @return bool
- * @access public
- */
-function auth_is_cookie_valid( $p_cookie_string ) {
-	# fail if DB isn't accessible
-	if( !db_is_connected() ) {
-		return false;
-	}
-
-	# fail if cookie is blank
-	if( '' === $p_cookie_string ) {
-		return false;
-	}
-
-	# look up cookie in the database to see if it is valid
-	$t_query = 'SELECT * FROM {user} WHERE cookie_string=%s';
-	$t_result = db_query( $t_query, array( $p_cookie_string ) );
-
-	# return true if a matching cookie was found
-	$row = db_fetch_array( $t_result );
-	if( !db_fetch_array( $t_result ) ) {
-		return true;
-	} else {
-		return false;
-	}
 }
 
 /**
