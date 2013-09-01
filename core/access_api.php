@@ -470,40 +470,6 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 }
 
 /**
- * Check if the current user can reopen the specified bug
- * @param int $p_bug_id integer representing bug id to check access against
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
- * @return bool whether user has access to reopen bugs
- * @access public
- */
- function access_can_reopen_bug( $p_bug_id, $p_user_id = null ) {
-	if( $p_user_id === null ) {
-		$p_user_id = auth_get_current_user_id();
-	}
-
-	# If allow_reporter_reopen is enabled, then reporters can always reopen their own bugs
-	if( ON == config_get( 'allow_reporter_reopen' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) ) {
-		return true;
-	}
-
-	return access_has_bug_level( config_get( 'reopen_bug_threshold' ), $p_bug_id, $p_user_id );
-}
-
-/**
- * Make sure that the current user can reopen the specified bug.
- * @see access_can_reopen_bug
- * @param int $p_bug_id integer representing bug id to check access against
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
- * @access public
- * @throws MantisBT\Exception\Access\AccessDenied
- */
- function access_ensure_can_reopen_bug( $p_bug_id, $p_user_id = null ) {
-	if( !access_can_reopen_bug( $p_bug_id, $p_user_id ) ) {
-		throw new MantisBT\Exception\Access\AccessDenied();
-	}
-}
-
-/**
  * get the user's access level specific to this project.
  * return false (0) if the user has no access override here
  * @param int $p_user_id Integer representing user id
