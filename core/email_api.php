@@ -424,8 +424,7 @@ function email_signup( $p_user_id, $p_password, $p_confirm_hash, $p_admin_name =
 	# Build Welcome Message
 	$t_subject = '[' . config_get( 'window_title' ) . '] ' . _( 'Account registration' );
 
-	//if( $p_admin_created && $p_admin_name) {
-	if( $p_admin_name ) {
+	if( !empty( $p_admin_name ) ) {
 		$intro_text = sprintf( _('The user %1 has created an account for you with username %2. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $p_admin_name, $t_username );
 	} else {
 		$intro_text = sprintf( _('Thank you for registering. You have an account with username %1. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $t_username );
@@ -504,13 +503,13 @@ function email_notify_new_account( $p_username, $p_email ) {
 		if( !is_blank( $t_recipient_email ) ) {
 			email_store( $t_recipient_email, $t_subject, $t_message );
 			log_event( LOG_EMAIL, sprintf( 'New Account Notify for email = \'%s\'', $t_recipient_email ) );
-
-			if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-				email_send_all();
-			}
 		}
 
 		lang_pop();
+	}
+
+	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
+		email_send_all();
 	}
 }
 
