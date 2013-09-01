@@ -1002,6 +1002,7 @@ function file_get_content( $p_file_id, $p_type = 'bug' ) {
 				}
 				return array( 'type' => $t_content_type, 'content' => file_get_contents( $t_local_disk_file ) );
 			}
+			return false;
 			break;
 		case FTP:
 			$t_local_disk_file = file_normalize_attachment_path( $row['diskfile'], $t_project_id );
