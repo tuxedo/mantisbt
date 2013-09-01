@@ -95,24 +95,20 @@ function email_is_valid( $p_email ) {
 		return true;
 	}
 
-	# Use a regular expression to check to see if the email is in valid format
-	#  x-xx.xxx@yyy.zzz.abc etc.
-	if( preg_match( email_regex_simple(), $p_email, $t_check ) ) {
-		$t_local = $t_check[1];
-		$t_domain = $t_check[2];
+	// check email address is a valid format
+	$t_email = filter_var($p_email, FILTER_SANITIZE_EMAIL);
+	if (filter_var($t_email, FILTER_VALIDATE_EMAIL)) {
+		$t_domain = end( explode( '@', $t_email ) );
 
 		# see if we're limited to a set of known domains
 		$t_limit_email_domains = config_get( 'limit_email_domains' );
 		if( !empty( $t_limit_email_domains ) ) {
-			$t_limit_domain = false;
 			foreach( $t_limit_email_domains as $t_email_domain ) {
 				if( 0 == strcasecmp( $t_email_domain, $t_domain ) ) {
-					$t_limit_domain = true;
+					return true; // no need to check mx record details (below) if we've explicity allowed the domain
 				}
 			}
-			if( !$t_limit_domain ) {
-				return false;
-			}
+			return false;
 		}
 
 		if( ON == config_get( 'check_mx_record' ) ) {
