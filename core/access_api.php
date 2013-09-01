@@ -440,13 +440,11 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
  * @return bool whether user has access to close bugs
  * @access public
  */
- function access_can_close_bug( $p_bug_id, $p_user_id = null ) {
-	if( null === $p_user_id ) {
-		$p_user_id = auth_get_current_user_id();
-	}
+ function access_can_close_bug( $p_bug_id ) {
+	$t_user_id = MantisContext::GetUser();
 
 	# If allow_reporter_close is enabled, then reporters can always close their own bugs
-	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug_id, $p_user_id ) ) {
+	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug_id, $t_user_id ) ) {
 		return true;
 	}
 
@@ -454,7 +452,7 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 
 	$t_closed_status_threshold = access_get_status_threshold( config_get( 'bug_closed_status_threshold' ), $t_bug->project_id );
 
-	return access_has_bug_level( $t_closed_status_threshold, $p_bug_id, $p_user_id );
+	return access_has_bug_level( $t_closed_status_threshold, $p_bug_id, $t_user_id );
 }
 
 /**
@@ -465,8 +463,8 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
  * @access public
  * @throws MantisBT\Exception\Access\AccessDenied
  */
- function access_ensure_can_close_bug( $p_bug_id, $p_user_id = null ) {
-	if( !access_can_close_bug( $p_bug_id, $p_user_id ) ) {
+ function access_ensure_can_close_bug( $p_bug_id ) {
+	if( !access_can_close_bug( $p_bug_id ) ) {
 		throw new MantisBT\Exception\Access\AccessDenied();
 	}
 }
