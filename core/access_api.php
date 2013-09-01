@@ -449,20 +449,6 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 }
 
 /**
- * Make sure that the current user can close the specified bug
- * @see access_can_close_bug
- * @param int $p_bug_id integer representing bug id to check access against
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
- * @access public
- * @throws MantisBT\Exception\Access\AccessDenied
- */
- function access_ensure_can_close_bug( $p_bug_id ) {
-	if( !access_can_close_bug( $p_bug_id ) ) {
-		throw new MantisBT\Exception\Access\AccessDenied();
-	}
-}
-
-/**
  * get the user's access level specific to this project.
  * return false (0) if the user has no access override here
  * @param int $p_user_id Integer representing user id
