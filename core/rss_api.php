@@ -74,7 +74,7 @@ function rss_calculate_key( $p_user_id = null ) {
  * @return bool
  */
 function rss_login( $p_username, $p_key ) {
-	if(( $p_username === null ) || ( $p_key === null ) ) {
+	if( empty( $p_username ) || empty($p_key) ) {
 		return false;
 	}
 

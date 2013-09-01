@@ -62,16 +62,15 @@ require_lib( 'ezc/Base/src/base.php' );
 $f_project_id = gpc_get_int( 'project_id', ALL_PROJECTS );
 $f_filter_id = gpc_get_int( 'filter_id', 0 );
 $f_sort = gpc_get_string( 'sort', 'submit' );
-$f_username = gpc_get_string( 'username', null );
-$f_key = gpc_get_string( 'key', null );
+$f_username = gpc_get_string( 'username', '' );
+$f_key = gpc_get_string( 'key', '' );
 
 # make sure RSS syndication is enabled.
 if ( OFF == config_get( 'rss_enabled' ) ) {
 	throw new MantisBT\Exception\Access\AccessDenied();
 }
-# @todo gpc_get_string seems to return '' not null
 # authenticate the user
-if ( $f_username !== null ) {
+if ( !empty( $f_username ) ) {
 	if ( !rss_login( $f_username, $f_key ) ) {
 		throw new MantisBT\Exception\Access\AccessDenied();
 	}
