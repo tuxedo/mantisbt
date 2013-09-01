@@ -307,28 +307,21 @@ function access_ensure_project_level( $p_access_level, $p_project_id = null, $p_
 /**
  * Check whether the user has the specified access level for any project project
  * @param int $p_access_level integer representing access level
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
  * @return bool whether user has access level specified
  * @access public
  */
-function access_has_any_project( $p_access_level, $p_user_id = null ) {
+function access_has_any_project( $p_access_level ) {
 	# Short circuit the check in this case
-
 	if( NOBODY == $p_access_level ) {
 		return false;
 	}
 
-	if( null === $p_user_id ) {
-		$p_user_id = auth_get_current_user_id();
-	}
-
 	$t_projects = project_get_all_rows();
 	foreach( $t_projects as $t_project ) {
-		if ( access_has_project_level( $p_access_level, $t_project['id'], $p_user_id ) ) {
+		if ( access_has_project_level( $p_access_level, $t_project['id'] ) ) {
 			return true;
 		}
 	}
-
 	return false;
 }
 
