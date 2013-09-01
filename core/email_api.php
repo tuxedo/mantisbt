@@ -88,15 +88,10 @@ function email_regex_simple() {
  */
 function email_is_valid( $p_email ) {
 	# if we don't validate then just accept
-	if( OFF == config_get( 'validate_email' ) ) {
-		return true;
-	}
-
-	if ( ON == config_get( 'use_ldap_email' ) ) {
-		return true;
-	}
-
-	if( is_blank( $p_email ) && ON == config_get( 'allow_blank_email' ) ) {
+	if( OFF == config_get( 'validate_email' ) ||
+		ON == config_get( 'use_ldap_email' ) ||
+		( is_blank( $p_email ) && ON == config_get( 'allow_blank_email' ) )
+	) {
 		return true;
 	}
 
