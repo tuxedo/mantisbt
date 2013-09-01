@@ -489,6 +489,10 @@ function email_send_confirm_hash_url( $p_user_id, $p_confirm_hash ) {
  * @return null
  */
 function email_notify_new_account( $p_username, $p_email ) {
+	if( OFF == config_get( 'enable_email_notification' ) ) {
+		return;
+	}
+
 	$t_threshold_min = config_get( 'notify_new_user_created_threshold_min' );
 	$t_threshold_users = project_get_all_user_rows( ALL_PROJECTS, $t_threshold_min );
 
@@ -524,44 +528,42 @@ function email_notify_new_account( $p_username, $p_email ) {
  * @param int $p_message_id
  * @param array $p_header_optional_params = null
  * @param array $p_extra_user_ids_to_email
- * @return bool
+ * @return null
  */
 function email_generic( $p_bug_id, $p_notify_type, $p_message_id = null, $p_header_optional_params = null, $p_extra_user_ids_to_email = array() ) {
-	$t_ok = true;
+	if( OFF == config_get( 'enable_email_notification' ) ) {
+		return;
+	}
 
-	if( ON === config_get( 'enable_email_notification' ) ) {
-		ignore_user_abort( true );
+	ignore_user_abort( true );
 
-		bugnote_get_all_bugnotes( $p_bug_id );
+	bugnote_get_all_bugnotes( $p_bug_id );
 
-		# @todo yarick123: email_collect_recipients(...) will be completely rewritten to provide additional information such as language, user access,..
-		# @todo yarick123:sort recipients list by language to reduce switches between different languages
-		$t_recipients = email_collect_recipients( $p_bug_id, $p_notify_type, $p_extra_user_ids_to_email );
+	# @todo yarick123: email_collect_recipients(...) will be completely rewritten to provide additional information such as language, user access,..
+	# @todo yarick123:sort recipients list by language to reduce switches between different languages
+	$t_recipients = email_collect_recipients( $p_bug_id, $p_notify_type, $p_extra_user_ids_to_email );
 
-		$t_project_id = bug_get_field( $p_bug_id, 'project_id' );
+	$t_project_id = bug_get_field( $p_bug_id, 'project_id' );
 
-		if( is_array( $t_recipients ) ) {
-			# send email to every recipient
-			foreach( $t_recipients as $t_user_id => $t_user_email ) {
-				log_event( LOG_EMAIL, sprintf( "Issue = #%d, Type = %s, Msg = '%s', User = @U%d, Email = '%s'.", $p_bug_id, $p_notify_type, $p_message_id, $t_user_id, $t_user_email ) );
+	if( is_array( $t_recipients ) ) {
+		# send email to every recipient
+		foreach( $t_recipients as $t_user_id => $t_user_email ) {
+			log_event( LOG_EMAIL, sprintf( "Issue = #%d, Type = %s, Msg = '%s', User = @U%d, Email = '%s'.", $p_bug_id, $p_notify_type, $p_message_id, $t_user_id, $t_user_email ) );
 
-				# load (push) user language here as build_visible_bug_data assumes current language
-				lang_push( user_pref_get_language( $t_user_id, $t_project_id ) );
+			# load (push) user language here as build_visible_bug_data assumes current language
+			lang_push( user_pref_get_language( $t_user_id, $t_project_id ) );
 
-				$t_visible_bug_data = email_build_visible_bug_data( $t_user_id, $p_bug_id, $p_message_id );
-				$t_ok = email_bug_info_to_one_user( $t_visible_bug_data, $p_message_id, $t_project_id, $t_user_id, $p_header_optional_params ) && $t_ok;
+			$t_visible_bug_data = email_build_visible_bug_data( $t_user_id, $p_bug_id, $p_message_id );
+			$t_ok = email_bug_info_to_one_user( $t_visible_bug_data, $p_message_id, $t_project_id, $t_user_id, $p_header_optional_params ) && $t_ok;
 
-				lang_pop();
-			}
-		}
-
-		# Only trigger the draining of the email queue if cronjob is disabled and email notifications are enabled.
-		if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-			email_send_all();
+			lang_pop();
 		}
 	}
 
-	return $t_ok;
+	# Only trigger the draining of the email queue if cronjob is disabled and email notifications are enabled.
+	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
+		email_send_all();
+	}
 }
 
 /**
@@ -991,6 +993,10 @@ function email_build_subject( $p_bug_id ) {
  * @return null
  */
 function email_bug_reminder( $p_recipients, $p_bug_id, $p_message ) {
+	if( OFF == config_get( 'enable_email_notification' ) ) {
+		return;
+	}
+
 	if( !is_array( $p_recipients ) ) {
 		$p_recipients = array(
 			$p_recipients,
@@ -1019,9 +1025,7 @@ function email_bug_reminder( $p_recipients, $p_bug_id, $p_message ) {
 		$t_header = "\n" . _( 'On' ) . " $t_date, $t_sender $t_sender_email " . _( 'sent you this reminder about' ) . ": \n\n";
 		$t_contents = $t_header . string_get_bug_view_url_with_fqdn( $p_bug_id, $t_recipient ) . " \n\n$p_message";
 
-		if( ON == config_get( 'enable_email_notification' ) ) {
-			email_store( $t_email, $t_subject, $t_contents );
-		}
+		email_store( $t_email, $t_subject, $t_contents );
 
 		lang_pop();
 	}
