@@ -49,10 +49,9 @@ $g_log_levels = array(
  * Log an event
  * @param int $p_level Valid debug log level
  * @param string|array $p_msg Either a string, or an array structured as (string,execution time)
- * @param object $p_backtrace [Optional] debug_backtrace() stack to use 
  * @return null
  */
-function log_event( $p_level, $p_msg, $p_backtrace = null ) {
+function log_event( $p_level, $p_msg /*,args*/) {
 	global $g_log_levels;
 
 	# check to see if logging is enabled
@@ -66,15 +65,16 @@ function log_event( $p_level, $p_msg, $p_backtrace = null ) {
 		$t_event = $p_msg;
 		$s_msg = var_export( $p_msg, true );
 	} else {
+		$args = func_get_args();
+		array_shift($args); // skip level
+		array_shift($args); // skip message
+		$p_msg = vsprintf( $p_msg, $args);
+
 		$t_event = array( $p_msg, 0 );
 		$s_msg = $p_msg;
 	}
 
-	if( $p_backtrace === null ) {
-		$t_backtrace = debug_backtrace();
-	} else {
-		$t_backtrace = $p_backtrace;
-	}
+	$t_backtrace = debug_backtrace();
 	$t_caller = basename( $t_backtrace[0]['file'] );
 	$t_caller .= ":" . $t_backtrace[0]['line'];
 

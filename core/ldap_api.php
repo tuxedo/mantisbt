@@ -62,13 +62,13 @@ function ldap_connect_bind( $p_binddn = '', $p_password = '' ) {
 	}
 
 	foreach( $t_ldap_servers as $t_ldap_server ) {
-		log_event( LOG_LDAP, "Attempting connection to LDAP server '{$t_ldap_server}'." );
+		log_event( LOG_LDAP, "Attempting connection to LDAP server '%s'.", $t_ldap_server );
 		$t_ds = @ldap_connect( $t_ldap_server );
 		if ( $t_ds !== false && $t_ds > 0 ) {
 			log_event( LOG_LDAP, "Connection accepted to LDAP server" );
 
 			foreach( $t_ldap_options as $t_ldap_option => $t_ldap_value ) {
-				log_event( LOG_LDAP, "Setting LDAP protocol option (PHP Constant Value) '{$t_ldap_option}' to '{$t_ldap_value}'." );
+				log_event( LOG_LDAP, "Setting LDAP protocol option (PHP Constant Value) '%s' to '%s'.", $t_ldap_option, $t_ldap_value );
 				ldap_set_option( $t_ds, $t_ldap_option, $t_ldap_value );
 			}
 
@@ -92,7 +92,7 @@ function ldap_connect_bind( $p_binddn = '', $p_password = '' ) {
 				log_event( LOG_LDAP, "bind to ldap server successful" );
 				return $t_ds;
 			} else {
-				log_event( LOG_LDAP, "bind to ldap server failed - " . ldap_err2str( ldap_errno( $t_ds ) ) );
+				log_event( LOG_LDAP, "bind to ldap server failed - %s", ldap_err2str( ldap_errno( $t_ds ) ) );
 			}
 		}
 	}
@@ -173,7 +173,7 @@ function ldap_get_field_from_username( $p_username, $p_field ) {
 		} else {
 			$t_value =  $g_cache_ldap_field[ $p_username ][$p_field][0];
 		}
-		log_event( LOG_LDAP, "Found value '{$t_value}' for field '{$p_field}'." );
+		log_event( LOG_LDAP, "Found value '%s' for field '%s'.", $t_value, $p_field );
 		return $t_value;
 	}
 
@@ -200,7 +200,7 @@ function ldap_get_field_from_username( $p_username, $p_field ) {
 	$t_search_attrs         = array( $t_ldap_uid_field, $t_ldap_realname_field, $t_ldap_email_field, 'dn' );
 
 	foreach( $t_ldap_contexts as $t_ldap_context => $t_ldap_subtree ) {
-		log_event( LOG_LDAP, "Searching for $t_search_filter (Context $t_ldap_context)" );
+		log_event( LOG_LDAP, "Searching for %s (Context %s)", $t_search_filter, $t_ldap_context );
 		if( $t_ldap_subtree == true ) {
 			$t_sr = ldap_search( $t_ds, $t_ldap_context, $t_search_filter, $t_search_attrs );
 		} else {
@@ -234,7 +234,7 @@ function ldap_get_field_from_username( $p_username, $p_field ) {
 	} else {
 		$t_value =  $t_info[0][$p_field][0];
 	}
-	log_event( LOG_LDAP, "Found value '{$t_value}' for field '{$p_field}'." );
+	log_event( LOG_LDAP, "Found value '%s' for field '%s'.", $t_value, $p_field );
 
 	return $t_value;
 }

@@ -997,7 +997,7 @@ function filter_get_bug_count( $p_query_clauses ) {
  * @return bool
  */
 function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p_bug_count, $p_custom_filter = null, $p_project_id = null, $p_user_id = null, $p_show_sticky = null ) {
-	log_event( LOG_FILTERING, 'START NEW FILTER QUERY' );
+	log_event( LOG_FILTERING, 'START NEW QUERY' );
 
 	$t_limit_reporters = config_get( 'limit_reporters' );
 	$t_report_bug_threshold = config_get( 'report_bug_threshold' );
@@ -1080,8 +1080,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 		$t_include_sub_projects = (( count( $t_project_ids ) == 1 ) && ( ( $t_project_ids[0] == META_FILTER_CURRENT ) || ( $t_project_ids[0] == ALL_PROJECTS ) ) );
 	}
 
-	log_event( LOG_FILTERING, 'project_ids = @P' . implode( ', @P', $t_project_ids ) );
-	log_event( LOG_FILTERING, 'include sub-projects = ' . ( $t_include_sub_projects ? '1' : '0' ) );
+	log_event( LOG_FILTERING, 'project_ids = %s (including sub-projects: %s)', implode( ',', $t_project_ids ), ( $t_include_sub_projects ? 'true' : 'false' ) );
 
 	// if the array has ALL_PROJECTS, then reset the array to only contain ALL_PROJECTS.
 	// replace META_FILTER_CURRENT with the actualy current project id.
@@ -1125,7 +1124,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 			$t_top_project_ids = $t_project_ids;
 
 			foreach( $t_top_project_ids as $t_pid ) {
-				log_event( LOG_FILTERING, 'Getting sub-projects for project id @P' . $t_pid );
+				log_event( LOG_FILTERING, 'Getting sub-projects for project id %d', $t_pid );
 				$t_subproject_ids = user_get_all_accessible_subprojects( $t_user_id, $t_pid );
 				if( $t_subproject_ids ) {
 					$t_project_ids = array_merge( $t_project_ids, $t_subproject_ids );
@@ -1141,7 +1140,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 			return array();
 		}
 
-		log_event( LOG_FILTERING, 'project_ids after including sub-projects = @P' . implode( ', @P', $t_project_ids ) );
+		log_event( LOG_FILTERING, 'project_ids after including sub-projects = %s', implode( ',', $t_project_ids ) );
 
 		// this array is to be populated with project ids for which we only want to show public issues.  This is due to the limited
 		// access of the current user.
@@ -1165,8 +1164,8 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 			}
 		}
 
-		log_event( LOG_FILTERING, 'project_ids (with public/private access) = @P' . implode( ', @P', $t_private_and_public_project_ids ) );
-		log_event( LOG_FILTERING, 'project_ids (with public access) = @P' . implode( ', @P', $t_public_only_project_ids ) );
+		log_event( LOG_FILTERING, 'project_ids (with public/private access) = %s', implode( ',', $t_private_and_public_project_ids ) );
+		log_event( LOG_FILTERING, 'project_ids (with public access) = %s', implode( ',', $t_public_only_project_ids ) );
 
 		$t_count_private_and_public_project_ids = count( $t_private_and_public_project_ids );
 		if( $t_count_private_and_public_project_ids == 1 ) {
@@ -1209,7 +1208,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 				}
 			}
 		}
-		log_event( LOG_FILTERING, 'project query = ' . $t_project_query );
+		log_event( LOG_FILTERING, 'project query = %s', $t_project_query );
 		array_push( $t_where_clauses, $t_project_query );
 	}
 
@@ -1217,7 +1216,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 	$t_view_state = (int)$t_filter[FILTER_PROPERTY_VIEW_STATE];
 	if( !filter_field_is_any( $t_filter[FILTER_PROPERTY_VIEW_STATE] ) ) {
 		$t_view_state_query = '({bug}.view_state=%d)';
-		log_event( LOG_FILTERING, 'view_state query = ' . $t_view_state_query );
+		log_event( LOG_FILTERING, 'view_state query = %s', $t_view_state_query );
 		$t_where_params[] = $t_view_state;
 		array_push( $t_where_clauses, $t_view_state_query );
 	} else {
@@ -1247,7 +1246,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 			$t_reporter_query = "( {bug}.reporter_id=$t_clauses[0] )";
 		}
 
-		log_event( LOG_FILTERING, 'reporter query = ' . $t_reporter_query );
+		log_event( LOG_FILTERING, 'reporter query = %s', $t_reporter_query );
 		array_push( $t_where_clauses, $t_reporter_query );
 	} else {
 		log_event( LOG_FILTERING, 'no reporter query' );
@@ -1276,7 +1275,7 @@ function filter_get_bug_rows( &$p_page_number, &$p_per_page, &$p_page_count, &$p
 			$t_handler_query = "( {bug}.handler_id=$t_clauses[0] )";
 		}
 
-		log_event( LOG_FILTERING, 'handler query = ' . $t_handler_query );
+		log_event( LOG_FILTERING, 'handler query = %s', $t_handler_query );
 		array_push( $t_where_clauses, $t_handler_query );
 	} else {
 		log_event( LOG_FILTERING, 'no handler query' );
@@ -3508,7 +3507,7 @@ function print_filter_platform() {
 		<select<?php echo $t_select_modifier;?> name="<?php echo FILTER_PROPERTY_PLATFORM;?>[]">
 			<option value="<?php echo META_FILTER_ANY?>"<?php check_selected( $t_filter[FILTER_PROPERTY_PLATFORM], META_FILTER_ANY );?>>[<?php echo _( 'any' )?>]</option>
 			<?php
-				log_event( LOG_FILTERING, 'Platform = ' . var_export( $t_filter[FILTER_PROPERTY_PLATFORM], true ) );
+				log_event( LOG_FILTERING, 'Platform = %s', var_export( $t_filter[FILTER_PROPERTY_PLATFORM], true ) );
 	print_platform_option_list( $t_filter[FILTER_PROPERTY_PLATFORM] );
 	?>
 		</select>

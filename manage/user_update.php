@@ -185,7 +185,7 @@ if ( $f_send_email_notification ) {
 		$t_updated_msg = _('Your account has been updated by an administrator. A list of these changes is provided below. You can update your account details and preferences at any time by visiting the following URL:');
 		$t_message = $t_updated_msg . "\n\n" . config_get( 'path' ) . 'account_page.php' . "\n\n" . $t_changes;
 		email_store( $t_email, $t_subject, $t_message );
-		log_event( LOG_EMAIL, sprintf( 'Account update notification sent to ' . $f_username . ' (' . $t_email . ')' ) );
+		log_event( LOG_EMAIL, sprintf( 'Account update notification sent to %s (%s)', $f_username, $t_email ) );
 		if ( config_get( 'email_send_using_cronjob' ) == OFF ) {
 			email_send_all();
 		}
