@@ -2171,7 +2171,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_REPORTER_ID] as $t_current ) {
 				$t_this_name = '';
-				echo '<input type="hidden" name="', FILTER_PROPERTY_REPORTER_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_REPORTER_ID, '[]" value="', string_attribute( $t_current ), '" />';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
 				}
@@ -2191,12 +2191,12 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_name;
+				$t_output = $t_output . string_display( $t_this_name );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
 			} else {
-				echo string_display( $t_output );
+				echo $t_output;
 			}
 		}
 		?>
@@ -2210,7 +2210,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_MONITOR_USER_ID] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_MONITOR_USER_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_MONITOR_USER_ID, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_name = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2229,12 +2229,12 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_name;
+				$t_output = $t_output . string_display( $t_this_name );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
 			} else {
-				echo string_display( $t_output );
+				echo $t_output;
 			}
 		}
 		?>
@@ -2248,7 +2248,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_HANDLER_ID] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_HANDLER_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_HANDLER_ID, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_name = '';
 				if( filter_field_is_none( $t_current ) ) {
 					$t_this_name = _( 'none' );
@@ -2268,12 +2268,12 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_name;
+				$t_output = $t_output . string_display( $t_this_name );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
 			} else {
-				echo string_display( $t_output );
+				echo $t_output;
 			}
 		}
 		?>
@@ -2287,19 +2287,19 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_CATEGORY_ID] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_CATEGORY_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_CATEGORY_ID, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
 				} else {
-					$t_this_string = string_display( $t_current );
+					$t_this_string = $t_current;
 				}
 				if( $t_first_flag != true ) {
 					$t_output = $t_output . '<br />';
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_string;
+				$t_output = $t_output . string_display( $t_this_string );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
@@ -2318,7 +2318,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_SEVERITY] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_SEVERITY, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_SEVERITY, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2349,7 +2349,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_RESOLUTION] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_RESOLUTION, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_RESOLUTION, '[]" value="', string_attribute( $t_current ), '" />';
 										$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2381,7 +2381,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_PROFILE_ID] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_PROFILE_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_PROFILE_ID, '[]" value="', string_attribute( $t_current ), '" />';
 										$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2474,7 +2474,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_STATUS] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_STATUS, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_STATUS, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2506,7 +2506,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			} else {
 				$t_first_flag = true;
 				foreach( $t_filter[FILTER_PROPERTY_HIDE_STATUS] as $t_current ) {
-					echo '<input type="hidden" name="', FILTER_PROPERTY_HIDE_STATUS, '[]" value="', $t_current, '" />';
+					echo '<input type="hidden" name="', FILTER_PROPERTY_HIDE_STATUS, '[]" value="', string_attribute( $t_current ), '" />';
 					$t_this_string = '';
 					if( filter_field_is_none( $t_current ) ) {
 						$t_none_found = true;
@@ -2551,14 +2551,14 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else if( filter_field_is_none( $t_current ) ) {
 					$t_this_string = _( 'none' );
 				} else {
-					$t_this_string = string_display( $t_current );
+					$t_this_string = $t_current;
 				}
 				if( $t_first_flag != true ) {
 					$t_output = $t_output . '<br />';
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_string;
+				$t_output = $t_output . string_display( $t_this_string );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
@@ -2618,7 +2618,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				$t_first_flag = true;
 				foreach( $t_filter[FILTER_PROPERTY_FIXED_IN_VERSION] as $t_current ) {
 					$t_current = stripslashes( $t_current );
-					echo '<input type="hidden" name="', FILTER_PROPERTY_FIXED_IN_VERSION, '[]" value="', string_display( $t_current ), '" />';
+					echo '<input type="hidden" name="', FILTER_PROPERTY_FIXED_IN_VERSION, '[]" value="', string_attribute( $t_current ), '" />';
 					$t_this_string = '';
 					if( filter_field_is_any( $t_current ) ) {
 						$t_any_found = true;
@@ -2661,7 +2661,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_PRIORITY] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_PRIORITY, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_PRIORITY, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2694,7 +2694,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_TARGET_VERSION] as $t_current ) {
 				$t_current = stripslashes( $t_current );
-				echo '<input type="hidden" name="', FILTER_PROPERTY_TARGET_VERSION, '[]" value="', string_display( $t_current ), '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_TARGET_VERSION, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_string = '';
 				if( filter_field_is_any( $t_current ) ) {
 					$t_any_found = true;
@@ -2757,7 +2757,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			<td class="small-caption" id="per_page_filter_target">
 				<?php
 					echo( $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE] == 0 ) ? _( 'all' ) : $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE];
-		echo '<input type="hidden" name="', FILTER_PROPERTY_ISSUES_PER_PAGE, '" value="', $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE], '" />';
+		echo '<input type="hidden" name="', FILTER_PROPERTY_ISSUES_PER_PAGE, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE] ), '" />';
 		?>
 			</td>
 			<td class="small-caption" id="view_state_filter_target">
@@ -2770,7 +2770,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			echo _( 'any' );
 			$t_filter[FILTER_PROPERTY_VIEW_STATE] = META_FILTER_ANY;
 		}
-		echo '<input type="hidden" name="', FILTER_PROPERTY_VIEW_STATE, '" value="', $t_filter[FILTER_PROPERTY_VIEW_STATE], '" />';
+		echo '<input type="hidden" name="', FILTER_PROPERTY_VIEW_STATE, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_VIEW_STATE] ), '" />';
 		?>
 			</td>
 			<td class="small-caption" id="sticky_issues_filter_target">
@@ -2783,19 +2783,19 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			<td class="small-caption" colspan="2" id="highlight_changed_filter_target">
 				<?php
 					echo $t_filter[FILTER_PROPERTY_HIGHLIGHT_CHANGED];
-		echo '<input type="hidden" name="', FILTER_PROPERTY_HIGHLIGHT_CHANGED, '" value="', $t_filter[FILTER_PROPERTY_HIGHLIGHT_CHANGED], '" />';
+		echo '<input type="hidden" name="', FILTER_PROPERTY_HIGHLIGHT_CHANGED, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_HIGHLIGHT_CHANGED] ), '" />';
 		?>
 			</td>
 			<td class="small-caption" id="do_filter_by_date_filter_target">
 		<?php
 		if( $t_filter[FILTER_PROPERTY_FILTER_BY_DATE] ) {
-			echo '<input type="hidden" name="', FILTER_PROPERTY_FILTER_BY_DATE, '" value="', $t_filter[FILTER_PROPERTY_FILTER_BY_DATE], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_START_MONTH, '" value="', $t_filter[FILTER_PROPERTY_START_MONTH], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_START_DAY, '" value="', $t_filter[FILTER_PROPERTY_START_DAY], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_START_YEAR, '" value="', $t_filter[FILTER_PROPERTY_START_YEAR], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_END_MONTH, '" value="', $t_filter[FILTER_PROPERTY_END_MONTH], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_END_DAY, '" value="', $t_filter[FILTER_PROPERTY_END_DAY], '" />';
-			echo '<input type="hidden" name="', FILTER_PROPERTY_END_YEAR, '" value="', $t_filter[FILTER_PROPERTY_END_YEAR], '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_FILTER_BY_DATE, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_FILTER_BY_DATE] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_START_MONTH, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_START_MONTH] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_START_DAY, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_START_DAY] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_START_YEAR, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_START_YEAR] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_END_MONTH, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_END_MONTH] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_END_DAY, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_END_DAY] ), '" />';
+			echo '<input type="hidden" name="', FILTER_PROPERTY_END_YEAR, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_END_YEAR] ), '" />';
 
 			$t_chars = preg_split( '//', config_get( 'short_date_format' ), -1, PREG_SPLIT_NO_EMPTY );
 			$t_time = mktime( 0, 0, 0, $t_filter[FILTER_PROPERTY_START_MONTH], $t_filter[FILTER_PROPERTY_START_DAY], $t_filter[FILTER_PROPERTY_START_YEAR] );
@@ -2839,8 +2839,8 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 
 			<td class="small-caption" colspan="2" id="relationship_type_filter_target">
 							<?php
-								echo '<input type="hidden" name="', FILTER_PROPERTY_RELATIONSHIP_TYPE, '" value="', $t_filter[FILTER_PROPERTY_RELATIONSHIP_TYPE], '" />';
-		echo '<input type="hidden" name="', FILTER_PROPERTY_RELATIONSHIP_BUG, '" value="', $t_filter[FILTER_PROPERTY_RELATIONSHIP_BUG], '" />';
+								echo '<input type="hidden" name="', FILTER_PROPERTY_RELATIONSHIP_TYPE, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_RELATIONSHIP_TYPE] ), '" />';
+		echo '<input type="hidden" name="', FILTER_PROPERTY_RELATIONSHIP_BUG, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_RELATIONSHIP_BUG] ), '" />';
 		$c_rel_type = $t_filter[FILTER_PROPERTY_RELATIONSHIP_TYPE];
 		$c_rel_bug = $t_filter[FILTER_PROPERTY_RELATIONSHIP_BUG];
 		if( -1 == $c_rel_type || 0 == $c_rel_bug ) {
@@ -3121,7 +3121,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 								}
 
 								$t_output = $t_output . $t_this_string;
-								$t_values .= '<input type="hidden" name="custom_field_' . $t_accessible_custom_fields_ids[$i] . '[]" value="' . string_display( $t_current ) . '" />';
+								$t_values .= '<input type="hidden" name="custom_field_' . $t_accessible_custom_fields_ids[$i] . '[]" value="' . string_attribute( $t_current ) . '" />';
 							}
 						}
 
@@ -3185,7 +3185,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 		} else {
 			$t_first_flag = true;
 			foreach( $t_filter[FILTER_PROPERTY_NOTE_USER_ID] as $t_current ) {
-				echo '<input type="hidden" name="', FILTER_PROPERTY_NOTE_USER_ID, '[]" value="', $t_current, '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_NOTE_USER_ID, '[]" value="', string_attribute( $t_current ), '" />';
 				$t_this_name = '';
 				if( filter_field_is_none( $t_current ) ) {
 					$t_this_name = _( 'none' );
@@ -3205,12 +3205,12 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else {
 					$t_first_flag = false;
 				}
-				$t_output = $t_output . $t_this_name;
+				$t_output = $t_output . string_display_line( $t_this_name );
 			}
 			if( true == $t_any_found ) {
 				echo _( 'any' );
 			} else {
-				echo string_display( $t_output );
+				echo $t_output;
 			}
 		}
 		?>
@@ -3241,8 +3241,8 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 				} else {
 					echo $t_field_name . ' ' . _('Descending');
 				}
-				echo '<input type="hidden" name="', FILTER_PROPERTY_SORT_FIELD_NAME, '_', $i, '" value="', $t_sort_fields[$i], '" />';
-				echo '<input type="hidden" name="', FILTER_PROPERTY_SORT_DIRECTION, '_', $i, '" value="', $t_dir_fields[$i], '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_SORT_FIELD_NAME, '_', $i, '" value="', string_attribute( $t_sort_fields[$i] ), '" />';
+				echo '<input type="hidden" name="', FILTER_PROPERTY_SORT_DIRECTION, '_', $i, '" value="', string_attribute( $t_dir_fields[$i] ), '" />';
 			}
 		}
 		?>
@@ -3266,7 +3266,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 			} else {
 				$t_first_flag = true;
 				foreach( $t_filter[FILTER_PROPERTY_PROJECT_ID] as $t_current ) {
-					echo '<input type="hidden" name="', FILTER_PROPERTY_PROJECT_ID, '[]" value="', $t_current, '" />';
+					echo '<input type="hidden" name="', FILTER_PROPERTY_PROJECT_ID, '[]" value="', string_attribute( $t_current ), '" />';
 					$t_this_name = '';
 					if( META_FILTER_CURRENT == $t_current ) {
 						$t_this_name = _( 'current' );
@@ -3304,7 +3304,7 @@ function filter_draw_selection_area2( $p_page_number, $p_for_screen = true, $p_e
 	echo '<div class="search-box">';
 	echo '<label>';
 	echo _( 'Search' ) . '&#160;';
-	echo '<input type="text" size="16" name="', FILTER_PROPERTY_SEARCH, '" value="', string_html_specialchars( $t_filter[FILTER_PROPERTY_SEARCH] ), '" />';
+	echo '<input type="text" size="16" name="', FILTER_PROPERTY_SEARCH, '" value="', string_attribute( $t_filter[FILTER_PROPERTY_SEARCH] ), '" />';
 	echo '</label>';
 	echo '</div>';
 	?>
@@ -3685,7 +3685,7 @@ function print_filter_show_profile() {
 function print_filter_per_page() {
 	global $t_filter;
 	?><!-- Number of bugs per page -->
-		<input type="text" name="<?php echo FILTER_PROPERTY_ISSUES_PER_PAGE;?>" size="3" maxlength="7" value="<?php echo $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE]?>" />
+		<input type="text" name="<?php echo FILTER_PROPERTY_ISSUES_PER_PAGE;?>" size="3" maxlength="7" value="<?php echo string_attribute( $t_filter[FILTER_PROPERTY_ISSUES_PER_PAGE] )?>" />
 		<?php
 }
 
@@ -3727,7 +3727,7 @@ function print_filter_sticky_issues() {
 function print_filter_highlight_changed() {
 	global $t_filter;
 	?><!-- Highlight changed bugs -->
-			<input type="text" name="<?php echo FILTER_PROPERTY_HIGHLIGHT_CHANGED;?>" size="3" maxlength="7" value="<?php echo $t_filter[FILTER_PROPERTY_HIGHLIGHT_CHANGED]?>" />
+			<input type="text" name="<?php echo FILTER_PROPERTY_HIGHLIGHT_CHANGED;?>" size="3" maxlength="7" value="<?php echo string_attribute( $t_filter[FILTER_PROPERTY_HIGHLIGHT_CHANGED] )?>" />
 		<?php
 }
 
@@ -4203,7 +4203,7 @@ function print_multivalue_field( $p_field_name, $p_field_value ) {
 		foreach( $t_field_value as $t_current ) {
 			$t_current = stripslashes( $t_current );
 			?>
-				<input type="hidden" name="<?php echo $p_field_name?>[]" value="<?php echo string_display( $t_current );?>" />
+				<input type="hidden" name="<?php echo $p_field_name?>[]" value="<?php echo string_attribute( $t_current );?>" />
 				<?php
 				$t_this_string = '';
 
