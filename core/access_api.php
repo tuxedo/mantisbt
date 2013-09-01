@@ -427,8 +427,8 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
  * @access public
  * @throws MantisBT\Exception\Access\AccessDenied
  */
- function access_ensure_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = null ) {
-	if( !access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id ) ) {
+ function access_ensure_bugnote_level( $p_access_level, $p_bugnote_id ) {
+	if( !access_has_bugnote_level( $p_access_level, $p_bugnote_id ) ) {
 		throw new MantisBT\Exception\Access\AccessDenied();
 	}
 }
