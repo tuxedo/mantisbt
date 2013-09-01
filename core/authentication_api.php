@@ -176,7 +176,7 @@ function auth_prepare_password( $p_password ) {
 				auth_http_prompt();
 
 				/* calls exit */
-				return;
+				return null;
 			}
 			break;
 		default:
