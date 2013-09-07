@@ -27,7 +27,6 @@
  * @uses config_api.php
  * @uses constant_inc.php
  * @uses html_api.php
-
  */
 
 require_once( 'core.php' );
