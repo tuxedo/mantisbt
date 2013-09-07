@@ -416,7 +416,6 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
  * @see access_has_bugnote_level
  * @param int $p_access_level integer representing access level
  * @param int $p_bugnote_id integer representing bugnote id to check access against
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
  * @access public
  * @throws MantisBT\Exception\Access\AccessDenied
  */
