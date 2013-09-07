@@ -207,7 +207,6 @@ function __autoload( $p_class ) {
         $t_parts = explode( '\\', $p_class);
         $t_class = array_pop($t_parts);
         array_shift($t_parts);
-        $t_count = sizeof( $t_parts );
         $t_name = implode( DIRECTORY_SEPARATOR, $t_parts ) . DIRECTORY_SEPARATOR;
         $t_require_path = $MantisConfig->class_path . $t_name . $t_class . '.class.php';
         if ( file_exists( $t_require_path ) ) {
