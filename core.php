@@ -39,27 +39,11 @@
  * @uses database_api.php
  * @uses event_api.php
  * @uses http_api.php
- * @uses mantis_offline.php
  * @uses plugin_api.php
  * @uses php_api.php
  * @uses user_pref_api.php
  * @uses wiki_api.php
  */
-
-/**
- * Before doing anything... check if MantisBT is down for maintenance
- *
- *   To make MantisBT 'offline' simply create a file called
- *   'mantis_offline.php' in the MantisBT root directory.
- *   Users are redirected to that file if it exists.
- *   If you have to test MantisBT while it's offline, add the
- *   parameter 'mbadmin=1' to the URL.
- */
-if ( file_exists( 'mantis_offline.php' ) && !isset( $_GET['mbadmin'] ) ) {
-	include( 'mantis_offline.php' );
-	exit;
-}
-
 
 $g_request_time = microtime( true );
 

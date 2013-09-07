@@ -181,8 +181,7 @@ $t_ignore_files = array(
 	'custom_constants_inc.php',
 	'custom_functions_inc.php',
 	'custom_relationships_inc.php',
-	'custom_strings_inc.php',
-	'mantis_offline.php'
+	'custom_strings_inc.php'
 );
 check_file_integrity_recursive( $t_absolute_base_dir, $t_absolute_base_dir, '', $t_ignore_files );
 
