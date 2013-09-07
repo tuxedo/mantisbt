@@ -428,7 +428,6 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 /**
  * Check if the current user can close the specified bug
  * @param int $p_bug_id integer representing bug id to check access against
- * @param int|null $p_user_id integer representing user id, defaults to null to use current user
  * @return bool whether user has access to close bugs
  * @access public
  */
