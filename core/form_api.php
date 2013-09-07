@@ -50,7 +50,7 @@ require_api( 'session_api.php' );
  * @return string Security token string
  */
 function form_security_token( $p_form_name ) {
-	if ( PHP_CLI == php_mode() || OFF == config_get_global( 'form_security_validation' ) ) {
+	if ( OFF == config_get_global( 'form_security_validation' ) ) {
 		return '';
 	}
 
@@ -85,7 +85,7 @@ function form_security_token( $p_form_name ) {
  * @return string Hidden form element to output
  */
 function form_security_field( $p_form_name ) {
-	if ( PHP_CLI == php_mode() || OFF == config_get_global( 'form_security_validation' ) ) {
+	if ( OFF == config_get_global( 'form_security_validation' ) ) {
 		return '';
 	}
 
@@ -105,7 +105,7 @@ function form_security_field( $p_form_name ) {
  * @return string Hidden form element to output
  */
 function form_security_param( $p_form_name ) {
-	if ( PHP_CLI == php_mode() || OFF == config_get_global( 'form_security_validation' ) ) {
+	if ( OFF == config_get_global( 'form_security_validation' ) ) {
 		return '';
 	}
 
@@ -128,7 +128,7 @@ function form_security_param( $p_form_name ) {
  * @throws MantisBT\Exception\Security\CSRFTokenInvalid
  */
 function form_security_validate( $p_form_name ) {
-	if ( PHP_CLI == php_mode() || OFF == config_get_global( 'form_security_validation' ) ) {
+	if ( OFF == config_get_global( 'form_security_validation' ) ) {
 		return true;
 	}
 
@@ -166,7 +166,7 @@ function form_security_validate( $p_form_name ) {
  * @param string $p_form_name Form name
  */
 function form_security_purge( $p_form_name ) {
-	if ( PHP_CLI == php_mode() || OFF == config_get_global( 'form_security_validation' ) ) {
+	if ( OFF == config_get_global( 'form_security_validation' ) ) {
 		return;
 	}
 
