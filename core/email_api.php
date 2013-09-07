@@ -1039,7 +1039,6 @@ function email_bug_reminder( $p_recipients, $p_bug_id, $p_message ) {
 
 /**
  * Send bug info to given user
- * return true on success
  * @param array $p_visible_bug_data
  * @param string $p_message_id
  * @param int $p_project_id
@@ -1053,7 +1052,7 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	# check whether email should be sent
 	# @@@ can be email field empty? if yes - then it should be handled here
 	if( ON !== config_get( 'enable_email_notification' ) || is_blank( $t_user_email ) ) {
-		return true;
+		return;
 	}
 
 	# build subject
@@ -1087,8 +1086,6 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 
 	# send mail
 	email_store( $t_user_email, $t_subject, $t_message, $t_mail_headers );
-
-	return;
 }
 
 /**
