@@ -61,9 +61,10 @@ $f_bug_id = gpc_get_int( 'bug_id' );
 $f_tag_select = gpc_get_int( 'tag_select' );
 $f_tag_string = gpc_get_string( 'tag_string' );
 
+$t_bug = bug_get( $f_bug_id );
 $t_user_id = auth_get_current_user_id();
 
-access_ensure_bug_level( config_get( 'tag_attach_threshold' ), $f_bug_id, $t_user_id );
+access_ensure_bug_level( config_get( 'tag_attach_threshold' ), $t_bug, $t_user_id );
 
 /** @todo The handling of tag strings which can include multiple tags should be moved
  *     to the APIs.  This is to allow other clients of the API to support such

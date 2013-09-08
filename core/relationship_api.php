@@ -785,10 +785,10 @@ function relationship_view_box( $p_bug_id ) {
 </tr>
 <?php
 	# bug not read-only and user authenticated
-	if( !bug_is_readonly( $p_bug ) ) {
+	if( !bug_is_readonly( $t_bug ) ) {
 
 		# user access level at least updater
-		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug ) ) {
+		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug ) ) {
 			?>
 <tr class="row-1">
 	<th class="category"><?php echo _( 'New relationship' )?></th>
@@ -806,7 +806,7 @@ function relationship_view_box( $p_bug_id ) {
 	}
 	?>
 <tr>
-	<td colspan="2"><?php echo relationship_get_summary_html( $p_bug->id )?></td>
+	<td colspan="2"><?php echo relationship_get_summary_html( $t_bug->id )?></td>
 </tr>
 </table>
 

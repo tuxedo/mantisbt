@@ -45,8 +45,9 @@ form_security_validate( 'bug_revision_drop' );
 
 $f_revision_id = gpc_get_int( 'id' );
 $t_revision = bug_revision_get( $f_revision_id );
+$t_bug = bug_get( $t_revision['bug_id'] );
 
-access_ensure_bug_level( config_get( 'bug_revision_drop_threshold' ), $t_revision['bug_id'] );
+access_ensure_bug_level( config_get( 'bug_revision_drop_threshold' ), $t_bug );
 helper_ensure_confirmed( _( 'Are you sure you want to drop this issue revision?' ), _( 'Drop' ) );
 
 bug_revision_drop( $f_revision_id );

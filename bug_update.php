@@ -70,7 +70,7 @@ MantisContext::SetProject( $t_existing_bug->project_id );
 # Ensure that the user has permission to update bugs. This check also factors
 # in whether the user has permission to view private bugs. The
 # $g_limit_reporters option is also taken into consideration.
-access_ensure_bug_level( config_get( 'update_bug_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_existing_bug );
 
 # Check if the bug is in a read-only state and whether the current user has
 # permission to update read-only bugs.
@@ -145,7 +145,7 @@ if ( ( $t_resolve_issue || $t_close_issue ) &&
 
 # Validate any change to the status of the issue.
 if ( $t_existing_bug->status !== $t_updated_bug->status ) {
-	access_ensure_bug_level( config_get( 'update_bug_status_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'update_bug_status_threshold' ), $t_existing_bug );
 	if ( !bug_check_workflow( $t_existing_bug->status, $t_updated_bug->status ) ) {
 		throw new MantisBT\Exception\Field\InvalidValue( _( 'Status' ) );
 	}
@@ -176,7 +176,7 @@ if ( $t_existing_bug->status !== $t_updated_bug->status ) {
 # Validate any change to the handler of an issue.
 $t_issue_is_sponsored = sponsorship_get_amount( sponsorship_get_all_ids( $f_bug_id ) ) > 0;
 if ( $t_existing_bug->handler_id !== $t_updated_bug->handler_id ) {
-	access_ensure_bug_level( config_get( 'update_bug_assign_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'update_bug_assign_threshold' ), $t_existing_bug );
 	if ( $t_issue_is_sponsored && !access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_existing_bug ) ) {
 		throw new MantisBT\Exception\Sponsorship_Handler_Access_Level_Too_Low();
 	}
@@ -208,12 +208,12 @@ if ( $t_existing_bug->resolution !== $t_updated_bug->resolution &&
 
 # Ensure that the user has permission to change the target version of the issue.
 if ( $t_existing_bug->target_version !== $t_updated_bug->target_version ) {
-	access_ensure_bug_level( config_get( 'roadmap_update_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'roadmap_update_threshold' ), $t_existing_bug );
 }
 
 # Ensure that the user has permission to change the view status of the issue.
 if ( $t_existing_bug->view_state !== $t_updated_bug->view_state ) {
-	access_ensure_bug_level( config_get( 'change_view_status_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'change_view_status_threshold' ), $t_existing_bug );
 }
 
 # Determine the custom field "require check" to use for validating
@@ -284,13 +284,13 @@ if ( $t_updated_bug->duplicate_id !== 0 ) {
 if ( $t_bug_note->note ||
      ( config_get( 'time_tracking_enabled' ) &&
        helper_duration_to_minutes( $t_bug_note->time_tracking ) > 0 ) ) {
-	access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $t_existing_bug );
 	if ( !$t_bug_note->note &&
 	     !config_get( 'time_tracking_without_note' ) ) {
 		throw new MantisBT\Exception\Field\EmptyField( _( 'Note' ) );
 	}
 	if ( $t_bug_note->view_state !== config_get( 'default_bugnote_view_status' ) ) {
-		access_ensure_bug_level( config_get( 'set_view_status_threshold' ), $f_bug_id );
+		access_ensure_bug_level( config_get( 'set_view_status_threshold' ), $t_existing_bug );
 	}
 }
 

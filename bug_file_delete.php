@@ -53,7 +53,7 @@ $t_bug_id = file_get_field( $f_file_id, 'bug_id' );
 $t_bug = bug_get( $t_bug_id, true );
 MantisContext::SetProject( $t_bug->project_id );
 
-access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_bug_id );
+access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_bug );
 
 helper_ensure_confirmed( _( 'Are you sure you wish to delete this attachment?' ), _( 'Delete' ) );
 

@@ -66,7 +66,7 @@ if ( !file_allow_bug_upload( $t_bug ) ) {
 	throw new MantisBT\Exception\Access\AccessDenied();
 }
 
-access_ensure_bug_level( config_get( 'upload_bug_file_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'upload_bug_file_threshold' ), $t_bug );
 
 file_add( $f_bug_id, $f_file, 'bug' );
 

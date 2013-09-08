@@ -66,7 +66,7 @@ if ( bug_is_readonly( $t_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
-access_ensure_bug_level( config_get( 'bug_reminder_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'bug_reminder_threshold' ), $t_bug );
 
 # Automically add recipients to monitor list if they are above the monitor
 # threshold, option is enabled, and not reporter or handler.

@@ -60,10 +60,10 @@ if ( bug_is_readonly( $t_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
-access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $t_bug->id );
+access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $t_bug );
 
 if ( $f_private ) {
-	access_ensure_bug_level( config_get( 'set_view_status_threshold' ), $t_bug->id );
+	access_ensure_bug_level( config_get( 'set_view_status_threshold' ), $t_bug );
 }
 
 // We always set the note time to BUGNOTE, and the API will overwrite it with TIME_TRACKING

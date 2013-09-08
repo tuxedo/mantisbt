@@ -81,7 +81,7 @@ $t_bug = bug_get( $f_bug_id, true );
 
 MantisContext::SetProject( $t_bug->project_id );
 
-access_ensure_bug_level( VIEWER, $f_bug_id );
+access_ensure_bug_level( VIEWER, $t_bug );
 
 compress_enable();
 

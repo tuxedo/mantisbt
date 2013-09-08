@@ -54,10 +54,11 @@ form_security_validate( 'bug_relationship_add' );
 
 $f_rel_type = gpc_get_int( 'rel_type' );
 $f_src_bug_id = gpc_get_int( 'src_bug_id' );
+$t_bug = bug_get( $f_src_bug_id );
 $f_dest_bug_id_string = gpc_get_string( 'dest_bug_id' );
 
 # user has access to update the bug...
-access_ensure_bug_level( config_get( 'update_bug_threshold' ), $f_src_bug_id );
+access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_bug );
 
 $f_dest_bug_id_string = str_replace( ',', '|', $f_dest_bug_id_string );
 
@@ -74,7 +75,6 @@ foreach( $f_dest_bug_id_array as $f_dest_bug_id ) {
 	# the related bug exists...
 	bug_ensure_exists( $f_dest_bug_id );
 
-	$t_bug = bug_get( $f_src_bug_id );
 	$t_dest_bug = bug_get( $f_dest_bug_id );
 	
 	# bug is not read-only...

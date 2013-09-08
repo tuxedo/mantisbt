@@ -71,9 +71,9 @@ bug_ensure_exists( $f_bug_id );
 MantisContext::SetProject( $t_bug->project_id );
 
 if ( $t_logged_in_user_id == $t_user_id ) {
-	access_ensure_bug_level( config_get( 'monitor_bug_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'monitor_bug_threshold' ), $t_bug );
 } else {
-	access_ensure_bug_level( config_get( 'monitor_delete_others_bug_threshold' ), $f_bug_id );
+	access_ensure_bug_level( config_get( 'monitor_delete_others_bug_threshold' ), $t_bug );
 }
 
 bug_unmonitor( $f_bug_id, $t_user_id );

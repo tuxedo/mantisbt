@@ -371,14 +371,14 @@ function access_has_bug_level( $p_access_level, MantisBug $p_bug, $p_user_id = n
  * and deny access to the page if not
  * @see access_has_bug_level
  * @param int $p_access_level integer representing access level
- * @param int $p_bug_id integer representing bug id to check access against
+ * @param MantisBug $p_bug Mantis Bug Object
  * @param int|null $p_user_id integer representing user id, defaults to null to use current user
  * @return bool whether user has access level specified
  * @access public
  * @throws MantisBT\Exception\Access\AccessDenied
  */
-function access_ensure_bug_level( $p_access_level, $p_bug_id, $p_user_id = null ) {
-	if( !access_has_bug_level( $p_access_level, $p_bug->id, $p_user_id ) ) {
+function access_ensure_bug_level( $p_access_level, $p_bug, $p_user_id = null ) {
+	if( !access_has_bug_level( $p_access_level, $p_bug, $p_user_id ) ) {
 		throw new MantisBT\Exception\Access\AccessDenied();
 	}
 }

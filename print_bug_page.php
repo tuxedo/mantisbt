@@ -84,7 +84,7 @@ $t_selected_project = helper_get_current_project();
 
 MantisContext::SetProject( $t_bug->project_id );
 
-access_ensure_bug_level( VIEWER, $f_bug_id );
+access_ensure_bug_level( VIEWER, $t_bug );
 
 $t_fields = config_get( 'bug_print_page_columns', columns_get_default( 'bug_print_page' ) );
 $t_fields = columns_filter_disabled( $t_fields );

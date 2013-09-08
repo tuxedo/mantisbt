@@ -55,7 +55,7 @@ $f_bug_id		= gpc_get_int( 'bug_id' );
 $f_type			= gpc_get_string( 'graph', 'relation' );
 $f_orientation	= gpc_get_string( 'orientation', config_get( 'relationship_graph_orientation' ) );
 
-access_ensure_bug_level( VIEWER, $f_bug_id );
+access_ensure_bug_level( VIEWER, $t_bug );
 
 $t_bug = bug_get( $f_bug_id, true );
 

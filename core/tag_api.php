@@ -521,7 +521,8 @@ function tag_get_bugs_attached( $p_tag_id ) {
  * @throws MantisBT\Exception\Issue\Tag\TagAlreadyAttached
  */
 function tag_bug_attach( $p_tag_id, $p_bug_id, $p_user_id = null ) {
-	access_ensure_bug_level( config_get( 'tag_attach_threshold' ), $p_bug_id, $p_user_id );
+	$t_bug = bug_get( $p_bug_id );
+	access_ensure_bug_level( config_get( 'tag_attach_threshold' ), $t_bug, $p_user_id );
 
 	tag_ensure_exists( $p_tag_id );
 
@@ -581,7 +582,8 @@ function tag_bug_detach( $p_tag_id, $p_bug_id, $p_add_history = true, $p_user_id
 		$t_detach_level = config_get( 'tag_detach_threshold' );
 	}
 
-	access_ensure_bug_level( $t_detach_level, $p_bug_id, $t_user_id );
+	$t_bug = bug_get( $p_bug_id );
+	access_ensure_bug_level( $t_detach_level, $t_bug, $t_user_id );
 
 	$t_query = 'DELETE FROM {bug_tag} WHERE tag_id=%d AND bug_id=%d';
 	db_query( $t_query, array( $p_tag_id, $p_bug_id ) );

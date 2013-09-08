@@ -65,9 +65,10 @@ foreach ( $t_bug_list as $t_bug ) {
 
 	bug_ensure_exists( $c_bug_id ); # dies if bug doesn't exist
 
-	access_ensure_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $c_bug_id ); # dies if user can't handle bug
-
 	$t_bug = bug_get( $c_bug_id );
+	
+	access_ensure_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_bug ); # dies if user can't handle bug
+
 	$t_sponsor = sponsorship_get( (int) $t_sponsor_id );
 
 	$t_new_payment = gpc_get_int( 'sponsor_' . $c_bug_id . '_' . $t_sponsor->id, $t_sponsor->paid );

@@ -70,7 +70,7 @@ if ( config_get( 'enable_sponsorship' ) == OFF ) {
     throw new MantisBT\Exception\Sponsorship\SponsorshipDisabled();
 }
 
-access_ensure_bug_level( config_get( 'sponsor_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'sponsor_threshold' ), $t_bug );
 
 helper_ensure_confirmed(
 	sprintf( _( 'Please confirm you want to sponsor issue %1$d for %2$s.' ), $f_bug_id, sponsorship_format_amount( $f_amount ) ),

@@ -56,7 +56,7 @@ if ( bug_is_readonly( $t_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
-access_ensure_bug_level( config_get( 'bug_reminder_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'bug_reminder_threshold' ), $t_bug );
 
 html_page_top( bug_format_summary( $f_bug_id, SUMMARY_CAPTION ) );
 ?>

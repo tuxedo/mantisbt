@@ -65,7 +65,7 @@ $t_bug = bug_get( $f_bug_id, true );
 MantisContext::SetProject( $t_bug->project_id );
 
 # user has access to update the bug...
-access_ensure_bug_level( config_get( 'update_bug_threshold' ), $f_bug_id );
+access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_bug );
 
 # bug is not read-only...
 if ( bug_is_readonly( $t_bug ) ) {
