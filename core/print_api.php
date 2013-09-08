@@ -301,7 +301,7 @@ function print_user_option_list( $p_user_id, $p_project_id = null, $p_access = A
 	for( $i = 0;$i < $t_count;$i++ ) {
 		$t_row = $t_users[$i];
 		echo '<option value="' . $t_row['id'] . '" ';
-		check_selected( $p_user_id, $t_row['id'] );
+		check_selected( $p_user_id, (int)$t_row['id'] );
 		echo '>' . $t_display[$i] . '</option>';
 	}
 }
