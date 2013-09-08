@@ -255,7 +255,7 @@ function bug_is_resolved( MantisBug $p_bug ) {
  * @access public
  * @uses database_api.php
  */
-function bug_is_overdue( $p_bug ) {
+function bug_is_overdue( MantisBug $p_bug ) {
 	$t_due_date = $p_bug->due_date;
 	if( !date_is_null( $t_due_date ) ) {
 		$t_now = db_now();
