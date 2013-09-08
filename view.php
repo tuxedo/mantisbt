@@ -27,11 +27,11 @@
 
 require_once( 'core.php' );
 
-$tpl_file = __FILE__;
-$tpl_mantis_dir = dirname( __FILE__ ) . '/';
-$tpl_show_page_header = true;
-$tpl_force_readonly = false;
-$tpl_fields_config_option = 'bug_view_page_columns';
+$t_file = __FILE__;
+$t_mantis_dir = dirname( __FILE__ ) . '/';
+$t_show_page_header = true;
+$t_force_readonly = false;
+$t_fields_config_option = 'bug_view_page_columns';
 
 define ( 'BUG_VIEW_INC_ALLOW', true );
 include( dirname( __FILE__ ) . '/bug_view_inc.php' );
