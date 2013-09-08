@@ -233,6 +233,7 @@ foreach( $t_project_ids as $t_project_id ) {
 			$t_issue_id = $t_row['id'];
 			$t_issue_parent = $t_row['source_bug_id'];
 			$t_parent_version = $t_row['parent_version'];
+			$t_issue = bug_get( $t_issue_id );
 
 			if ( !helper_call_custom_function( 'roadmap_include_issue', array( $t_issue_id ) ) ) {
 				continue;
@@ -241,7 +242,7 @@ foreach( $t_project_ids as $t_project_id ) {
 			if ( !isset( $t_issues_counted[$t_issue_id] ) ) {
 				$t_issues_planned++;
 
-				if ( bug_is_resolved( $t_issue_id ) ) {
+				if ( bug_is_resolved( $t_issue ) ) {
 					$t_issues_resolved++;
 				}
 

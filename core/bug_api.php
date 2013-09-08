@@ -238,29 +238,29 @@ function bug_is_readonly( $p_bug_id ) {
 
 /**
  * Check if a given bug is resolved
- * @param int $p_bug_id integer representing bug id
+ * @param MantisBug $p_bug MantisBug Object
  * @return bool true if bug is resolved, false otherwise
  * @access public
  * @uses config_api.php
  */
-function bug_is_resolved( $p_bug_id ) {
-	$t_status = bug_get_field( $p_bug_id, 'status' );
+function bug_is_resolved( MantisBug $p_bug ) {
+	$t_status = $p_bug->status;
 	return( $t_status >= config_get( 'bug_resolved_status_threshold' ) );
 }
 
 /**
  * Check if a given bug is overdue
- * @param int $p_bug_id integer representing bug id
+ * @param MantisBug $p_bug MantisBug Object
  * @return bool true if bug is overdue, false otherwise
  * @access public
  * @uses database_api.php
  */
-function bug_is_overdue( $p_bug_id ) {
-	$t_due_date = bug_get_field( $p_bug_id, 'due_date' );
+function bug_is_overdue( $p_bug ) {
+	$t_due_date = $p_bug->due_date;
 	if( !date_is_null( $t_due_date ) ) {
 		$t_now = db_now();
 		if( $t_now > $t_due_date ) {
-			if( !bug_is_resolved( $p_bug_id ) ) {
+			if( !bug_is_resolved( $p_bug ) ) {
 				return true;
 			}
 		}

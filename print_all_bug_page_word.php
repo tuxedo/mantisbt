@@ -251,7 +251,7 @@ for( $j=0; $j < $t_row_count; $j++ ) {
 		<?php echo sprintf( _( '%1$s:' ), $t_lang_due_date ) ?>
 	</td>
 <?php
-		if ( bug_is_overdue( $t_id ) ) { ?>
+		if ( bug_is_overdue( $t_bug ) ) { ?>
 		<td class="print-overdue">
 <?php
 		} else	{ ?>

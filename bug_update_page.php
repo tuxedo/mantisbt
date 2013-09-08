@@ -292,7 +292,7 @@ if ( $tpl_show_handler || $tpl_show_due_date ) {
 		# Due Date
 		echo '<th class="category"><label for="due_date">' . _( 'Due Date' ) . '</label></th>';
 
-		if ( bug_is_overdue( $tpl_bug_id ) ) {
+		if ( bug_is_overdue( $tpl_bug ) ) {
 			echo '<td class="overdue">';
 		} else {
 			echo '<td>';

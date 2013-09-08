@@ -167,7 +167,7 @@ $tpl_last_updated = $tpl_show_last_updated ? date( config_get( 'normal_date_form
 
 $tpl_show_tags = in_array( 'tags', $t_fields ) && access_has_global_level( config_get( 'tag_view_threshold' ) );
 
-$tpl_bug_overdue = bug_is_overdue( $f_bug_id );
+$tpl_bug_overdue = bug_is_overdue( $tpl_bug );
 
 $tpl_show_view_state = in_array( 'view_state', $t_fields );
 $tpl_bug_view_state_enum = $tpl_show_view_state ? string_display_line( get_enum_element( 'view_state', $tpl_bug->view_state ) ) : '';

@@ -1468,7 +1468,7 @@ function print_column_due_date( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_
 		return;
 	}
 
-	if ( bug_is_overdue( $p_bug->id ) ) {
+	if ( bug_is_overdue( $p_bug ) ) {
 		echo '<td class="column-due-date overdue">';
 	} else {
 		echo '<td>';
@@ -1493,7 +1493,7 @@ function print_column_overdue( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_P
 
 	if ( access_has_bug_level( config_get( 'due_date_view_threshold' ), $p_bug->id ) &&
 		!date_is_null( $p_bug->due_date ) &&
-		bug_is_overdue( $p_bug->id ) ) {
+		bug_is_overdue( $p_bug ) ) {
 		$t_overdue_text = _( 'Overdue' );
 		$t_overdue_text_hover = $t_overdue_text . '. Due date was: ' . string_display_line( date( config_get( 'short_date_format' ), $p_bug->due_date ) );
 		echo '<img src="' . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/overdue.png' ) . '" alt="' . $t_overdue_text . '" title="' . $t_overdue_text_hover . '" />';
