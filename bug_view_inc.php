@@ -145,7 +145,7 @@ if ( access_has_bug_level( config_get( 'view_history_threshold' ), $f_bug_id ) )
 	$tpl_history_link = '';
 }
 
-$tpl_show_reminder_link = !user_is_anonymous( auth_get_current_user_id() ) && !bug_is_readonly( $f_bug_id ) &&
+$tpl_show_reminder_link = !user_is_anonymous( auth_get_current_user_id() ) && !bug_is_readonly( $tpl_bug ) &&
 	  access_has_bug_level( config_get( 'bug_reminder_threshold' ), $f_bug_id );
 $tpl_bug_reminder_link = 'bug_reminder_page.php?bug_id=' . $f_bug_id;
 
@@ -189,7 +189,7 @@ $tpl_show_steps_to_reproduce = !is_blank( $tpl_bug->steps_to_reproduce ) && in_a
 $tpl_show_monitor_box = !$tpl_force_readonly;
 $tpl_show_relationships_box = !$tpl_force_readonly;
 $tpl_show_sponsorships_box = config_get( 'enable_sponsorship' ) && access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $f_bug_id );
-$tpl_show_upload_form = !$tpl_force_readonly && !bug_is_readonly( $f_bug_id );
+$tpl_show_upload_form = !$tpl_force_readonly && !bug_is_readonly( $tpl_bug );
 $tpl_show_history = $f_history;
 $tpl_show_profiles = config_get( 'enable_profiles' );
 $tpl_show_platform = $tpl_show_profiles && in_array( 'platform', $t_fields );

@@ -74,8 +74,10 @@ foreach( $f_dest_bug_id_array as $f_dest_bug_id ) {
 	# the related bug exists...
 	bug_ensure_exists( $f_dest_bug_id );
 
+	$t_bug = bug_get( $f_src_bug_id );
+	
 	# bug is not read-only...
-	if ( bug_is_readonly( $f_src_bug_id ) ) {
+	if ( bug_is_readonly( $t_bug ) ) {
 		throw new MantisBT\Exception\Issue\IssueReadOnly( $f_src_bug_id );
 	}
 

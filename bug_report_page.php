@@ -85,8 +85,9 @@ if ( $f_master_bug_id > 0 ) {
 	# master bug exists...
 	bug_ensure_exists( $f_master_bug_id );
 
+	$t_bug = bug_get( $f_master_bug_id );
 	# master bug is not read-only...
-	if ( bug_is_readonly( $f_master_bug_id ) ) {
+	if ( bug_is_readonly( $t_bug ) ) {
 		throw new MantisBT\Exception\Issue\IssueReadOnly( $f_master_bug_id );
 	}
 

@@ -54,12 +54,13 @@ require_api( 'utility_api.php' );
 #
 # Determine whether the sponsorship section should be shown.
 #
+$t_bug = bug_get( $f_bug_id );
 
 if ( ( config_get( 'enable_sponsorship' ) == ON ) && ( access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $f_bug_id ) ) ) {
 	$t_sponsorship_ids = sponsorship_get_all_ids( $f_bug_id );
 
 	$t_sponsorships_exist = count( $t_sponsorship_ids ) > 0;
-	$t_can_sponsor = !bug_is_readonly( $f_bug_id ) && !user_is_anonymous( auth_get_current_user_id() );
+	$t_can_sponsor = !bug_is_readonly( $t_bug ) && !user_is_anonymous( auth_get_current_user_id() );
 
 	$t_show_sponsorships = $t_sponsorships_exist || $t_can_sponsor;
 } else {

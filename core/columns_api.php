@@ -1024,7 +1024,7 @@ function print_column_plugin( $p_column_object, $p_bug, $p_columns_target = COLU
 function print_column_edit( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_PAGE ) {
 	echo '<td class="column-edit">';
 
-	if( !bug_is_readonly( $p_bug->id ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
+	if( !bug_is_readonly( $p_bug ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
 		echo '<a href="' . string_get_bug_update_url( $p_bug->id ) . '">';
 		echo '<img width="16" height="16" src="' . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/update.png' );
 		echo '" alt="' . _( 'Edit' ) . '"';

@@ -251,7 +251,7 @@ for( $i = 0;$i < $t_count; $i++ ) {
 
 	echo '<br />';
 
-	if( !bug_is_readonly( $t_bug->id ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug->id ) ) {
+	if( !bug_is_readonly( $t_bug ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug->id ) ) {
 		echo '<a class="edit" href="' . string_get_bug_update_url( $t_bug->id ) . '"><img src="' . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/update.png' ) . '" alt="' . _( 'Edit' ) . '" /></a>';
 	}
 

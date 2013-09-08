@@ -217,19 +217,19 @@ function bug_is_user_handler( $p_bug_id, $p_user_id ) {
  * Check if the bug is readonly and shouldn't be modified
  * For a bug to be readonly the status has to be >= bug_readonly_status_threshold and
  * current user access level < update_readonly_bug_threshold.
- * @param int $p_bug_id integer representing bug id
+ * @param MantisBug $p_bug MantisBug Object
  * @return bool
  * @access public
  * @uses access_api.php
  * @uses config_api.php
  */
-function bug_is_readonly( $p_bug_id ) {
-	$t_status = bug_get_field( $p_bug_id, 'status' );
+function bug_is_readonly( MantisBug $p_bug ) {
+	$t_status = $p_bug->status;
 	if( $t_status < config_get( 'bug_readonly_status_threshold' ) ) {
 		return false;
 	}
 
-	if( access_has_bug_level( config_get( 'update_readonly_bug_threshold' ), $p_bug_id ) ) {
+	if( access_has_bug_level( config_get( 'update_readonly_bug_threshold' ), $p_bug->id ) ) {
 		return false;
 	}
 

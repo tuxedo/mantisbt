@@ -184,7 +184,7 @@ $num_notes = count( $t_bugnotes );
 		<br /><div class="small bugnote-buttons">
 		<?php
 			# bug must be open to be editable
-			if ( !bug_is_readonly( $f_bug_id ) ) {
+			if ( !bug_is_readonly( $t_bug ) ) {
 
 				# check if the user can edit this bugnote
 				if ( $t_user_id == $t_bugnote->reporter_id ) {

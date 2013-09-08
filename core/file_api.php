@@ -163,7 +163,8 @@ function file_can_download_bug_attachments( $p_bug_id, $p_uploader_user_id = nul
  * @return bool
  */
 function file_can_delete_bug_attachments( $p_bug_id, $p_uploader_user_id = null ) {
-	if( bug_is_readonly( $p_bug_id ) ) {
+	$t_bug = bug_get( $p_bug_id );
+	if( bug_is_readonly( $t_bug ) ) {
 		return false;
 	}
 	$t_uploaded_by_me = auth_get_current_user_id() === $p_uploader_user_id;

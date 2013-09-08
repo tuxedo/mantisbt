@@ -68,7 +68,9 @@ function action_update_product_build_print_fields() {
 function action_update_product_build_validate( $p_bug_id ) {
 	$t_bug_id = (int)$p_bug_id;
 
-	if ( bug_is_readonly( $t_bug_id ) ) {
+	$t_bug = bug_get( $t_bug_id );
+
+	if ( bug_is_readonly( $t_bug ) ) {
 		return _( 'Issue is readonly.' );
 	}
 

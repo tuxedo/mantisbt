@@ -74,7 +74,7 @@ $tpl_bug = bug_get( $f_bug_id, true );
 
 MantisContext::SetProject( $t_bug->project_id );
 
-if ( bug_is_readonly( $f_bug_id ) ) {
+if ( bug_is_readonly( $tpl_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $f_bug_id );
 }
 

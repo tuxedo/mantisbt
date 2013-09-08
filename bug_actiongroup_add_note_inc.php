@@ -104,9 +104,10 @@ function action_add_note_validate( $p_bug_id ) {
 	}
 
 	$t_add_bugnote_threshold = config_get( 'add_bugnote_threshold' );
-	$t_bug_id = $p_bug_id;
 
-	if ( bug_is_readonly( $t_bug_id ) ) {
+	$t_bug = bug_get( $p_bug_id );
+
+	if ( bug_is_readonly( $t_bug ) ) {
 		return _( 'Issue is readonly.' );
 	}
 

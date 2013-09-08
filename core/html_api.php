@@ -1593,11 +1593,10 @@ function html_button_bug_delete( $p_bug ) {
  * @return null
  */
 function html_buttons_view_bug_page( $p_bug ) {
-	$p_bug_id = $p_bug->id;
 
 	$t_resolved = config_get( 'bug_resolved_status_threshold' );
-	$t_status = bug_get_field( $p_bug_id, 'status' );
-	$t_readonly = bug_is_readonly( $p_bug_id );
+	$t_status = $p_bug->status );
+	$t_readonly = bug_is_readonly( $p_bug );
 	$t_sticky = config_get( 'set_bug_sticky_threshold' );
 
 	echo '<table><tr class="vcenter">';
@@ -1623,7 +1622,7 @@ function html_buttons_view_bug_page( $p_bug ) {
 	# MONITOR/UNMONITOR button
 	if( !user_is_anonymous( auth_get_current_user_id() ) ) {
 		echo '<td class="center">';
-		if( user_is_monitoring_bug( auth_get_current_user_id(), $p_bug_id ) ) {
+		if( user_is_monitoring_bug( auth_get_current_user_id(), $p_bug->id ) ) {
 			html_button_bug_unmonitor( $p_bug );
 		} else {
 			html_button_bug_monitor( $p_bug );
@@ -1632,9 +1631,9 @@ function html_buttons_view_bug_page( $p_bug ) {
 	}
 
 	# STICK/UNSTICK button
-	if ( access_has_bug_level( $t_sticky, $p_bug_id ) ) {
+	if ( access_has_bug_level( $t_sticky, $p_bug->id ) ) {
 		echo '<td class="center">';
-		if ( !bug_get_field( $p_bug_id, 'sticky' ) ) {
+		if ( !$p_bug->sticky ) {
 			html_button_bug_stick( $p_bug );
 		} else {
 			html_button_bug_unstick( $p_bug );
@@ -1668,7 +1667,7 @@ function html_buttons_view_bug_page( $p_bug ) {
 	html_button_bug_delete( $p_bug );
 	echo '</td>';
 
-	helper_call_custom_function( 'print_bug_view_page_custom_buttons', array( $p_bug_id ) );
+	helper_call_custom_function( 'print_bug_view_page_custom_buttons', array( $p_bug->id ) );
 
 	echo '</tr></table>';
 }

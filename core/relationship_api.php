@@ -618,7 +618,8 @@ function relationship_get_details( $p_bug_id, $p_relationship, $p_html = false, 
 		}
 
 		# add delete link if bug not read only and user has access level
-		if( !bug_is_readonly( $p_bug_id ) && !user_is_anonymous( auth_get_current_user_id()  ) && ( $p_html_preview == false ) ) {
+		$t_bug2 = bug_get( $p_bug_id );
+		if( !bug_is_readonly( $t_bug2 ) && !user_is_anonymous( auth_get_current_user_id()  ) && ( $p_html_preview == false ) ) {
 			if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug_id ) ) {
 				$t_relationship_info .= ' [<a class="small" href="bug_relationship_delete.php?bug_id=' . $p_bug_id . '&amp;rel_id=' . $p_relationship->id . htmlspecialchars( form_security_param( 'bug_relationship_delete' ) ) . '">' . _( 'Delete' ) . '</a>]';
 			}
@@ -761,6 +762,7 @@ function relationship_list_box( $p_default_rel_type = -1, $p_select_name = "rel_
  * @return null
  */
 function relationship_view_box( $p_bug_id ) {
+	$t_bug = bug_get( $p_bug_id );
 	?>
 <br/>
 
@@ -782,10 +784,10 @@ function relationship_view_box( $p_bug_id ) {
 </tr>
 <?php
 	# bug not read-only and user authenticated
-	if( !bug_is_readonly( $p_bug_id ) ) {
+	if( !bug_is_readonly( $p_bug ) ) {
 
 		# user access level at least updater
-		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug_id ) ) {
+		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
 			?>
 <tr class="row-1">
 	<th class="category"><?php echo _( 'New relationship' )?></th>
@@ -803,7 +805,7 @@ function relationship_view_box( $p_bug_id ) {
 	}
 	?>
 <tr>
-	<td colspan="2"><?php echo relationship_get_summary_html( $p_bug_id )?></td>
+	<td colspan="2"><?php echo relationship_get_summary_html( $p_bug->id )?></td>
 </tr>
 </table>
 

@@ -48,8 +48,10 @@ require_api( 'form_api.php' );
 require_api( 'helper_api.php' );
 require_api( 'html_api.php' );
 
+$t_bug = bug_get( $f_bug_id );
+
 ?>
-<?php if ( ( !bug_is_readonly( $f_bug_id ) ) &&
+<?php if ( ( !bug_is_readonly( $t_bug ) ) &&
 		( access_has_bug_level( config_get( 'add_bugnote_threshold' ), $f_bug_id ) ) ) { ?>
 <?php # Bugnote Add Form BEGIN ?>
 <a id="addbugnote"></a> <br />

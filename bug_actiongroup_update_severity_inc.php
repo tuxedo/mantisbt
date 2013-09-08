@@ -74,7 +74,8 @@ function action_update_severity_validate( $p_bug_id ) {
 	$t_update_severity_threshold = config_get( 'update_bug_threshold' );
 	$t_bug_id = $p_bug_id;
 
-	if ( bug_is_readonly( $t_bug_id ) ) {
+	$t_bug = bug_get( $t_bug_id );
+	if ( bug_is_readonly( $t_bug ) ) {
 		return _( 'Issue is readonly.' );
 	}
 
