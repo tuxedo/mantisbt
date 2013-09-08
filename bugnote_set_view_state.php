@@ -61,7 +61,6 @@ $t_bug = bug_get( $t_bug_id, true );
 MantisContext::SetProject( $t_bug->project_id );
 
 # Check if the bug is readonly
-$t_bug_id = bugnote_get_field( $f_bugnote_id, 'bug_id' );
 if ( bug_is_readonly( $t_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug_id );
 }
