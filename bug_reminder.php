@@ -73,7 +73,7 @@ access_ensure_bug_level( config_get( 'bug_reminder_threshold' ), $f_bug_id );
 foreach ( $f_to as $t_recipient )
 {
 	if ( ON == config_get( 'reminder_recipients_monitor_bug' ) &&
-		access_has_bug_level( config_get( 'monitor_bug_threshold' ), $f_bug_id ) &&
+		access_has_bug_level( config_get( 'monitor_bug_threshold' ), $t_bug ) &&
 		!bug_is_user_handler( $f_bug_id, $t_recipient ) &&
 		!bug_is_user_reporter( $f_bug_id, $t_recipient ) ) {
 		bug_monitor( $f_bug_id, $t_recipient );

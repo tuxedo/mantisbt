@@ -79,7 +79,7 @@ function action_update_severity_validate( $p_bug_id ) {
 		return _( 'Issue is readonly.' );
 	}
 
-	if ( !access_has_bug_level( $t_update_severity_threshold, $t_bug_id ) ) {
+	if ( !access_has_bug_level( $t_update_severity_threshold, $t_bug ) ) {
 		return _( 'Access Denied.' );
 	}
 

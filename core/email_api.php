@@ -1317,11 +1317,11 @@ function email_build_visible_bug_data( $p_user_id, $p_bug_id, $p_message_id ) {
 	}
 
 	# Sponsorship Information
-	if(( config_get( 'enable_sponsorship' ) == ON ) && ( access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $p_bug_id, $p_user_id ) ) ) {
+	if(( config_get( 'enable_sponsorship' ) == ON ) && ( access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $t_bug, $p_user_id ) ) ) {
 		$t_sponsorship_ids = sponsorship_get_all_ids( $p_bug_id );
 		$t_bug_data['sponsorship_total'] = sponsorship_get_amount( $t_sponsorship_ids );
 
-		if( access_has_bug_level( config_get( 'view_sponsorship_details_threshold' ), $p_bug_id, $p_user_id ) ) {
+		if( access_has_bug_level( config_get( 'view_sponsorship_details_threshold' ), $t_bug, $p_user_id ) ) {
 			$t_bug_data['sponsorships'] = array();
 			foreach( $t_sponsorship_ids as $id ) {
 				$t_bug_data['sponsorships'][] = sponsorship_get( $id );

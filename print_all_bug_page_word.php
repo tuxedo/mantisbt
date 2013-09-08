@@ -246,7 +246,7 @@ for( $j=0; $j < $t_row_count; $j++ ) {
 	<td class="print">
 		<?php echo string_display_line( $t_bug->platform ) ?>
 	</td>
-<?php if ( access_has_bug_level( config_get( 'due_date_view_threshold' ), $t_id ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'due_date_view_threshold' ), $t_bug ) ) { ?>
 	<td class="print-category">
 		<?php echo sprintf( _( '%1$s:' ), $t_lang_due_date ) ?>
 	</td>
@@ -273,7 +273,7 @@ for( $j=0; $j < $t_row_count; $j++ ) {
 	</td>
 	<td class="print">
 		<?php
-			if ( access_has_bug_level( config_get( 'view_handler_threshold' ), $t_id ) ) {
+			if ( access_has_bug_level( config_get( 'view_handler_threshold' ), $t_bug ) ) {
 				print_user_with_subject( $t_bug->handler_id, $t_id );
 			}
 		?>

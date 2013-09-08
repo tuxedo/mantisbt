@@ -623,6 +623,9 @@ function tag_display_link( $p_tag_row, $p_bug_id = 0 ) {
 	if( is_null( $t_security_token ) ) {
 		$t_security_token = htmlspecialchars( form_security_param( 'tag_detach' ) );
 	}
+	
+	$t_bug = bug_get( $p_bug_id );
+
 
 	if( auth_get_current_user_id() == $p_tag_row['user_attached'] || auth_get_current_user_id() == $p_tag_row['user_id'] ) {
 		$t_detach = config_get( 'tag_detach_own_threshold' );
@@ -635,7 +638,7 @@ function tag_display_link( $p_tag_row, $p_bug_id = 0 ) {
 
 	echo "<a href='tag_view_page.php?tag_id=$p_tag_row[id]' title='$t_description'>$t_name</a>";
 
-	if( $p_bug_id > 0 && access_has_bug_level( $t_detach, $p_bug_id ) ) {
+	if( $p_bug_id > 0 && access_has_bug_level( $t_detach, $t_bug ) ) {
 		$t_tooltip = string_html_specialchars( sprintf( _( 'Detach "%1$s"' ), $t_name ) );
 		echo " <a href='tag_detach.php?bug_id=$p_bug_id&amp;tag_id=$p_tag_row[id]$t_security_token'><img src='" . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/delete.png' ) . "' class='delete-icon' title=\"$t_tooltip\" alt=\"X\"/></a>";
 	}

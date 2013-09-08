@@ -331,12 +331,12 @@ function access_has_any_project( $p_access_level ) {
  * This function looks up the bug's project and performs an access check
  * against that project
  * @param int $p_access_level integer representing access level
- * @param int $p_bug_id integer representing bug id to check access against
+ * @param MantisBug $p_bug integer representing bug id to check access against
  * @param int|null $p_user_id integer representing user id, defaults to null to use current user
  * @return bool whether user has access level specified
  * @access public
  */
-function access_has_bug_level( $p_access_level, $p_bug_id, $p_user_id = null ) {
+function access_has_bug_level( $p_access_level, MantisBug $p_bug, $p_user_id = null ) {
 	# Deal with not logged in silently in this case
 	# @@@ we may be able to remove this and just error
 	#     and once we default to anon login, we can remove it for sure
@@ -348,18 +348,18 @@ function access_has_bug_level( $p_access_level, $p_bug_id, $p_user_id = null ) {
 		$p_user_id = auth_get_current_user_id();
 	}
 
-	$t_project_id = bug_get_field( $p_bug_id, 'project_id' );
+	$t_project_id = $p_bug->project_id;
 
 	# check limit_Reporter (Issue #4769)
 	# reporters can view just issues they reported
 	$t_limit_reporters = config_get( 'limit_reporters' );
-	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug_id, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $t_project_id, $p_user_id ) ) ) {
+	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug->id, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $t_project_id, $p_user_id ) ) ) {
 		return false;
 	}
 
 	# If the bug is private and the user is not the reporter, then the
 	#  the user must also have higher access than private_bug_threshold
-	if( VS_PRIVATE == bug_get_field( $p_bug_id, 'view_state' ) && !bug_is_user_reporter( $p_bug_id, $p_user_id ) ) {
+	if( VS_PRIVATE == $p_bug->view_state && !bug_is_user_reporter( $p_bug->id, $p_user_id ) ) {
 		$p_access_level = max( $p_access_level, config_get( 'private_bug_threshold' ) );
 	}
 
@@ -378,7 +378,7 @@ function access_has_bug_level( $p_access_level, $p_bug_id, $p_user_id = null ) {
  * @throws MantisBT\Exception\Access\AccessDenied
  */
 function access_ensure_bug_level( $p_access_level, $p_bug_id, $p_user_id = null ) {
-	if( !access_has_bug_level( $p_access_level, $p_bug_id, $p_user_id ) ) {
+	if( !access_has_bug_level( $p_access_level, $p_bug->id, $p_user_id ) ) {
 		throw new MantisBT\Exception\Access\AccessDenied();
 	}
 }
@@ -406,8 +406,9 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 	}
 
 	$t_bug_id = bugnote_get_field( $p_bugnote_id, 'bug_id' );
+	$t_bug = bug_get( $t_bug_id );
 
-	return access_has_bug_level( $p_access_level, $t_bug_id, $p_user_id );
+	return access_has_bug_level( $p_access_level, $t_bug, $p_user_id );
 }
 
 /**
@@ -443,7 +444,7 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
 
 	$t_closed_status_threshold = access_get_status_threshold( config_get( 'bug_closed_status_threshold' ), $t_bug->project_id );
 
-	return access_has_bug_level( $t_closed_status_threshold, $p_bug_id, $t_user_id );
+	return access_has_bug_level( $t_closed_status_threshold, $t_bug, $t_user_id );
 }
 
 /**

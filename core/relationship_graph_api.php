@@ -114,11 +114,13 @@ function relgraph_generate_rel_graph( $p_bug_id ) {
 			continue;
 		}
 
-		if( !access_has_bug_level( VIEWER, $t_id ) ) {
+		$t_bug = bug_get( $t_id, false );
+
+		if( !access_has_bug_level( VIEWER, $t_bug ) ) {
 			continue;
 		}
 
-		$v_bug_list[$t_id] = bug_get( $t_id, false );
+		$v_bug_list[$t_id] = $t_bug
 
 		$t_relationships = relationship_get_all_src( $t_id );
 		foreach( $t_relationships as $t_relationship ) {
@@ -369,7 +371,8 @@ function relgraph_add_parent( &$p_bug_list, $p_bug_id ) {
 		return false;
 	}
 
-	if( !access_has_bug_level( VIEWER, $p_bug_id ) ) {
+	$t_bug = bug_get( $p_bug_id );
+	if( !access_has_bug_level( VIEWER, $t_bug ) ) {
 		return false;
 	}
 
@@ -441,7 +444,8 @@ function relgraph_add_child( &$p_bug_list, $p_bug_id ) {
 			return false;
 		}
 
-		if( !access_has_bug_level( VIEWER, $p_bug_id ) ) {
+		$t_bug = bug_get( $p_bug_id, false );
+		if( !access_has_bug_level( VIEWER, $t_bug ) ) {
 			return false;
 		}
 

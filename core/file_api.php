@@ -138,7 +138,8 @@ function file_bug_has_attachments( $p_bug_id ) {
  */
 function file_can_view_bug_attachments( $p_bug_id, $p_uploader_user_id = null ) {
 	$t_uploaded_by_me = auth_get_current_user_id() === $p_uploader_user_id;
-	$t_can_view = access_has_bug_level( config_get( 'view_attachments_threshold' ), $p_bug_id );
+	$t_bug = bug_get( $p_bug_id );
+	$t_can_view = access_has_bug_level( config_get( 'view_attachments_threshold' ), $t_bug );
 	$t_can_view = $t_can_view || ( $t_uploaded_by_me && config_get( 'allow_view_own_attachments' ) );
 	return $t_can_view;
 }
@@ -151,7 +152,8 @@ function file_can_view_bug_attachments( $p_bug_id, $p_uploader_user_id = null ) 
  */
 function file_can_download_bug_attachments( $p_bug_id, $p_uploader_user_id = null ) {
 	$t_uploaded_by_me = auth_get_current_user_id() === $p_uploader_user_id;
-	$t_can_download = access_has_bug_level( config_get( 'download_attachments_threshold' ), $p_bug_id );
+	$t_bug = bug_get( $p_bug_id );
+	$t_can_download = access_has_bug_level( config_get( 'download_attachments_threshold' ), $t_bug );
 	$t_can_download = $t_can_download || ( $t_uploaded_by_me && config_get( 'allow_download_own_attachments' ) );
 	return $t_can_download;
 }
@@ -168,7 +170,7 @@ function file_can_delete_bug_attachments( $p_bug_id, $p_uploader_user_id = null 
 		return false;
 	}
 	$t_uploaded_by_me = auth_get_current_user_id() === $p_uploader_user_id;
-	$t_can_delete = access_has_bug_level( config_get( 'delete_attachments_threshold' ), $p_bug_id );
+	$t_can_delete = access_has_bug_level( config_get( 'delete_attachments_threshold' ), $t_bug );
 	$t_can_delete = $t_can_delete || ( $t_uploaded_by_me && config_get( 'allow_delete_own_attachments' ) );
 	return $t_can_delete;
 }

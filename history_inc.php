@@ -45,7 +45,7 @@ require_api( 'print_api.php' );
 require_api( 'string_api.php' );
 
 $t_access_level_needed = config_get( 'view_history_threshold' );
-if ( !access_has_bug_level( $t_access_level_needed, $f_bug_id ) ) {
+if ( !access_has_bug_level( $t_access_level_needed, $t_bug ) ) {
 	return;
 }
 ?>

@@ -1350,7 +1350,7 @@ function html_button( $p_action, $p_button_text, $p_fields = null, $p_method = '
  * @return null
  */
 function html_button_bug_update( $p_bug ) {
-	if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug ) ) {
 		html_button( string_get_bug_update_page(), _( 'Edit' ), array( 'bug_id' => $p_bug->id ) );
 	}
 }
@@ -1417,7 +1417,7 @@ function html_button_bug_assign_to( $p_bug ) {
 	}
 
 	# make sure current user has access to modify bugs.
-	if( !access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $p_bug->id ) ) {
+	if( !access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $p_bug ) ) {
 		return;
 	}
 
@@ -1429,7 +1429,7 @@ function html_button_bug_assign_to( $p_bug ) {
 	$t_options = array();
 	$t_default_assign_to = null;
 
-	if(( $t_handler_id != $t_current_user_id ) && ( access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug->id, $t_current_user_id ) ) ) {
+	if(( $t_handler_id != $t_current_user_id ) && ( access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug, $t_current_user_id ) ) ) {
 		$t_options[] = array(
 			$t_current_user_id,
 			'[' . _( 'Myself' ) . ']',
@@ -1437,7 +1437,7 @@ function html_button_bug_assign_to( $p_bug ) {
 		$t_default_assign_to = $t_current_user_id;
 	}
 
-	if(( $t_handler_id != $t_reporter_id ) && user_exists( $t_reporter_id ) && ( access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug->id, $t_reporter_id ) ) ) {
+	if(( $t_handler_id != $t_reporter_id ) && user_exists( $t_reporter_id ) && ( access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug, $t_reporter_id ) ) ) {
 		$t_options[] = array(
 			$t_reporter_id,
 			'[' . _( 'Reporter' ) . ']',
@@ -1503,7 +1503,7 @@ function html_button_bug_assign_to( $p_bug ) {
  * @return null
  */
 function html_button_bug_move( $p_bug ) {
-	if( access_has_bug_level( config_get( 'move_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'move_bug_threshold' ), $p_bug ) ) {
 		html_button( 'bug_actiongroup_page.php', _( 'Move' ), array( 'bug_arr[]' => $p_bug->id, 'action' => 'MOVE' ) );
 	}
 }
@@ -1514,7 +1514,7 @@ function html_button_bug_move( $p_bug ) {
  * @return null
  */
 function html_button_bug_create_child( $p_bug ) {
-	if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug ) ) {
 		html_button( string_get_bug_report_url(), _( 'Clone' ), array( 'm_id' => $p_bug->id ) );
 	}
 }
@@ -1527,7 +1527,7 @@ function html_button_bug_create_child( $p_bug ) {
 function html_button_bug_reopen( $p_bug ) {
 	$t_reopen_status = config_get( 'bug_reopen_status', null, null, $p_bug->project_id );
 
-	if( access_has_bug_level( config_get( 'reopen_bug_threshold', null, null, $p_bug->project_id ), $p_bug->id ) ||
+	if( access_has_bug_level( config_get( 'reopen_bug_threshold', null, null, $p_bug->project_id ), $p_bug ) ||
 			(( $p_bug->reporter_id == auth_get_current_user_id() ) && ( ON == config_get( 'allow_reporter_reopen', null, null, $p_bug->project_id ) ) ) ) {
 		html_button( 'bug_change_status_page.php', _( 'Reopen' ), array( 'id' => $p_bug->id, 'new_status' => $t_reopen_status, 'reopen_flag' => ON ) );
 	}
@@ -1539,7 +1539,7 @@ function html_button_bug_reopen( $p_bug ) {
  * @return null
  */
 function html_button_bug_monitor( $p_bug ) {
-	if( access_has_bug_level( config_get( 'monitor_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'monitor_bug_threshold' ), $p_bug ) ) {
 		html_button( 'bug_monitor_add.php', _( 'Monitor' ), array( 'bug_id' => $p_bug->id ) );
 	}
 }
@@ -1560,7 +1560,7 @@ function html_button_bug_unmonitor( $p_bug ) {
  * @return null
  */
 function html_button_bug_stick( $p_bug ) {
-	if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $p_bug->id ) ) {
+	if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $p_bug ) ) {
 		html_button( 'bug_stick.php', _( 'Stick' ), array( 'bug_id' => $p_bug->id, 'action' => 'stick' ) );
 	}
 }
@@ -1571,7 +1571,7 @@ function html_button_bug_stick( $p_bug ) {
  * @return null
  */
 function html_button_bug_unstick( $p_bug ) {
-	if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $p_bug->id ) ) {
+	if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $p_bug ) ) {
 		html_button( 'bug_stick.php', _( 'Unstick' ), array( 'bug_id' => $p_bug->id, 'action' => 'unstick' ) );
 	}
 }
@@ -1582,7 +1582,7 @@ function html_button_bug_unstick( $p_bug ) {
  * @return null
  */
 function html_button_bug_delete( $p_bug ) {
-	if( access_has_bug_level( config_get( 'delete_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'delete_bug_threshold' ), $p_bug ) ) {
 		html_button( 'bug_actiongroup_page.php', _( 'Delete' ), array( 'bug_arr[]' => $p_bug->id, 'action' => 'DELETE' ) );
 	}
 }
@@ -1595,7 +1595,7 @@ function html_button_bug_delete( $p_bug ) {
 function html_buttons_view_bug_page( $p_bug ) {
 
 	$t_resolved = config_get( 'bug_resolved_status_threshold' );
-	$t_status = $p_bug->status );
+	$t_status = $p_bug->status;
 	$t_readonly = bug_is_readonly( $p_bug );
 	$t_sticky = config_get( 'set_bug_sticky_threshold' );
 
@@ -1631,7 +1631,7 @@ function html_buttons_view_bug_page( $p_bug ) {
 	}
 
 	# STICK/UNSTICK button
-	if ( access_has_bug_level( $t_sticky, $p_bug->id ) ) {
+	if ( access_has_bug_level( $t_sticky, $p_bug ) ) {
 		echo '<td class="center">';
 		if ( !$p_bug->sticky ) {
 			html_button_bug_stick( $p_bug );

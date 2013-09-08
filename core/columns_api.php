@@ -1024,7 +1024,7 @@ function print_column_plugin( $p_column_object, $p_bug, $p_columns_target = COLU
 function print_column_edit( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_PAGE ) {
 	echo '<td class="column-edit">';
 
-	if( !bug_is_readonly( $p_bug ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
+	if( !bug_is_readonly( $p_bug ) && access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug ) ) {
 		echo '<a href="' . string_get_bug_update_url( $p_bug->id ) . '">';
 		echo '<img width="16" height="16" src="' . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/update.png' );
 		echo '" alt="' . _( 'Edit' ) . '"';
@@ -1462,7 +1462,7 @@ function print_column_view_state( $p_bug, $p_columns_target = COLUMNS_TARGET_VIE
  * @access public
  */
 function print_column_due_date( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_PAGE ) {
-	if ( !access_has_bug_level( config_get( 'due_date_view_threshold' ), $p_bug->id ) ||
+	if ( !access_has_bug_level( config_get( 'due_date_view_threshold' ), $p_bug ) ||
 		date_is_null( $p_bug->due_date ) ) {
 		echo '<td class="column-due-date">&#160;</td>';
 		return;
@@ -1491,7 +1491,7 @@ function print_column_overdue( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_P
 
 	echo '<td class="column-overdue">';
 
-	if ( access_has_bug_level( config_get( 'due_date_view_threshold' ), $p_bug->id ) &&
+	if ( access_has_bug_level( config_get( 'due_date_view_threshold' ), $p_bug ) &&
 		!date_is_null( $p_bug->due_date ) &&
 		bug_is_overdue( $p_bug ) ) {
 		$t_overdue_text = _( 'Overdue' );

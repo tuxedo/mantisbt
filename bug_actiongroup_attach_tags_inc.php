@@ -73,7 +73,8 @@ function action_attach_tags_validate( $p_bug_id ) {
 	global $g_action_attach_tags_attach;
 	global $g_action_attach_tags_create;
 
-	$t_can_attach = access_has_bug_level( config_get( 'tag_attach_threshold' ), $p_bug_id );
+	$t_bug = bug_get( $p_bug_id );
+	$t_can_attach = access_has_bug_level( config_get( 'tag_attach_threshold' ), $t_bug );
 	if( !$t_can_attach ) {
 		return _( 'Attach permission denied.' );
 	}
@@ -93,7 +94,7 @@ function action_attach_tags_validate( $p_bug_id ) {
 		}
 	}
 
-	$t_can_create = access_has_bug_level( config_get( 'tag_create_threshold' ), $p_bug_id );
+	$t_can_create = access_has_bug_level( config_get( 'tag_create_threshold' ), $t_bug );
 	if( count( $g_action_attach_tags_create ) > 0 && !$t_can_create ) {
 		return _( 'Create permission denied.' );
 	}

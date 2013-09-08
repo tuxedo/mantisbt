@@ -114,9 +114,9 @@ $t_show_versions = version_should_show_product_version( $t_bug->project_id );
 $t_show_product_version = $t_show_versions && in_array( 'product_version', $t_fields );
 $t_show_product_build = $t_show_versions && in_array( 'product_build', $t_fields ) && ( config_get( 'enable_product_build' ) == ON );
 $t_product_build_attribute = $t_show_product_build ? string_attribute( $t_bug->build ) : '';
-$t_show_target_version = $t_show_versions && in_array( 'target_version', $t_fields ) && access_has_bug_level( config_get( 'roadmap_update_threshold' ), $t_bug_id );
+$t_show_target_version = $t_show_versions && in_array( 'target_version', $t_fields ) && access_has_bug_level( config_get( 'roadmap_update_threshold' ), $t_bug );
 $t_show_fixed_in_version = $t_show_versions && in_array( 'fixed_in_version', $t_fields );
-$t_show_due_date = in_array( 'due_date', $t_fields ) && access_has_bug_level( config_get( 'due_date_view_threshold' ), $t_bug_id );
+$t_show_due_date = in_array( 'due_date', $t_fields ) && access_has_bug_level( config_get( 'due_date_view_threshold' ), $t_bug );
 $t_show_summary = in_array( 'summary', $t_fields );
 $t_summary_attribute = $t_show_summary ? string_attribute( $t_bug->summary ) : '';
 $t_show_description = in_array( 'description', $t_fields );
@@ -298,7 +298,7 @@ if ( $t_show_handler || $t_show_due_date ) {
 			echo '<td>';
 		}
 
-		if ( access_has_bug_level( config_get( 'due_date_update_threshold' ), $t_bug_id ) ) {
+		if ( access_has_bug_level( config_get( 'due_date_update_threshold' ), $t_bug ) ) {
 			$t_date_to_display = '';
 
 			if ( !date_is_null( $t_bug->due_date ) ) {
@@ -667,13 +667,13 @@ echo '<th class="category"><label for="bugnote_text">' . _( 'Add Note' ) . '</la
 echo '<td colspan="5"><textarea ', helper_get_tab_index(), ' id="bugnote_text" name="bugnote_text" cols="80" rows="10"></textarea></td></tr>';
 
 # Bugnote Private Checkbox (if permitted)
-if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug_id ) ) {
+if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug ) ) {
 	echo '<tr>';
 	echo '<th class="category">' . _( 'private' ) . '</th>';
 	echo '<td colspan="5">';
 
 	$t_default_bugnote_view_status = config_get( 'default_bugnote_view_status' );
-	if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $t_bug_id ) ) {
+	if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $t_bug ) ) {
 		echo '<input ', helper_get_tab_index(), ' type="checkbox" id="private" name="private" ', check_checked( config_get( 'default_bugnote_view_status' ), VS_PRIVATE ), ' />';
 		echo _( 'private' );
 	} else {
@@ -685,7 +685,7 @@ if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug_id 
 
 # Time Tracking (if permitted)
 if ( config_get('time_tracking_enabled') ) {
-	if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $t_bug_id ) ) {
+	if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $t_bug ) ) {
 		echo '<tr>';
 		echo '<th class="category"><label for="time_tracking">' . _('Time tracking') . ' (HH:MM)</label></th>';
 		echo '<td colspan="5"><input type="text" id="time_tracking" name="time_tracking" size="5" value="0:00" /></td></tr>';

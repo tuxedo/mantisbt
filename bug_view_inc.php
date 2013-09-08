@@ -109,7 +109,7 @@ $t_show_product_build = $t_show_versions && in_array( 'product_build', $t_fields
 	&& ( config_get( 'enable_product_build' ) == ON );
 $t_product_build = $t_show_product_build ? string_display_line( $t_bug->build ) : '';
 $t_show_target_version = $t_show_versions && in_array( 'target_version', $t_fields )
-	&& access_has_bug_level( config_get( 'roadmap_view_threshold' ), $f_bug_id );
+	&& access_has_bug_level( config_get( 'roadmap_view_threshold' ), $t_bug );
 
 $t_product_version_string  = '';
 $t_target_version_string   = '';
@@ -139,14 +139,14 @@ $t_bug_id = $f_bug_id;
 $t_form_title = _( 'View Issue Details' );
 $t_wiki_link = config_get_global( 'wiki_enable' ) == ON ? 'wiki.php?id=' . $f_bug_id : '';
 
-if ( access_has_bug_level( config_get( 'view_history_threshold' ), $f_bug_id ) ) {
+if ( access_has_bug_level( config_get( 'view_history_threshold' ), $t_bug ) ) {
 	$t_history_link = "view.php?id=$f_bug_id&history=1#history";
 } else {
 	$t_history_link = '';
 }
 
 $t_show_reminder_link = !user_is_anonymous( auth_get_current_user_id() ) && !bug_is_readonly( $t_bug ) &&
-	  access_has_bug_level( config_get( 'bug_reminder_threshold' ), $f_bug_id );
+	  access_has_bug_level( config_get( 'bug_reminder_threshold' ), $t_bug );
 $t_bug_reminder_link = 'bug_reminder_page.php?bug_id=' . $f_bug_id;
 
 $t_print_link = 'print_bug_page.php?bug_id=' . $f_bug_id;
@@ -172,7 +172,7 @@ $t_bug_overdue = bug_is_overdue( $t_bug );
 $t_show_view_state = in_array( 'view_state', $t_fields );
 $t_bug_view_state_enum = $t_show_view_state ? string_display_line( get_enum_element( 'view_state', $t_bug->view_state ) ) : '';
 
-$t_show_due_date = in_array( 'due_date', $t_fields ) && access_has_bug_level( config_get( 'due_date_view_threshold' ), $f_bug_id );
+$t_show_due_date = in_array( 'due_date', $t_fields ) && access_has_bug_level( config_get( 'due_date_view_threshold' ), $t_bug );
 
 if ( $t_show_due_date ) {
 	if ( !date_is_null( $t_bug->due_date ) ) {
@@ -183,12 +183,12 @@ if ( $t_show_due_date ) {
 }
 
 $t_show_reporter = in_array( 'reporter', $t_fields );
-$t_show_handler = in_array( 'handler', $t_fields ) && access_has_bug_level( config_get( 'view_handler_threshold' ), $f_bug_id );
+$t_show_handler = in_array( 'handler', $t_fields ) && access_has_bug_level( config_get( 'view_handler_threshold' ), $t_bug );
 $t_show_additional_information = !is_blank( $t_bug->additional_information ) && in_array( 'additional_info', $t_fields );
 $t_show_steps_to_reproduce = !is_blank( $t_bug->steps_to_reproduce ) && in_array( 'steps_to_reproduce', $t_fields );
 $t_show_monitor_box = !$t_force_readonly;
 $t_show_relationships_box = !$t_force_readonly;
-$t_show_sponsorships_box = config_get( 'enable_sponsorship' ) && access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $f_bug_id );
+$t_show_sponsorships_box = config_get( 'enable_sponsorship' ) && access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $t_bug );
 $t_show_upload_form = !$t_force_readonly && !bug_is_readonly( $t_bug );
 $t_show_history = $f_history;
 $t_show_profiles = config_get( 'enable_profiles' );
@@ -203,7 +203,7 @@ $t_projection = $t_show_projection ? string_display_line( get_enum_element( 'pro
 $t_show_eta = in_array( 'eta', $t_fields );
 $t_eta = $t_show_eta ? string_display_line( get_enum_element( 'eta', $t_bug->eta ) ) : '';
 $t_show_attachments = in_array( 'attachments', $t_fields );
-$t_can_attach_tag = $t_show_tags && !$t_force_readonly && access_has_bug_level( config_get( 'tag_attach_threshold' ), $f_bug_id );
+$t_can_attach_tag = $t_show_tags && !$t_force_readonly && access_has_bug_level( config_get( 'tag_attach_threshold' ), $t_bug );
 $t_show_category = in_array( 'category_id', $t_fields );
 $t_category = $t_show_category ? string_display_line( category_full_name( $t_bug->category_id ) ) : '';
 $t_show_priority = in_array( 'priority', $t_fields );
@@ -775,7 +775,7 @@ event_signal( 'EVENT_VIEW_BUG_EXTRA', array( $f_bug_id ) );
 
 # Time tracking statistics
 if ( config_get( 'time_tracking_enabled' ) &&
-	access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $f_bug_id ) ) {
+	access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $t_bug ) ) {
 	include( $t_mantis_dir . 'bugnote_stats_inc.php' );
 }
 

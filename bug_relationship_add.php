@@ -75,6 +75,7 @@ foreach( $f_dest_bug_id_array as $f_dest_bug_id ) {
 	bug_ensure_exists( $f_dest_bug_id );
 
 	$t_bug = bug_get( $f_src_bug_id );
+	$t_dest_bug = bug_get( $f_dest_bug_id );
 	
 	# bug is not read-only...
 	if ( bug_is_readonly( $t_bug ) ) {
@@ -82,8 +83,8 @@ foreach( $f_dest_bug_id_array as $f_dest_bug_id ) {
 	}
 
 	# user can access to the related bug at least as viewer...
-	if ( !access_has_bug_level( VIEWER, $f_dest_bug_id ) ) {
-		throw new MantisBT\Exception\Relationship_Access_Level_To_Dest_Bug_Too_Low( $f_dest_bug_id );
+	if ( !access_has_bug_level( VIEWER, $t_dest_bug ) ) {
+		throw new MantisBT\Exception\Relationship_Access_Level_To_Dest_Bug_Too_Low( $t_dest_bug );
 	}
 
 	$t_bug = bug_get( $f_src_bug_id, true );

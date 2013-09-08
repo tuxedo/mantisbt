@@ -52,7 +52,7 @@ $t_bug = bug_get( $f_bug_id );
 
 ?>
 <?php if ( ( !bug_is_readonly( $t_bug ) ) &&
-		( access_has_bug_level( config_get( 'add_bugnote_threshold' ), $f_bug_id ) ) ) { ?>
+		( access_has_bug_level( config_get( 'add_bugnote_threshold' ), $t_bug ) ) ) { ?>
 <?php # Bugnote Add Form BEGIN ?>
 <a id="addbugnote"></a> <br />
 
@@ -78,7 +78,7 @@ $t_bug = bug_get( $f_bug_id );
 		<textarea name="bugnote_text" cols="80" rows="10"></textarea>
 	</td>
 </tr>
-<?php if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $f_bug_id ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $t_bug ) ) { ?>
 <tr class="row-1">
 	<th class="category">
 		<?php echo _( 'View Status' ) ?>
@@ -86,7 +86,7 @@ $t_bug = bug_get( $f_bug_id );
 	<td>
 <?php
 		$t_default_bugnote_view_status = config_get( 'default_bugnote_view_status' );
-		if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $f_bug_id ) ) {
+		if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $t_bug ) ) {
 ?>
 			<input type="checkbox" id="bugnote_add_view_status" name="private" <?php check_checked( $t_default_bugnote_view_status, VS_PRIVATE ); ?> />
 			<label for="bugnote_add_view_status"><?php echo _( 'private' ) ?></label>
@@ -100,7 +100,7 @@ $t_bug = bug_get( $f_bug_id );
 <?php } ?>
 
 <?php if ( config_get('time_tracking_enabled') ) { ?>
-<?php if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $f_bug_id ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $t_bug ) ) { ?>
 <tr>
 	<th class="category">
 		<?php echo _( 'Time tracking' ) ?>

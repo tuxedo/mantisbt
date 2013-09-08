@@ -161,6 +161,8 @@ function history_get_events_array( $p_bug_id, $p_user_id = null ) {
 function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 	$t_history_order = config_get( 'history_order' );
 
+	$p_bug = bug_get( $p_bug_id );
+	
 	$t_user_id = (( null === $p_user_id ) ? auth_get_current_user_id() : $p_user_id );
 
 	$t_roadmap_view_access_level = config_get( 'roadmap_view_threshold' );
@@ -177,7 +179,7 @@ function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 	$raw_history = array();
 
 	$t_private_bugnote_threshold = config_get( 'private_bugnote_threshold' );
-	$t_private_bugnote_visible = access_has_bug_level( config_get( 'private_bugnote_threshold' ), $p_bug_id, $t_user_id );
+	$t_private_bugnote_visible = access_has_bug_level( config_get( 'private_bugnote_threshold' ), $p_bug, $t_user_id );
 	$t_tag_view_threshold = config_get( 'tag_view_threshold' );
 	$t_show_monitor_list_threshold = config_get( 'show_monitor_list_threshold' );
 
@@ -202,11 +204,11 @@ function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 				}
 			}
 
-			if ( ( $v_field_name == 'target_version' ) && !access_has_bug_level( $t_roadmap_view_access_level, $p_bug_id, $t_user_id ) ) {
+			if ( ( $v_field_name == 'target_version' ) && !access_has_bug_level( $t_roadmap_view_access_level, $p_bug, $t_user_id ) ) {
 				continue;
 			}
 
-			if ( ( $v_field_name == 'due_date' ) && !access_has_bug_level( $t_due_date_view_threshold, $p_bug_id, $t_user_id ) ) {
+			if ( ( $v_field_name == 'due_date' ) && !access_has_bug_level( $t_due_date_view_threshold, $p_bug, $t_user_id ) ) {
 				continue;
 			}
 		}
@@ -229,14 +231,14 @@ function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 
 		// tags
 		if( $v_type == TAG_ATTACHED || $v_type == TAG_DETACHED || $v_type == TAG_RENAMED ) {
-			if( !access_has_bug_level( $t_tag_view_threshold, $p_bug_id, $t_user_id ) ) {
+			if( !access_has_bug_level( $t_tag_view_threshold, $p_bug, $t_user_id ) ) {
 				continue;
 			}
 		}
 
 		// monitoring
 		if( $v_type == BUG_MONITOR || $v_type == BUG_UNMONITOR ) {
-			if( !access_has_bug_level( $t_show_monitor_list_threshold, $p_bug_id, $t_user_id ) ) {
+			if( !access_has_bug_level( $t_show_monitor_list_threshold, $p_bug, $t_user_id ) ) {
 				continue;
 			}
 		}

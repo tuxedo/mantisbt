@@ -56,7 +56,7 @@ require_api( 'utility_api.php' );
 #
 $t_bug = bug_get( $f_bug_id );
 
-if ( ( config_get( 'enable_sponsorship' ) == ON ) && ( access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $f_bug_id ) ) ) {
+if ( ( config_get( 'enable_sponsorship' ) == ON ) && ( access_has_bug_level( config_get( 'view_sponsorship_total_threshold' ), $t_bug ) ) ) {
 	$t_sponsorship_ids = sponsorship_get_all_ids( $f_bug_id );
 
 	$t_sponsorships_exist = count( $t_sponsorship_ids ) > 0;
@@ -128,8 +128,7 @@ if ( $t_show_sponsorships ) {
 			echo sprintf( _( 'Total Sponsorship = %1' ),
 				sponsorship_format_amount( $t_total_sponsorship ) );
 
-			if ( access_has_bug_level( config_get( 'view_sponsorship_details_threshold' )
-				, $f_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'view_sponsorship_details_threshold' ), $t_bug ) ) {
 				echo '<br /><br />';
 				$i = 0;
 				foreach ( $t_sponsorship_ids as $id ) {
@@ -143,7 +142,7 @@ if ( $t_show_sponsorships ) {
 					echo sprintf( _( '%1$s:' ), $t_date_added ) . _( '&#32;' );
 					print_user( $t_sponsorship->user_id );
 					echo ' (' . sponsorship_format_amount( $t_sponsorship->amount ) . ')';
-					if ( access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $f_bug_id ) ) {
+					if ( access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_bug ) ) {
 						echo ' ' . get_enum_element( 'sponsorship', $t_sponsorship->paid );
 					}
 				}

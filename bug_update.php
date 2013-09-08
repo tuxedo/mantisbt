@@ -149,7 +149,7 @@ if ( $t_existing_bug->status !== $t_updated_bug->status ) {
 	if ( !bug_check_workflow( $t_existing_bug->status, $t_updated_bug->status ) ) {
 		throw new MantisBT\Exception\Field\InvalidValue( _( 'Status' ) );
 	}
-	if ( !access_has_bug_level( access_get_status_threshold( $t_updated_bug->status, $t_updated_bug->project_id ), $f_bug_id ) ) {
+	if ( !access_has_bug_level( access_get_status_threshold( $t_updated_bug->status, $t_updated_bug->project_id ), $t_existing_bug ) ) {
 		# The reporter may be allowed to close or reopen the issue regardless.
 		$t_can_bypass_status_access_thresholds = false;
 		if ( $t_close_issue &&
@@ -177,14 +177,14 @@ if ( $t_existing_bug->status !== $t_updated_bug->status ) {
 $t_issue_is_sponsored = sponsorship_get_amount( sponsorship_get_all_ids( $f_bug_id ) ) > 0;
 if ( $t_existing_bug->handler_id !== $t_updated_bug->handler_id ) {
 	access_ensure_bug_level( config_get( 'update_bug_assign_threshold' ), $f_bug_id );
-	if ( $t_issue_is_sponsored && !access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $f_bug_id ) ) {
+	if ( $t_issue_is_sponsored && !access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_existing_bug ) ) {
 		throw new MantisBT\Exception\Sponsorship_Handler_Access_Level_Too_Low();
 	}
 	if ( $t_updated_bug->handler_id !== NO_USER ) {
-		if ( !access_has_bug_level( config_get( 'handle_bug_threshold' ), $f_bug_id, $t_updated_bug->handler_id ) ) {
+		if ( !access_has_bug_level( config_get( 'handle_bug_threshold' ), $t_existing_bug, $t_updated_bug->handler_id ) ) {
 			throw new MantisBT\Exception\Handler_Access_Too_Low();
 		}
-		if ( $t_issue_is_sponsored && !access_has_bug_level( config_get( 'assign_sponsored_bugs_threshold' ), $f_bug_id ) ) {
+		if ( $t_issue_is_sponsored && !access_has_bug_level( config_get( 'assign_sponsored_bugs_threshold' ), $t_existing_bug ) ) {
 			throw new MantisBT\Exception\Sponsorship_Assigner_Access_Level_Too_Low();
 		}
 	}

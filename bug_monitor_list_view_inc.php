@@ -47,7 +47,7 @@ require_api( 'helper_api.php' );
 require_api( 'print_api.php' );
 require_api( 'user_api.php' );
 
-if ( access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $f_bug_id ) ) {
+if ( access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $t_bug ) ) {
 	
 	$t_users = bug_get_monitors( $f_bug_id );
 	$num_users = sizeof ( $t_users );
@@ -74,7 +74,7 @@ if ( access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $f_bug_i
 		if ( 0 == $num_users ) {
 			echo _( 'There are no users monitoring this issue.' );
 		} else {
-			$t_can_delete_others = access_has_bug_level( config_get( 'monitor_delete_others_bug_threshold' ), $f_bug_id );
+			$t_can_delete_others = access_has_bug_level( config_get( 'monitor_delete_others_bug_threshold' ), $t_bug );
 	 		for ( $i = 0; $i < $num_users; $i++ ) {
 				echo ($i > 0) ? ', ' : '';
 				print_user( $t_users[$i] );
@@ -84,7 +84,7 @@ if ( access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $f_bug_i
 	 		}
  		}
 
-		if ( access_has_bug_level( config_get( 'monitor_add_others_bug_threshold' ), $f_bug_id ) ) {
+		if ( access_has_bug_level( config_get( 'monitor_add_others_bug_threshold' ), $t_bug ) ) {
 ?>
 		<br /><br />
 		<form method="get" action="bug_monitor_add.php">

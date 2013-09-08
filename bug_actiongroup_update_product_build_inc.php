@@ -74,7 +74,7 @@ function action_update_product_build_validate( $p_bug_id ) {
 		return _( 'Issue is readonly.' );
 	}
 
-	if ( !access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug_id ) ) {
+	if ( !access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug ) ) {
 		return _( 'Access Denied.' );
 	}
 

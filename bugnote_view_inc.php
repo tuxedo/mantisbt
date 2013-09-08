@@ -115,9 +115,9 @@ $num_notes = count( $t_bugnotes );
 	$t_bugnote_user_edit_threshold = config_get( 'bugnote_user_edit_threshold' );
 	$t_bugnote_user_delete_threshold = config_get( 'bugnote_user_delete_threshold' );
 	$t_bugnote_user_change_view_state_threshold = config_get( 'bugnote_user_change_view_state_threshold' );
-	$t_can_edit_all_bugnotes = access_has_bug_level( config_get( 'update_bugnote_threshold' ), $f_bug_id );
-	$t_can_delete_all_bugnotes = access_has_bug_level( config_get( 'delete_bugnote_threshold' ), $f_bug_id );
-	$t_can_change_view_state_all_bugnotes = $t_can_edit_all_bugnotes && access_has_bug_level( config_get( 'change_view_status_threshold' ), $f_bug_id );
+	$t_can_edit_all_bugnotes = access_has_bug_level( config_get( 'update_bugnote_threshold' ), $t_bug );
+	$t_can_delete_all_bugnotes = access_has_bug_level( config_get( 'delete_bugnote_threshold' ), $t_bug );
+	$t_can_change_view_state_all_bugnotes = $t_can_edit_all_bugnotes && access_has_bug_level( config_get( 'change_view_status_threshold' ), $t_bug );
 
 	for ( $i=0; $i < $num_notes; $i++ ) {
 		$t_bugnote = $t_bugnotes[$i];
@@ -242,7 +242,7 @@ $num_notes = count( $t_bugnotes );
 					echo implode( ', ', $t_to ) . '</em><br /><br />';
 					break;
 				case TIME_TRACKING:
-					if ( access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $f_bug_id ) ) {
+					if ( access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $t_bug ) ) {
 						echo '<div class="time-tracked">', $t_time_tracking_hhmm, '</div>';
 					}
 					break;
@@ -264,7 +264,7 @@ $num_notes = count( $t_bugnotes );
 </table>
 <?php
 
-if ( $t_total_time > 0 && access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $f_bug_id ) ) {
+if ( $t_total_time > 0 && access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $t_bug ) ) {
 	echo '<p class="time-tracking-total">', sprintf ( _( 'Total time for issue = %1' ), '<span class="time-tracked">' . db_minutes_to_hhmm( $t_total_time ) . '</span>' ), '</p>';
 }
 	collapse_closed( 'bugnotes' );

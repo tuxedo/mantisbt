@@ -229,7 +229,7 @@ function bug_is_readonly( MantisBug $p_bug ) {
 		return false;
 	}
 
-	if( access_has_bug_level( config_get( 'update_readonly_bug_threshold' ), $p_bug->id ) ) {
+	if( access_has_bug_level( config_get( 'update_readonly_bug_threshold' ), $p_bug ) ) {
 		return false;
 	}
 
@@ -742,7 +742,7 @@ function bug_set_field( $p_bug_id, $p_field_name, $p_value ) {
  * @throws MantisBT\Exception\Access\InsufficientAccessLevel
  */
 function bug_assign( $p_bug, $p_user_id, $p_bugnote_text = '', $p_bugnote_private = false ) {
-	if(( $p_user_id != NO_USER ) && !access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug->id, $p_user_id ) ) {
+	if(( $p_user_id != NO_USER ) && !access_has_bug_level( config_get( 'handle_bug_threshold' ), $p_bug, $p_user_id ) ) {
 		throw new MantisBT\Exception\Access\InsufficientAccessLevel();
 	}
 
@@ -977,7 +977,9 @@ function bug_monitor( $p_bug_id, $p_user_id ) {
  * @return array
  */
 function bug_get_monitors( $p_bug_id ) {
-    if ( ! access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $p_bug_id ) ) {
+	$t_bug = bug_get( $p_bug_id );
+
+    if ( ! access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $t_bug ) ) {
         return array();
     }
 

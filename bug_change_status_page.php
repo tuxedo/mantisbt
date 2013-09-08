@@ -77,16 +77,16 @@ $f_reopen_flag = gpc_get_int( 'reopen_flag', OFF );
 
 $t_current_user_id = auth_get_current_user_id();
 
-if ( !( ( access_has_bug_level( access_get_status_threshold( $f_new_status, $t_bug->project_id ), $f_bug_id ) ) ||
+if ( !( ( access_has_bug_level( access_get_status_threshold( $f_new_status, $t_bug->project_id ), $t_bug ) ) ||
 			( ( $t_bug->reporter_id == $t_current_user_id ) &&
 					( ( ON == config_get( 'allow_reporter_reopen' ) ) ||
 							( ON == config_get( 'allow_reporter_close' ) ) ) ) ||
-			( ( ON == $f_reopen_flag ) && ( access_has_bug_level( config_get( 'reopen_bug_threshold' ), $f_bug_id ) ) )
+			( ( ON == $f_reopen_flag ) && ( access_has_bug_level( config_get( 'reopen_bug_threshold' ), $t_bug ) ) )
 		) ) {
 	throw new MantisBT\Exception\Access\AccessDenied();
 }
 
-$t_can_update_due_date = access_has_bug_level( config_get( 'due_date_update_threshold' ), $f_bug_id );
+$t_can_update_due_date = access_has_bug_level( config_get( 'due_date_update_threshold' ), $t_bug );
 if ( $t_can_update_due_date ) {
 	require_js( 'jscalendar/calendar.js' );
 	require_js( 'jscalendar/lang/calendar-en.js' );
@@ -100,18 +100,18 @@ $f_handler_id = gpc_get_int( 'handler_id', $t_bug->handler_id );
 if ( config_get( 'bug_assigned_status' ) == $f_new_status ) {
 	$t_bug_sponsored = sponsorship_get_amount( sponsorship_get_all_ids( $f_bug_id ) ) > 0;
 	if ( $t_bug_sponsored ) {
-		if ( !access_has_bug_level( config_get( 'assign_sponsored_bugs_threshold' ), $f_bug_id ) ) {
+		if ( !access_has_bug_level( config_get( 'assign_sponsored_bugs_threshold' ), $t_bug ) ) {
 			throw new MantisBT\Exception\Sponsorship_Assigner_Access_Level_Too_Low();
 		}
 	}
 
 	if ( $f_handler_id != NO_USER ) {
-		if ( !access_has_bug_level( config_get( 'handle_bug_threshold' ), $f_bug_id, $f_handler_id ) ) {
+		if ( !access_has_bug_level( config_get( 'handle_bug_threshold' ), $t_bug, $f_handler_id ) ) {
 			throw new MantisBT\Exception\Handler_Access_Too_Low();
 		}
 
 		if ( $t_bug_sponsored ) {
-			if ( !access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $f_bug_id, $f_handler_id ) ) {
+			if ( !access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_bug, $f_handler_id ) ) {
 				throw new MantisBT\Exception\Sponsorship_Handler_Access_Level_Too_Low();
 			}
 		}
@@ -197,10 +197,10 @@ if ( $f_new_status >= $t_resolved
 <?php } ?>
 
 <?php
-if ( access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $f_bug_id ) ) {
+if ( access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $t_bug ) ) {
 	$t_suggested_handler_id = $t_bug->handler_id;
 
-	if ( $t_suggested_handler_id == NO_USER && access_has_bug_level( config_get( 'handle_bug_threshold' ), $f_bug_id ) ) {
+	if ( $t_suggested_handler_id == NO_USER && access_has_bug_level( config_get( 'handle_bug_threshold' ), $t_bug ) ) {
 		$t_suggested_handler_id = $t_current_user_id;
 	}
 ?>
@@ -326,7 +326,7 @@ if ( ( $t_resolved <= $f_new_status ) ) {
 		<textarea name="bugnote_text" cols="80" rows="10"></textarea>
 	</td>
 </tr>
-<?php if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $f_bug_id ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug ) ) { ?>
 <tr>
 	<th class="category">
 		<?php echo _( 'View Status' ) ?>
@@ -334,7 +334,7 @@ if ( ( $t_resolved <= $f_new_status ) ) {
 	<td>
 <?php
 		$t_default_bugnote_view_status = config_get( 'default_bugnote_view_status' );
-		if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $f_bug_id ) ) {
+		if ( access_has_bug_level( config_get( 'set_view_status_threshold' ), $t_bug ) ) {
 ?>
 			<input type="checkbox" name="private" <?php check_checked( $t_default_bugnote_view_status, VS_PRIVATE ); ?> />
 <?php
@@ -348,8 +348,8 @@ if ( ( $t_resolved <= $f_new_status ) ) {
 <?php } ?>
 
 <?php if ( config_get('time_tracking_enabled') ) { ?>
-<?php if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $f_bug_id ) ) { ?>
-<?php if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $f_bug_id ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug ) ) { ?>
+<?php if ( access_has_bug_level( config_get( 'time_tracking_edit_threshold' ), $t_bug ) ) { ?>
 <tr>
 	<th class="category">
 		<?php echo _('Time tracking') ?>

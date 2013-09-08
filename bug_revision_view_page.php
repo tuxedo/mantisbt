@@ -103,7 +103,8 @@ function show_revision( $p_revision ) {
 	static $s_user_access = null;
 
 	if ( is_null( $s_can_drop ) ) {
-		$s_can_drop = access_has_bug_level( config_get( 'bug_revision_drop_threshold' ), $p_revision['bug_id'] );
+		$t_bug = get_get( $p_revision['bug_id'] );
+		$s_can_drop = access_has_bug_level( config_get( 'bug_revision_drop_threshold' ), $t_bug );
 		$s_drop_token = form_security_param( 'bug_revision_drop' );
 	}
 
@@ -120,7 +121,7 @@ function show_revision( $p_revision ) {
 
 	case REV_BUGNOTE:
 		if ( is_null( $s_user_access ) ) {
-			$s_user_access = access_has_bug_level( config_get( 'private_bugnote_threshold' ), $p_revision['bug_id'] );
+			$s_user_access = access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug );
 		}
 
 		if ( !$s_user_access ) {

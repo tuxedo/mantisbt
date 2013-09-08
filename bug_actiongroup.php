@@ -118,14 +118,14 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			}
 			break;
 		case 'DELETE':
-			if ( access_has_bug_level( config_get( 'delete_bug_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'delete_bug_threshold' ), $t_bug ) ) {
 				$t_bug->delete();
 			} else {
 				$t_failed_ids[$t_bug_id] = _( 'You did not have appropriate permissions to perform that action.' );
 			}
 			break;
 		case 'MOVE':
-			if ( access_has_bug_level( config_get( 'move_bug_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'move_bug_threshold' ), $t_bug ) ) {
 				/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 				$f_project_id = gpc_get_int( 'project_id' );
 				bug_move( $t_bug_id, $f_project_id );
@@ -153,8 +153,8 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			# check that new handler has rights to handle the issue, and
 			#  that current user has rights to assign the issue
 			$t_threshold = access_get_status_threshold( $t_assign_status, bug_get_field( $t_bug_id, 'project_id' ) );
-			if ( access_has_bug_level( $t_threshold , $t_bug_id, $f_assign ) &&
-				 access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $t_bug_id ) &&
+			if ( access_has_bug_level( $t_threshold , $t_bug, $f_assign ) &&
+				 access_has_bug_level( config_get( 'update_bug_assign_threshold', config_get( 'update_bug_threshold' ) ), $t_bug ) &&
 					bug_check_workflow($t_status, $t_assign_status )	) {
 				/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 				bug_assign( $t_bug, $f_assign, $f_bug_notetext, $f_bug_noteprivate );
@@ -169,7 +169,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			break;
 		case 'RESOLVE':
 			$t_resolved_status = config_get( 'bug_resolved_status_threshold' );
-			if ( access_has_bug_level( access_get_status_threshold( $t_resolved_status, bug_get_field( $t_bug_id, 'project_id' ) ), $t_bug_id ) &&
+			if ( access_has_bug_level( access_get_status_threshold( $t_resolved_status, bug_get_field( $t_bug_id, 'project_id' ) ), $t_bug ) &&
 						( $t_status < $t_resolved_status ) &&
 						bug_check_workflow($t_status, $t_resolved_status ) ) {
 				$f_resolution = gpc_get_int( 'resolution' );
@@ -187,7 +187,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			}
 			break;
 		case 'UP_PRIOR':
-			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug ) ) {
 				$f_priority = gpc_get_int( 'priority' );
 				/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 				bug_set_field( $t_bug_id, 'priority', $f_priority );
@@ -199,7 +199,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 		case 'UP_STATUS':
 			$f_status = gpc_get_int( 'status' );
 			$t_project = bug_get_field( $t_bug_id, 'project_id' );
-			if ( access_has_bug_level( access_get_status_threshold( $f_status, $t_project ), $t_bug_id ) ) {
+			if ( access_has_bug_level( access_get_status_threshold( $f_status, $t_project ), $t_bug ) ) {
 				if ( TRUE == bug_check_workflow($t_status, $f_status ) ) {
 					/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 					bug_set_field( $t_bug_id, 'status', $f_status );
@@ -219,7 +219,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			break;
 		case 'UP_CATEGORY':
 			$f_category_id = gpc_get_int( 'category' );
-			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug ) ) {
 				if ( category_exists( $f_category_id ) ) {
 					/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 					bug_set_field( $t_bug_id, 'category_id', $f_category_id );
@@ -236,7 +236,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			$t_project_id = bug_get_field( $t_bug_id, 'project_id' );
 			$t_success = false;
 
-			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug ) ) {
 				if ( version_get_id( $f_fixed_in_version, $t_project_id ) !== false ) {
 					/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 					bug_set_field( $t_bug_id, 'fixed_in_version', $f_fixed_in_version );
@@ -254,7 +254,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			$t_project_id = bug_get_field( $t_bug_id, 'project_id' );
 			$t_success = false;
 
-			if ( access_has_bug_level( config_get( 'roadmap_update_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'roadmap_update_threshold' ), $t_bug ) ) {
 				if ( version_get_id( $f_target_version, $t_project_id ) !== false ) {
 					/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 					bug_set_field( $t_bug_id, 'target_version', $f_target_version );
@@ -268,7 +268,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			}
 			break;
 		case 'VIEW_STATUS':
-			if ( access_has_bug_level( config_get( 'change_view_status_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'change_view_status_threshold' ), $t_bug ) ) {
 				$f_view_status = gpc_get_int( 'view_status' );
 				/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
 				bug_set_field( $t_bug_id, 'view_state', $f_view_status );
@@ -278,7 +278,7 @@ foreach( $f_bug_arr as $t_bug_id ) {
 			}
 			break;
 		case 'SET_STICKY':
-			if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $t_bug_id ) ) {
+			if ( access_has_bug_level( config_get( 'set_bug_sticky_threshold' ), $t_bug ) ) {
 				$f_sticky = bug_get_field( $t_bug_id, 'sticky' );
 				// The new value is the inverted old value
 				/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */

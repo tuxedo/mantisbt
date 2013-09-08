@@ -57,8 +57,10 @@ $f_bug_id = gpc_get_int( 'bug_id' );
 $t_user_id = auth_get_current_user_id();
 $c_bug_id = (integer)$f_bug_id;
 
+$t_bug = bug_get( $c_bug_id );
+
 $t_restriction = '';
-if ( !access_has_bug_level( config_get( 'private_bugnote_threshold' ), $f_bug_id ) )
+if ( !access_has_bug_level( config_get( 'private_bugnote_threshold' ), $t_bug ) )
 	$t_restriction = 'AND view_state=' . VS_PUBLIC;
 
 # get the bugnote data

@@ -353,8 +353,10 @@ function summary_print_by_activity() {
 	$t_summarydata = array();
 	$t_summarybugs = array();
 	while( $row = db_fetch_array( $t_result ) ) {
+		$t_bug = bug_get( $row['id'] );
+
 		// Skip private bugs unless user has proper permissions
-		if(( VS_PRIVATE == $row['view_state'] ) && ( false == access_has_bug_level( $t_private_bug_threshold, $row['id'] ) ) ) {
+		if(( VS_PRIVATE == $row['view_state'] ) && ( false == access_has_bug_level( $t_private_bug_threshold, $t_bug ) ) ) {
 			continue;
 		}
 
@@ -406,8 +408,10 @@ function summary_print_by_age() {
 		// as we select all from bug_table, inject into the cache.
 		bug_cache_database_result( $row );
 
+		$t_bug = bug_get( $row['id'] );
+
 		// Skip private bugs unless user has proper permissions
-		if(( VS_PRIVATE == bug_get_field( $row['id'], 'view_state' ) ) && ( false == access_has_bug_level( $t_private_bug_threshold, $row['id'] ) ) ) {
+		if(( VS_PRIVATE == bug_get_field( $row['id'], 'view_state' ) ) && ( false == access_has_bug_level( $t_private_bug_threshold, $t_bug ) ) ) {
 			continue;
 		}
 

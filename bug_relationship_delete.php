@@ -77,8 +77,9 @@ $t_dest_bug_id = relationship_get_linked_bug_id( $f_rel_id, $f_bug_id );
 
 # user can access to the related bug at least as viewer, if it's exist...
 if ( bug_exists( $t_dest_bug_id )) {
-	if ( !access_has_bug_level( VIEWER, $t_dest_bug_id ) ) {
-		throw new MantisBT\Exception\Relationship_Access_Level_To_Dest_Bug_Too_Low( $t_dest_bug_id );
+	$t_dest_bug = bug_get( $t_dest_bug_id );
+	if ( !access_has_bug_level( VIEWER, $t_dest_bug ) ) {
+		throw new MantisBT\Exception\Relationship_Access_Level_To_Dest_Bug_Too_Low( $t_dest_bug );
 	}
 }
 

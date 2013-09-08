@@ -111,7 +111,7 @@ function action_add_note_validate( $p_bug_id ) {
 		return _( 'Issue is readonly.' );
 	}
 
-	if ( !access_has_bug_level( $t_add_bugnote_threshold, $t_bug_id ) ) {
+	if ( !access_has_bug_level( $t_add_bugnote_threshold, $t_bug ) ) {
 		return _( 'Access Denied.' );
 	}
 

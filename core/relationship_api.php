@@ -573,13 +573,14 @@ function relationship_get_details( $p_bug_id, $p_relationship, $p_html = false, 
 		return '';
 	}
 
+	$t_bug = bug_get( $t_related_bug_id, false );
+
 	# user can access to the related bug at least as a viewer
-	if( !access_has_bug_level( VIEWER, $t_related_bug_id ) ) {
+	if( !access_has_bug_level( VIEWER, $t_bug ) ) {
 		return '';
 	}
 
 	# get the information from the related bug and prepare the link
-	$t_bug = bug_get( $t_related_bug_id, false );
 	$t_status_string = get_enum_element( 'status', $t_bug->status );
 	$t_resolution_string = get_enum_element( 'resolution', $t_bug->resolution );
 
@@ -620,7 +621,7 @@ function relationship_get_details( $p_bug_id, $p_relationship, $p_html = false, 
 		# add delete link if bug not read only and user has access level
 		$t_bug2 = bug_get( $p_bug_id );
 		if( !bug_is_readonly( $t_bug2 ) && !user_is_anonymous( auth_get_current_user_id()  ) && ( $p_html_preview == false ) ) {
-			if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug_id ) ) {
+			if( access_has_bug_level( config_get( 'update_bug_threshold' ), $t_bug2 ) ) {
 				$t_relationship_info .= ' [<a class="small" href="bug_relationship_delete.php?bug_id=' . $p_bug_id . '&amp;rel_id=' . $p_relationship->id . htmlspecialchars( form_security_param( 'bug_relationship_delete' ) ) . '">' . _( 'Delete' ) . '</a>]';
 			}
 		}
@@ -787,7 +788,7 @@ function relationship_view_box( $p_bug_id ) {
 	if( !bug_is_readonly( $p_bug ) ) {
 
 		# user access level at least updater
-		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug->id ) ) {
+		if( access_has_bug_level( config_get( 'update_bug_threshold' ), $p_bug ) ) {
 			?>
 <tr class="row-1">
 	<th class="category"><?php echo _( 'New relationship' )?></th>
