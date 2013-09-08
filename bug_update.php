@@ -75,7 +75,7 @@ access_ensure_bug_level( config_get( 'update_bug_threshold' ), $f_bug_id );
 # Check if the bug is in a read-only state and whether the current user has
 # permission to update read-only bugs.
 if ( bug_is_readonly( $f_existing_bug ) ) {
-	throw new MantisBT\Exception\Issue\IssueReadOnly( $f_bug_id );
+	throw new MantisBT\Exception\Issue\IssueReadOnly( $f_existing_bug );
 }
 
 $t_updated_bug = clone $t_existing_bug;

@@ -57,7 +57,7 @@ $t_bug = bug_get( $f_bug_id, true );
 MantisContext::SetProject( $t_bug->project_id );
 
 if ( bug_is_readonly( $t_bug ) ) {
-	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug->id );
+	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
 access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $t_bug->id );

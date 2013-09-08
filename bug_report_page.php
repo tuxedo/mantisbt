@@ -88,7 +88,7 @@ if ( $f_master_bug_id > 0 ) {
 	$t_bug = bug_get( $f_master_bug_id );
 	# master bug is not read-only...
 	if ( bug_is_readonly( $t_bug ) ) {
-		throw new MantisBT\Exception\Issue\IssueReadOnly( $f_master_bug_id );
+		throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 	}
 
 	$t_bug = bug_get( $f_master_bug_id, true );

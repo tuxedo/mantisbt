@@ -38,9 +38,9 @@ class IssueReadOnly extends ExceptionAbstract
     public function __construct($p_parameters = null, \Exception $p_previous = null)
     {
         if ($p_parameters === null) {
-            $t_message = _('The action cannot be performed because issue "%1$d" is read-only.');
+            $t_message = _('The action cannot be performed because the issue is read-only.');
         } else {
-            $t_message = vsprintf( _('The action cannot be performed because issue "%1$d" is read-only.'), $p_parameters);
+            $t_message = vsprintf( _('The action cannot be performed because issue "%1$d" is read-only.'), $p_parameters->id);
         }
         parent::__construct($t_message, 400, $p_previous);
     }

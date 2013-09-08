@@ -62,7 +62,7 @@ MantisContext::SetProject( $t_bug->project_id );
 
 # Check if the bug is readonly
 if ( bug_is_readonly( $t_bug ) ) {
-	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug_id );
+	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
 # Check if the current user is allowed to change the view state of this bugnote

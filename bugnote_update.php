@@ -70,7 +70,7 @@ $t_bug_id = bugnote_get_field( $f_bugnote_id, 'bug_id' );
 $t_bug = bug_get( $t_bug_id );
 
 if ( bug_is_readonly( $t_bug ) ) {
-	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug_id );
+	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
 $f_bugnote_text = trim( $f_bugnote_text ) . "\n\n";

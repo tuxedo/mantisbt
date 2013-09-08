@@ -84,7 +84,7 @@ if ( $t_user_id == $t_reporter_id ) {
 
 # Check if the bug is readonly
 if ( bug_is_readonly( $t_bug ) ) {
-	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug_id );
+	throw new MantisBT\Exception\Issue\IssueReadOnly( $t_bug );
 }
 
 $t_bugnote_text = string_textarea( bugnote_get_text( $f_bugnote_id ) );
