@@ -373,6 +373,7 @@ class MantisBug extends MantisCacheable {
 			case 'resolution':
 			case 'projection':
 			case 'category_id':
+			case 'view_state':
 				$p_value = (int)$p_value;
 				break;
 			case 'target_version':
