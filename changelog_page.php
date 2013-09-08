@@ -224,11 +224,13 @@ foreach( $t_project_ids as $t_project_id ) {
 			}
 
 			bug_cache_database_result( $t_row );
+			
+			$t_issue = bug_get( $t_row['id'] );
 
 			# check limit_Reporter (Issue #4770)
 			# reporters can view just issues they reported
 			if ( ON === $t_limit_reporters && $t_user_access_level_is_reporter &&
-							!bug_is_user_reporter( $t_row['id'], $t_user_id )) {
+							!bug_is_user_reporter( $t_issue, $t_user_id )) {
 				continue;
 			}
 

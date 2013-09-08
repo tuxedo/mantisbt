@@ -890,7 +890,7 @@ function file_allow_bug_upload( $p_bug = null, $p_user_id = null ) {
 		$t_project_id = bug_get_field( $p_bug->id, 'project_id' );
 
 		# check if the user is the reporter of the bug
-		$t_reporter = bug_is_user_reporter( $p_bug->id, $p_user_id );
+		$t_reporter = bug_is_user_reporter( $p_bug, $p_user_id );
 	}
 
 	if( $t_reporter && ( ON == config_get( 'allow_reporter_upload' ) ) ) {

@@ -353,13 +353,13 @@ function access_has_bug_level( $p_access_level, MantisBug $p_bug, $p_user_id = n
 	# check limit_Reporter (Issue #4769)
 	# reporters can view just issues they reported
 	$t_limit_reporters = config_get( 'limit_reporters' );
-	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug->id, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $t_project_id, $p_user_id ) ) ) {
+	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $t_project_id, $p_user_id ) ) ) {
 		return false;
 	}
 
 	# If the bug is private and the user is not the reporter, then the
 	#  the user must also have higher access than private_bug_threshold
-	if( VS_PRIVATE == $p_bug->view_state && !bug_is_user_reporter( $p_bug->id, $p_user_id ) ) {
+	if( VS_PRIVATE == $p_bug->view_state && !bug_is_user_reporter( $p_bug, $p_user_id ) ) {
 		$p_access_level = max( $p_access_level, config_get( 'private_bug_threshold' ) );
 	}
 
@@ -435,12 +435,12 @@ function access_has_bugnote_level( $p_access_level, $p_bugnote_id, $p_user_id = 
  function access_can_close_bug( $p_bug_id ) {
 	$t_user_id = MantisContext::GetUser();
 
+	$t_bug = bug_get( $p_bug_id );
+
 	# If allow_reporter_close is enabled, then reporters can always close their own bugs
-	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug_id, $t_user_id ) ) {
+	if( ON == config_get( 'allow_reporter_close' ) && bug_is_user_reporter( $p_bug, $t_user_id ) ) {
 		return true;
 	}
-
-	$t_bug = bug_get( $p_bug_id );
 
 	$t_closed_status_threshold = access_get_status_threshold( config_get( 'bug_closed_status_threshold' ), $t_bug->project_id );
 

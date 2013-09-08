@@ -185,13 +185,13 @@ function bug_ensure_exists( $p_bug_id ) {
 
 /**
  * check if the given user is the reporter of the bug
- * @param int $p_bug_id integer representing bug id
+ * @param MantisBug $p_bug MantisBug Object
  * @param int $p_user_id integer reprenting a user id
  * @return bool return true if the user is the reporter, false otherwise
  * @access public
  */
-function bug_is_user_reporter( $p_bug_id, $p_user_id ) {
-	if( bug_get_field( $p_bug_id, 'reporter_id' ) == $p_user_id ) {
+function bug_is_user_reporter( $p_bug, $p_user_id ) {
+	if( $p_bug->reporter_id == $p_user_id ) {
 		return true;
 	} else {
 		return false;
