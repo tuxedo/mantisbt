@@ -608,7 +608,7 @@ function print_profile_option_list_from_profiles( $p_profiles, $p_select_id ) {
 		$t_os_build = string_attribute( $t_profile['os_build'] );
 
 		echo '<option value="' . $t_profile['id'] . '"';
-		check_selected( $p_select_id, $t_profile['id'] );
+		check_selected( (int)$p_select_id, $t_profile['id'] );
 		echo '>' . $t_platform . ' ' . $t_os . ' ' . $t_os_build . '</option>';
 	}
 }
