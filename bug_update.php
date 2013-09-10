@@ -74,7 +74,7 @@ access_ensure_bug_level( config_get( 'update_bug_threshold' ), $t_existing_bug )
 
 # Check if the bug is in a read-only state and whether the current user has
 # permission to update read-only bugs.
-if ( bug_is_readonly( $f_existing_bug ) ) {
+if ( bug_is_readonly( $t_existing_bug ) ) {
 	throw new MantisBT\Exception\Issue\IssueReadOnly( $f_existing_bug );
 }
 
@@ -272,7 +272,10 @@ if ( $t_updated_bug->duplicate_id !== 0 ) {
 		throw new MantisBT\Exception\Bug_Duplicate_Self();
 	}
 	bug_ensure_exists( $t_updated_bug->duplicate_id );
-	if ( !access_has_bug_level( config_get( 'update_bug_threshold' ), $t_updated_bug->duplicate_id ) ) {
+
+	$t_duplicate_bug = bug_get( $t_updated_bug->duplicate_id );
+
+	if ( !access_has_bug_level( config_get( 'update_bug_threshold' ), $t_duplicate_bug ) ) {
 		throw new MantisBT\Exception\Relationship_Access_Level_To_Dest_Bug_Too_Low();
 	}
 	if ( relationship_exists( $f_bug_id, $t_updated_bug->duplicate_id ) ) {
