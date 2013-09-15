@@ -499,3 +499,104 @@ function install_check_project_hierarchy() {
 	# Return 2 because that's what ADOdb/DataDict does when things happen properly
 	return 2;
 }
+
+function install_check_duplicate_ids() {
+	// check duplicate_id column in bugs table is blank
+	$query = "SELECT id, duplicate_id FROM {bug} WHERE duplicate_id > 0";
+
+	$t_result = db_query( $query );
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		$bug_id = (int)$t_row['id'];
+		$duplicate = $t_row['duplicate_id'];
+
+		$query = "SELECT id FROM {bug_relationship} WHERE source_bug_id=%d AND destination_bug_id=%d AND relationship_type=%d";
+		$t_result2 = db_query($query, array( $bug_id, $duplicate, 0 ) );
+		$result = db_result( $t_result2 );
+
+		if( $result > 0 ) {
+			$query = "UPDATE {bug} SET duplicate_id=0 WHERE id=%d";
+			db_query( $query, array( $bug_id ) );
+		} else {
+			// duplicate may have been deleted and only exist in history table so check history
+			$query = "SELECT id FROM {bug_history} WHERE bug_id=%d AND old_value=%d AND type=%d";
+			$t_result2 = db_query($query, array( $bug_id, 0, 18 ) );
+			$result = db_result( $t_result2 );
+			if( $result > 0 ) {
+				$query = "UPDATE {bug} SET duplicate_id=0 WHERE id=%d";
+				db_query( $query, array( $bug_id ) );
+			}
+		}
+	}
+
+	$query = "SELECT count(id) FROM {bug} WHERE duplicate_id > 0";
+	$t_result = db_query( $query );
+	$result = db_result( $t_result );
+
+	if( $result == 0 ) {
+		# Return 2 because that's what ADOdb/DataDict does when things happen properly
+		return 2;
+	}
+}
+
+// tidy_duplicate_id_history
+function install_tidy_duplicate_id_history() {
+	// Issues can not be duplicates of themselves [this was allowed in some old versions]
+	$query = "DELETE FROM {bug_history} WHERE field_name='duplicate_id' AND bug_id=new_value";
+	db_query( $query );
+
+	$query = "SELECT bug_id, new_value FROM {bug_history} WHERE field_name='duplicate_id'";
+
+	$t_result = db_query( $query );
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		// there was a point in time we stored duplicate_id in history + added duplicate relationship
+		// if the duplicate still exists, it's probably OK to delete the history record - on the basis that
+		// there will be a relationship history record adding the duplicate.
+
+		$query2 = "SELECT id FROM {bug_relationship} WHERE relationship_type=0 AND source_bug_id=%d AND destination_bug_id=%d";
+		$t_result2 = db_query( $query2, array( $t_row['bug_id'], $t_row['new_value'] ) );
+		$result = db_result( $t_result2 );
+		if( $result > 0 ) {
+			$query = "DELETE FROM {bug_history} WHERE field_name='duplicate_id' AND bug_id=%d and new_value=%d";
+			db_query($query, array( $t_row['bug_id'], $t_row['new_value'] ) );
+		}
+	}
+
+	// 2nd pass..
+	$query = "SELECT * FROM {bug_history} WHERE field_name='duplicate_id' AND new_value=0";
+	$t_result = db_query( $query ); // removal
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		// look for duplicate_id's that got added then removed, and convert to relationship history for these
+
+		$query2 = "SELECT * FROM {bug_history} WHERE field_name='duplicate_id' AND old_value=0"; // addition
+		$t_result2 = db_query( $query2, array( $t_row['bug_id'], $t_row['new_value'] ) );
+		$result = db_fetch_array( $t_result2 );
+		if( !empty( $result ) ) {
+			// insert relationship add record
+			$query = "INSERT INTO {bug_history} (user_id, bug_id, field_name, old_value, new_value, type, date_modified)
+						VALUES (%d,%d,%s,%s,%s,%d,%d) ";
+			db_query($query, array( $result['user_id'], $result['bug_id'], '', 0, $result['new_value'], 18, $result['date_modified'] ) );
+
+			// insert relationship delete record
+			$query = "INSERT INTO {bug_history} (user_id, bug_id, field_name, old_value, new_value, type, date_modified)
+						VALUES (%d,%d,%s,%s,%s,%d,%d) ";
+			db_query($query, array( $t_row['user_id'], $t_row['bug_id'], '', 0, $t_row['old_value'], 19, $t_row['date_modified'] ) );
+
+			// delete duplicate_id add record
+			$query = "DELETE FROM {bug_history} WHERE field_name='duplicate_id' AND bug_id=%d and new_value=%d AND old_value=0";
+			db_query($query, array( $result['bug_id'], $result['new_value'] ) );
+
+			// delete duplicate_id delete record
+			$query = "DELETE FROM {bug_history} WHERE field_name='duplicate_id' AND bug_id=%d and old_value=%d AND new_value=0";
+			db_query($query, array( $t_row['bug_id'], $t_row['old_value'] ) );
+		}
+	}
+
+	$query = "SELECT count(id) FROM {bug_history} WHERE field_name='duplicate_id'";
+	$t_result = db_query( $query );
+	$result = db_result( $t_result );
+
+	if( $result == 0 ) {
+		# Return 2 because that's what ADOdb/DataDict does when things happen properly
+		return 2;
+	}
+}

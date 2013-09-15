@@ -153,9 +153,6 @@ function columns_get_standard() {
 	unset( $t_columns['sticky'] );
 	unset( $t_columns['loading'] );
 
-	# legacy field
-	unset( $t_columns['duplicate_id'] );
-
 	return array_keys($t_columns);
 }
 /**

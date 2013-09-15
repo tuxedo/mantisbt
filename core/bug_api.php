@@ -336,7 +336,6 @@ function bug_copy( $p_bug_id, $p_target_project_id = null, $p_copy_custom_fields
 	# @todo VB: Shouldn't we check if the handler in the source project is also a handler in the destination project?
 	bug_set_field( $t_new_bug_id, 'handler_id', $t_bug_data->handler_id );
 
-	bug_set_field( $t_new_bug_id, 'duplicate_id', $t_bug_data->duplicate_id );
 	bug_set_field( $t_new_bug_id, 'status', $t_bug_data->status );
 	bug_set_field( $t_new_bug_id, 'resolution', $t_bug_data->resolution );
 	bug_set_field( $t_new_bug_id, 'projection', $t_bug_data->projection );
@@ -655,7 +654,6 @@ function bug_set_field( $p_bug_id, $p_field_name, $p_value ) {
 		case 'project_id':
 		case 'reporter_id':
 		case 'handler_id':
-		case 'duplicate_id':
 		case 'priority':
 		case 'severity':
 		case 'reproducibility':
@@ -711,12 +709,7 @@ function bug_set_field( $p_bug_id, $p_field_name, $p_value ) {
 	# updated the last_updated date
 	bug_update_date( $p_bug_id );
 
-	# log changes except for duplicate_id which is obsolete and should be removed in
-	# MantisBT 1.3.
 	switch( $p_field_name ) {
-		case 'duplicate_id':
-			break;
-
 		case 'category_id':
 			history_log_event_direct( $p_bug_id, 'category', category_full_name( $t_current_value, false ), category_full_name( $c_value, false ) );
 			break;
@@ -828,7 +821,6 @@ function bug_resolve( $p_bug, $p_resolution, $p_fixed_in_version = '', $p_bugnot
 	if( $t_duplicate ) {
 		if( $p_bug->id == $p_duplicate_id ) {
 			throw new MantisBT\Exception\Issue\IssueDuplicateSelf();
-
 			# never returns
 		}
 

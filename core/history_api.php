@@ -398,9 +398,6 @@ function history_localize_item( $p_field_name, $p_type, $p_old_value, $p_new_val
 		case 'summary':
 			$t_field_localized = _( 'Summary' );
 			break;
-		case 'duplicate_id':
-			$t_field_localized = _( 'Duplicate ID' );
-			break;
 		case 'sponsorship_total':
 			$t_field_localized = _( 'Sponsorship Total' );
 			break;

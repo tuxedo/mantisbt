@@ -46,11 +46,6 @@ class MantisBug extends MantisCacheable {
 	protected $handler_id = 0;
 
 	/**
-	 * Duplicate ID
-	 */
-	protected $duplicate_id = 0;
-
-	/**
 	 * Priority
 	 */
 	protected $priority = NORMAL;
@@ -365,7 +360,6 @@ class MantisBug extends MantisCacheable {
 			case 'project_id':
 			case 'reporter_id':
 			case 'handler_id':
-			case 'duplicate_id':
 			case 'priority':
 			case 'severity':
 			case 'reproducibility':
@@ -509,11 +503,6 @@ class MantisBug extends MantisCacheable {
 		if( 0 == $this->category_id && !config_get( 'allow_no_category' ) ) {
 			throw new MantisBT\Exception\Field\EmptyField( _( 'Category' ) );
 		}
-
-		if( !is_blank( $this->duplicate_id ) && ( $this->duplicate_id != 0 ) && ( $this->id == $this->duplicate_id ) ) {
-			throw new MantisBT\Exception\Issue\IssueDuplicateSelf();
-			# never returns
-		}
 	}
 
 	/**
@@ -562,7 +551,7 @@ class MantisBug extends MantisCacheable {
 
 		# Insert the rest of the data
 		$t_query = "INSERT INTO {bug}
-					    ( project_id,reporter_id, handler_id,duplicate_id,
+					    ( project_id,reporter_id, handler_id,
 					      priority,severity, reproducibility,status,
 					      resolution,projection, category_id,date_submitted,
 					      last_updated,eta, os,
@@ -572,7 +561,7 @@ class MantisBug extends MantisCacheable {
 						  description, steps_to_reproduce, additional_information
 					    )
 					  VALUES
-					    ( %d,%d,%d,%d,
+					    ( %d,%d,%d,
 					      %d,%d,%d,%d,
 					      %d,%d,%d,%d,
 					      %d,%d,%s,
@@ -581,7 +570,7 @@ class MantisBug extends MantisCacheable {
 					      %d,%d,%s,%d,
 						  %s, %s,%s)";
 
-		db_query( $t_query, array( $this->project_id, $this->reporter_id, $this->handler_id, $this->duplicate_id, $this->priority, $this->severity, $this->reproducibility, $t_status, $this->resolution, $this->projection, $this->category_id, $this->date_submitted, $this->last_updated, $this->eta, $this->os, $this->os_build, $this->platform, $this->version, $this->build, $this->profile_id, $this->summary, $this->view_state, $this->sponsorship_total, $this->sticky, $this->fixed_in_version, $this->target_version, $this->due_date, $this->description, $this->steps_to_reproduce, $this->additional_information ) );
+		db_query( $t_query, array( $this->project_id, $this->reporter_id, $this->handler_id, $this->priority, $this->severity, $this->reproducibility, $t_status, $this->resolution, $this->projection, $this->category_id, $this->date_submitted, $this->last_updated, $this->eta, $this->os, $this->os_build, $this->platform, $this->version, $this->build, $this->profile_id, $this->summary, $this->view_state, $this->sponsorship_total, $this->sticky, $this->fixed_in_version, $this->target_version, $this->due_date, $this->description, $this->steps_to_reproduce, $this->additional_information ) );
 
 		$this->id = db_insert_id( '{bug}' );
 
@@ -620,7 +609,7 @@ class MantisBug extends MantisCacheable {
 		#  them use bug_set_field()
 		$t_query = "UPDATE {bug}
 					SET project_id=%d, reporter_id=%d,
-						handler_id=%d, duplicate_id=%d,
+						handler_id=%d,
 						priority=%d, severity=%d,
 						reproducibility=%d, status=%d,
 						resolution=%d, projection=%d,
@@ -631,7 +620,7 @@ class MantisBug extends MantisCacheable {
 
 		$t_fields = array(
 			$this->project_id, $this->reporter_id,
-			$this->handler_id, $this->duplicate_id,
+			$this->handler_id,
 			$this->priority, $this->severity,
 			$this->reproducibility, $this->status,
 			$this->resolution, $this->projection,

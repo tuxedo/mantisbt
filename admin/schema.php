@@ -548,3 +548,6 @@ array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS'
 /* 201 */ $upgrade[] = array( 'AddColumnSQL', array( '{bug_file}', "downloaded I  UNSIGNED     NOTNULL DEFAULT '0'" ) );
 /* 202 */ $upgrade[] = array( 'AddColumnSQL', array( '{project_file}', "downloaded I  UNSIGNED     NOTNULL DEFAULT '0'" ) );
 /* 203 */ $upgrade[] = array( 'AddColumnSQL', array( '{user_pref}', "theme C(32) NOTNULL DEFAULT '' " ) );
+/* 204 */ $upgrade[] = array( 'UpdateFunction', "check_duplicate_ids", array() );
+/* 205 */ $upgrade[] = array( 'UpdateFunction', "tidy_duplicate_id_history", array() );
+/* 206 */ $upgrade[] = array( 'DropColumnSQL', array( '{bug}', "duplicate_id" ) );
