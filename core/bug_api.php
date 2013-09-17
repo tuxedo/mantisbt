@@ -740,8 +740,8 @@ function bug_assign( $p_bug, $p_user_id, $p_bugnote_text = '', $p_bugnote_privat
 	}
 
 	# extract current information into history variables
-	$h_status = bug_get_field( $p_bug->id, 'status' );
-	$h_handler_id = bug_get_field( $p_bug->id, 'handler_id' );
+	$h_status = $p_bug->status;
+	$h_handler_id = $p_bug->handler_id;
 
 	if(( ON == config_get( 'auto_set_status_to_assigned' ) ) && ( NO_USER != $p_user_id ) ) {
 		$t_ass_val = config_get( 'bug_assigned_status' );
@@ -847,8 +847,8 @@ function bug_resolve( $p_bug, $p_resolution, $p_fixed_in_version = '', $p_bugnot
 		} # else relationship is -1 - same type exists, do nothing
 
 		# Copy list of users monitoring the duplicate bug to the original bug
-		$t_old_reporter_id = bug_get_field( $p_bug->id, 'reporter_id' );
-		$t_old_handler_id = bug_get_field( $p_bug->id, 'handler_id' );
+		$t_old_reporter_id = $p_bug->reporter_id;
+		$t_old_handler_id = $p_bug->handler_id;
 		if ( user_exists( $t_old_reporter_id ) ) {
 			bug_monitor( $p_duplicate_id, $t_old_reporter_id );
 		}
@@ -866,7 +866,7 @@ function bug_resolve( $p_bug, $p_resolution, $p_fixed_in_version = '', $p_bugnot
 
 	# only set handler if specified explicitly or if bug was not assigned to a handler
 	if( null == $p_handler_id ) {
-		if( bug_get_field( $p_bug->id, 'handler_id' ) == 0 ) {
+		if( $p_bug->handler_id == 0 ) {
 			$p_handler_id = auth_get_current_user_id();
 			bug_set_field( $p_bug->id, 'handler_id', $p_handler_id );
 		}
