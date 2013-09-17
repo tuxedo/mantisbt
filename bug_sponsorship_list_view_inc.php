@@ -118,7 +118,7 @@ if ( $t_show_sponsorships ) {
 <?php
 	}
 
-	$t_total_sponsorship = bug_get_field( $f_bug_id, 'sponsorship_total' );
+	$t_total_sponsorship = $t_bug->sponsorship_total;
 	if ( $t_total_sponsorship > 0 ) {
 ?>
 	<tr class="row-2">
@@ -172,13 +172,12 @@ if ( $t_show_sponsorships ) {
 					. _( 'More information about sponsorship' ) . '</a>]';
 			}
 
-	$t_total_sponsorship = bug_get_field( $f_bug_id, 'sponsorship_total' );
-	if ( $t_total_sponsorship > 0 ) {
-		echo ' <span style="font-weight: normal;">(';
-		echo sprintf( _( 'Total Sponsorship = %1' ),
-			sponsorship_format_amount( $t_total_sponsorship ) );
-		echo ')</span>';
-	}
+			if ( $t_total_sponsorship > 0 ) {
+				echo ' <span style="font-weight: normal;">(';
+				echo sprintf( _( 'Total Sponsorship = %1' ),
+				sponsorship_format_amount( $t_total_sponsorship ) );
+				echo ')</span>';
+			}
 ?>
 		</td>
 	</tr>
