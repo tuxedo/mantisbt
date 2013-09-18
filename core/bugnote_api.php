@@ -353,8 +353,7 @@ function bugnote_get_all_visible_bugnotes( $p_bug, $p_user_bugnote_order, $p_use
 		$t_user_id = $p_user_id;
 	}
 
-	$t_project_id = $p_bug->project_id;
-	$t_user_access_level = user_get_access_level( $t_user_id, $t_project_id );
+	$t_user_access_level = user_get_access_level( $t_user_id, $p_bug->project_id );
 
 	$t_all_bugnotes = bugnote_get_all_bugnotes( $p_bug->id );
 	$t_private_bugnote_threshold = config_get( 'private_bugnote_threshold' );

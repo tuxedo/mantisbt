@@ -348,12 +348,10 @@ function access_has_bug_level( $p_access_level, MantisBug $p_bug, $p_user_id = n
 		$p_user_id = auth_get_current_user_id();
 	}
 
-	$t_project_id = $p_bug->project_id;
-
 	# check limit_Reporter (Issue #4769)
 	# reporters can view just issues they reported
 	$t_limit_reporters = config_get( 'limit_reporters' );
-	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $t_project_id, $p_user_id ) ) ) {
+	if(( ON === $t_limit_reporters ) && ( !bug_is_user_reporter( $p_bug, $p_user_id ) ) && ( !access_has_project_level( REPORTER + 1, $p_bug->project_id, $p_user_id ) ) ) {
 		return false;
 	}
 
@@ -363,7 +361,7 @@ function access_has_bug_level( $p_access_level, MantisBug $p_bug, $p_user_id = n
 		$p_access_level = max( $p_access_level, config_get( 'private_bug_threshold' ) );
 	}
 
-	return access_has_project_level( $p_access_level, $t_project_id, $p_user_id );
+	return access_has_project_level( $p_access_level, $p_bug->project_id, $p_user_id );
 }
 
 /**
