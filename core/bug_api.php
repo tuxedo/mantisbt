@@ -767,7 +767,7 @@ function bug_assign( $p_bug, $p_user_id, $p_bugnote_text = '', $p_bugnote_privat
 		bug_clear_cache( $p_bug->id );
 
 		# send assigned to email
-		email_assign( $p_bug->id );
+		email_generic( $p_bug->id, 'owner', 'email_notification_title_for_action_bug_assigned' );
 	}
 
 	return true;
@@ -790,7 +790,7 @@ function bug_close( $p_bug, $p_bugnote_text = '', $p_bugnote_private = false, $p
 
 	bug_set_field( $p_bug->id, 'status', config_get( 'bug_closed_status_threshold' ) );
 
-	email_close( $p_bug->id );
+	email_generic( $p_bug->id, 'closed', 'The following issue has been CLOSED' );
 	email_relationship_child_closed( $p_bug->id );
 
 	return true;
@@ -874,7 +874,7 @@ function bug_resolve( $p_bug, $p_resolution, $p_fixed_in_version = '', $p_bugnot
 		bug_set_field( $p_bug->id, 'handler_id', $p_handler_id );
 	}
 
-	email_resolved( $p_bug->id );
+	email_generic( $p_bug->id, 'resolved', 'The following issue has been RESOLVED.' );
 	email_relationship_child_resolved( $p_bug->id );
 
 	twitter_issue_resolved( $p_bug->id );

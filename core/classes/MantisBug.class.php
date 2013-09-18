@@ -762,7 +762,7 @@ class MantisBug extends MantisCacheable {
 		# log deletion of bug - removed later on in this function by history_delete
 		history_log_event_special( $this->id, BUG_DELETED, bug_format_id( $this->id ) );
 
-		email_bug_deleted( $this->id );
+		email_generic( $this->id, 'deleted', 'email_notification_title_for_action_bug_deleted' );
 
 		# call post-deletion custom function.  We call this here to allow the custom function to access the details of the bug before
 		# they are deleted from the database given it's id.  The other option would be to move this to the end of the function and

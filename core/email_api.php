@@ -100,16 +100,16 @@ function email_is_valid( $p_email ) {
 		}
 
 		if( ON == config_get( 'check_mx_record' ) ) {
-			$temp = '';
+			$t_mx = '';
 
 			# Check for valid mx records
-			if( getmxrr( $t_domain, $temp ) ) {
+			if( getmxrr( $t_domain, $t_mx ) ) {
 				return true;
 			} else {
-				$host = $t_domain . '.';
+				$t_host = $t_domain . '.';
 
 				# for no mx record... try dns check
-				if( checkdnsrr( $host, 'ANY' ) ) {
+				if( checkdnsrr( $t_host, 'ANY' ) ) {
 					return true;
 				}
 			}
@@ -673,93 +673,12 @@ function email_relationship_child_resolved_closed( $p_bug_id, $p_message_id ) {
 }
 
 /**
- * send notices when a bug is sponsored
- * @param int $p_bug_id
- * @return null
- */
-function email_sponsorship_added( $p_bug_id ) {
-	email_generic( $p_bug_id, 'sponsor', 'email_notification_title_for_action_sponsorship_added' );
-}
-
-/**
- * send notices when a sponsorship is modified
- * @param int $p_bug_id
- * @return null
- */
-function email_sponsorship_updated( $p_bug_id ) {
-	email_generic( $p_bug_id, 'sponsor', 'email_notification_title_for_action_sponsorship_updated' );
-}
-
-/**
- * send notices when a sponsorship is deleted
- * @param int $p_bug_id
- * @return null
- */
-function email_sponsorship_deleted( $p_bug_id ) {
-	email_generic( $p_bug_id, 'sponsor', 'A sponsorship of the following issue was withdrawn.' );
-}
-
-/**
- * send notices when a new bug is added
- * @param int $p_bug_id
- * @return null
- */
-function email_new_bug( $p_bug_id ) {
-	email_generic( $p_bug_id, 'new', 'email_notification_title_for_action_bug_submitted' );
-}
-
-/**
- * send notices when a new bugnote
- * @param int $p_bug_id
- * @return null
- */
-function email_bugnote_add( $p_bug_id ) {
-	email_generic( $p_bug_id, 'bugnote', 'email_notification_title_for_action_bugnote_submitted' );
-}
-
-/**
- * send notices when a bug is RESOLVED
- * @param int $p_bug_id
- * @return null
- */
-function email_resolved( $p_bug_id ) {
-	email_generic( $p_bug_id, 'resolved', 'The following issue has been RESOLVED.' );
-}
-
-/**
- * send notices when a bug is CLOSED
- * @param int $p_bug_id
- * @return null
- */
- function email_close( $p_bug_id ) {
-	email_generic( $p_bug_id, 'closed', 'The following issue has been CLOSED' );
-}
-
-/**
  * send notices when a bug is REOPENED
  * @param int $p_bug_id
  * @return null
  */
 function email_reopen( $p_bug_id ) {
 	email_generic( $p_bug_id, 'reopened', 'email_notification_title_for_action_bug_reopened' );
-}
-
-/**
- * send notices when a bug is ASSIGNED
- * @param int $p_bug_id
- * @return null
- */
-function email_assign( $p_bug_id ) {
-	email_generic( $p_bug_id, 'owner', 'email_notification_title_for_action_bug_assigned' );
-}
-
-/**
- * send notices when a bug is DELETED
- * @param int $p_bug_id
- * @return null
- */
-function email_bug_deleted( $p_bug_id ) {
-	email_generic( $p_bug_id, 'deleted', 'email_notification_title_for_action_bug_deleted' );
 }
 
 /**
