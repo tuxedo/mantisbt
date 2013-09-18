@@ -168,18 +168,18 @@ function email_ensure_not_disposable( $p_email ) {
  * For example, you can get the value associated with notifying "admin"
  * on action "new", i.e. notify administrators on new bugs which can be
  * ON or OFF.
- * @param string $action
- * @param string $flag
+ * @param string $p_action
+ * @param string $p_flag
  * @return int
  */
-function email_notify_flag( $action, $flag ) {
+function email_notify_flag( $p_action, $p_flag ) {
 	$t_notify_flags = config_get( 'notify_flags' );
 	$t_default_notify_flags = config_get( 'default_notify_flags' );
-	if( isset( $t_notify_flags[$action][$flag] ) ) {
-		return $t_notify_flags[$action][$flag];
+	if( isset( $t_notify_flags[$p_action][$p_flag] ) ) {
+		return $t_notify_flags[$p_action][$p_flag];
 	}
-	else if( isset( $t_default_notify_flags[$flag] ) ) {
-		return $t_default_notify_flags[$flag];
+	else if( isset( $t_default_notify_flags[$p_flag] ) ) {
+		return $t_default_notify_flags[$p_flag];
 	}
 
 	return OFF;
