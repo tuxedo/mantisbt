@@ -440,11 +440,8 @@ function tag_get_candidates_for_bug( $p_bug_id ) {
  * @return boolean True if the tag is attached
  */
 function tag_bug_is_attached( $p_tag_id, $p_bug_id ) {
-	$c_tag_id = (int)$p_tag_id;
-	$c_bug_id = (int)$p_bug_id;
-
-	$query = 'SELECT id FROM {bug_tag} WHERE tag_id=%d AND bug_id=%d';
-	$result = db_query( $query, array( $c_tag_id, $c_bug_id ) );
+	$t_query = 'SELECT id FROM {bug_tag} WHERE tag_id=%d AND bug_id=%d';
+	$result = db_query( $t_query, array( $p_tag_id, $p_bug_id ) );
 	return( db_result( $result ) > 0 );
 }
 
@@ -456,11 +453,8 @@ function tag_bug_is_attached( $p_tag_id, $p_bug_id ) {
  * @throws MantisBT\Exception\Issue\Tag\TagNotAttached
  */
 function tag_bug_get_row( $p_tag_id, $p_bug_id ) {
-	$c_tag_id = (int)$p_tag_id;
-	$c_bug_id = (int)$p_bug_id;
-
 	$query = 'SELECT * FROM {bug_tag} WHERE tag_id=%d AND bug_id=%d';
-	$result = db_query( $query, array( $c_tag_id, $c_bug_id ) );
+	$result = db_query( $query, array( $p_tag_id, $p_bug_id ) );
 
 	$t_row = db_fetch_array( $result );
 	if( !$t_row ) {
@@ -475,14 +469,12 @@ function tag_bug_get_row( $p_tag_id, $p_bug_id ) {
  * @return array Array of tag rows with attachement information
  */
 function tag_bug_get_attached( $p_bug_id ) {
-	$c_bug_id = (int)$p_bug_id;
-
 	$query = "SELECT t.*, b.user_id as user_attached, b.date_attached
 					FROM {tag} as t
 					LEFT JOIN {bug_tag} as b
 						on t.id=b.tag_id
 					WHERE b.bug_id=%d";
-	$result = db_query( $query, array( $c_bug_id ) );
+	$result = db_query( $query, array( $p_bug_id ) );
 
 	$rows = array();
 	while( $row = db_fetch_array( $result ) ) {
@@ -499,10 +491,8 @@ function tag_bug_get_attached( $p_bug_id ) {
  * @return array Array of bug ID's.
  */
 function tag_get_bugs_attached( $p_tag_id ) {
-	$c_tag_id = (int)$p_tag_id;
-
 	$query = 'SELECT bug_id FROM {bug_tag} WHERE tag_id=%d';
-	$result = db_query( $query, array( $c_tag_id ) );
+	$result = db_query( $query, array( $p_tag_id ) );
 
 	$bugs = array();
 	while( $row = db_fetch_array( $result ) ) {
@@ -536,15 +526,11 @@ function tag_bug_attach( $p_tag_id, $p_bug_id, $p_user_id = null ) {
 		user_ensure_exists( $p_user_id );
 	}
 
-	$c_tag_id = (int)$p_tag_id;
-	$c_bug_id = (int)$p_bug_id;
-	$c_user_id = (int)$p_user_id;
-
 	$t_query = "INSERT INTO {bug_tag}
 					( tag_id, bug_id, user_id, date_attached )
 					VALUES
 					( %d, %d, %d, %d )";
-	db_query( $t_query, array( $c_tag_id, $c_bug_id, $c_user_id, db_now() ) );
+	db_query( $t_query, array( $p_tag_id, $p_bug_id, $p_user_id, db_now() ) );
 
 	$t_tag_name = tag_get_field( $p_tag_id, 'name' );
 	history_log_event_special( $p_bug_id, TAG_ATTACHED, $t_tag_name );
