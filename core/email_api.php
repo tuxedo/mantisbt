@@ -69,6 +69,8 @@ require_api( 'user_pref_api.php' );
 require_api( 'utility_api.php' );
 require_lib( 'ezc/Base/src/base.php' );
 
+$g_email_stored = false;
+
 /**
  * check to see that the format is valid and that the mx record exists
  * @param string $p_email
@@ -437,10 +439,6 @@ function email_signup( $p_user_id, $p_password, $p_confirm_hash, $p_admin_name =
 	if( !is_blank( $t_email ) ) {
 		email_store( $t_email, $t_subject, $t_message );
 		log_event( LOG_EMAIL, 'Signup Email = %s, Hash = %s, User = @U%d', $t_email, $p_confirm_hash, $p_user_id );
-
-		if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-			email_send_all();
-		}
 	}
 
 	#		lang_pop(); # see above
@@ -473,10 +471,6 @@ function email_send_confirm_hash_url( $p_user_id, $p_confirm_hash ) {
 	if( !is_blank( $t_email ) ) {
 		email_store( $t_email, $t_subject, $t_message );
 		log_event( LOG_EMAIL, 'Password reset for email = %s', $t_email );
-
-		if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-			email_send_all();
-		}
 	}
 
 	lang_pop();
@@ -510,10 +504,6 @@ function email_notify_new_account( $p_username, $p_email ) {
 		}
 
 		lang_pop();
-	}
-
-	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-		email_send_all();
 	}
 }
 
@@ -558,11 +548,6 @@ function email_generic( $p_bug_id, $p_notify_type, $p_message_id = null, $p_head
 
 			lang_pop();
 		}
-	}
-
-	# Only trigger the draining of the email queue if cronjob is disabled and email notifications are enabled.
-	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-		email_send_all();
 	}
 }
 
@@ -691,6 +676,8 @@ function email_reopen( $p_bug_id ) {
  * @return int
  */
 function email_store( $p_recipient, $p_subject, $p_message, $p_headers = null ) {
+	global $g_email_stored;
+
 	$t_recipient = trim( $p_recipient );
 	$t_subject = string_email( trim( $p_subject ) );
 	$t_message = string_email_links( trim( $p_message ) );
@@ -727,6 +714,10 @@ function email_store( $p_recipient, $p_subject, $p_message, $p_headers = null ) 
 	$t_email_data->metadata['hostname'] = $t_hostname;
 
 	$t_email_id = email_queue_add( $t_email_data );
+
+	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
+		$g_email_stored = true;
+	}
 
 	return $t_email_id;
 }
@@ -947,10 +938,6 @@ function email_bug_reminder( $p_recipients, $p_bug_id, $p_message ) {
 		email_store( $t_email, $t_subject, $t_contents );
 
 		lang_pop();
-	}
-
-	if( OFF == config_get( 'email_send_using_cronjob' ) ) {
-		email_send_all();
 	}
 
 	return $result;
