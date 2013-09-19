@@ -18,16 +18,11 @@
  * Relationship Graph API
  *
  * This uses GraphViz utilities to generate relationship graphs for
- * issues. Either GraphViz (for all OSs except Windows) or
- * WinGraphviz (for Windows) must be installed in order to use this
- * feature.
+ * issues. GraphViz must be installed in order to use this feature.
  *
  * Graphviz is available at:
  * 	- http://www.graphviz.org/
  * 	- http://www.research.att.com/sw/tools/graphviz/
- *
- * WinGraphviz is available at:
- * 	- http://home.so-net.net.tw/oodtsen/wingraphviz/
  *
  * Most Linux distributions already have a GraphViz package
  * conveniently available for download and install. Refer to

@@ -109,11 +109,6 @@ class Graph {
 	var $graphviz_tool;
 
 	/**
-	 * Graphviz com module
-	 */
-	var $graphviz_com_module;
-
-	/**
 	 * Formats
 	 */
 	var $formats = array(
@@ -219,10 +214,9 @@ class Graph {
 	 * @param string $p_name
 	 * @param array $p_attributes
 	 * @param string $p_tool
-	 * @param string $p_com_module
 	 * @return null
 	 */
-	function Graph( $p_name = 'G', $p_attributes = array(), $p_tool = 'neato', $p_com_module = 'WinGraphviz.NEATO' ) {
+	function Graph( $p_name = 'G', $p_attributes = array(), $p_tool = 'neato' ) {
 		if( is_string( $p_name ) ) {
 			$this->name = $p_name;
 		}
@@ -230,7 +224,6 @@ class Graph {
 		$this->set_attributes( $p_attributes );
 
 		$this->graphviz_tool = $p_tool;
-		$this->graphviz_com_module = $p_com_module;
 	}
 
 	/**
