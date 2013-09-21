@@ -1442,6 +1442,12 @@ $MantisConfig->assign_sponsored_bugs_threshold = MANAGER;
  */
 $MantisConfig->minimum_sponsorship_amount = 5;
 
+/**
+ * URL to get more information about sponshorship for a given project
+ * @global string $g_sponsorship_details_url
+ */
+$MantisConfig->sponsorship_details_url = '';
+
 /*********************************
  * MantisBT File Upload Settings *
  *********************************/

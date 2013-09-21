@@ -91,7 +91,7 @@ if ( $t_show_sponsorships ) {
 
 			echo _( 'Users sponsoring this issue' );
 
-			$t_details_url = _( '' );
+			$t_details_url = config_get( 'sponsorship_details_url' );
 			if ( !is_blank( $t_details_url ) ) {
 				echo '&#160;[<a href="' . $t_details_url . '">'
 					. _( 'More information about sponsorship' ) . '</a>]';
@@ -125,8 +125,7 @@ if ( $t_show_sponsorships ) {
 		<th class="category" width="15%"><?php echo _( 'Sponsors List' ) ?></th>
 		<td>
 		<?php
-			echo sprintf( _( 'Total Sponsorship = %1' ),
-				sponsorship_format_amount( $t_total_sponsorship ) );
+			echo sprintf( _( 'Total Sponsorship = %d' ), sponsorship_format_amount( $t_total_sponsorship ) );
 
 			if ( access_has_bug_level( config_get( 'view_sponsorship_details_threshold' ), $t_bug ) ) {
 				echo '<br /><br />';
@@ -166,7 +165,7 @@ if ( $t_show_sponsorships ) {
 			collapse_icon( 'sponsorship' );
 			echo _( 'Users sponsoring this issue' );
 
-			$t_details_url = _( '' );
+			$t_details_url = config_get( 'sponsorship_details_url' );
 			if ( !is_blank( $t_details_url ) ) {
 				echo '&#160;[<a href="' . $t_details_url . '">'
 					. _( 'More information about sponsorship' ) . '</a>]';
