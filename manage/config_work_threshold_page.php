@@ -307,7 +307,7 @@ echo "<br /><br />\n";
 if ( ALL_PROJECTS == $t_project_id ) {
 	$t_project_title = _( 'Note: These configurations affect all projects, unless overridden at the project level.' );
 } else {
-	$t_project_title = sprintf( _( 'Note: These configurations affect only the %1 project.' ) , string_display( project_get_name( $t_project_id ) ) );
+	$t_project_title = sprintf( _( 'Note: These configurations affect only the %s project.' ) , string_display( project_get_name( $t_project_id ) ) );
 }
 echo '<p class="bold">' . $t_project_title . '</p>' . "\n";
 echo '<p>' . _( 'In the table below, the following color code applies:' ) . '<br />';
