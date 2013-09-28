@@ -20,7 +20,7 @@
  * @package MantisBT
  */
 
-namespace MantisBT\Exception\Issue;
+namespace MantisBT\Exception\Locale;
 use MantisBT\Exception\ExceptionAbstract;
 
 /**
