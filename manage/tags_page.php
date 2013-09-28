@@ -170,7 +170,7 @@ print_manage_menu( 'tags_page.php' ); ?>
 			<div class="field-container">
 				<label for="tag-name" class="required"><span><?php echo _( 'Name' ) ?></span></label>
 				<span class="input"><input type="text" id="tag-name" name="name" size="40" maxlength="100" />
-				<span><?php echo sprintf( _( '(Separate by %1)' ), config_get( 'tag_separator' ) ); ?></span>
+				<span><?php echo sprintf( _( '(Separate by %s)' ), config_get( 'tag_separator' ) ); ?></span>
 				</span>
 				<span class="label-style"></span>
 			</div>

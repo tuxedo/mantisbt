@@ -265,7 +265,7 @@ $num_notes = count( $t_bugnotes );
 <?php
 
 if ( $t_total_time > 0 && access_has_bug_level( config_get( 'time_tracking_view_threshold' ), $t_bug ) ) {
-	echo '<p class="time-tracking-total">', sprintf ( _( 'Total time for issue = %1' ), '<span class="time-tracked">' . db_minutes_to_hhmm( $t_total_time ) . '</span>' ), '</p>';
+	echo '<p class="time-tracking-total">', sprintf ( _( 'Total time for issue = %s' ), '<span class="time-tracked">' . db_minutes_to_hhmm( $t_total_time ) . '</span>' ), '</p>';
 }
 	collapse_closed( 'bugnotes' );
 ?>

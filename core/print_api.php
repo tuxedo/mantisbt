@@ -1661,7 +1661,7 @@ function print_bug_attachment_header( $p_attachment ) {
 			echo '</a>';
 		}
 		echo _( '&#32;' ) . '(' . number_format( $p_attachment['size'] ) . _( '&#32;' ) . _( 'bytes' ) . ')';
-		echo _( '&#32;' ) . '<span class="italic">' . date( config_get( 'normal_date_format' ), $p_attachment['date_added'] ) . ', ' . sprintf( _( 'Downloaded %1 time(s)' ), $p_attachment['downloaded'] ) . '</span>';
+		echo _( '&#32;' ) . '<span class="italic">' . date( config_get( 'normal_date_format' ), $p_attachment['date_added'] ) . ', ' . sprintf( _( 'Downloaded %s time(s)' ), $p_attachment['downloaded'] ) . '</span>';
 		if ( $p_attachment['can_delete'] ) {
 			echo _( '&#32;' ) . '[';
 			print_link( 'bug_file_delete.php?file_id=' . $p_attachment['id'] . form_security_param( 'bug_file_delete' ), _( 'Delete' ), false, 'small' );

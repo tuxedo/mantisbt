@@ -67,7 +67,7 @@ $t_can_edit_own = $t_can_edit || auth_get_current_user_id() == tag_get_field( $f
 html_page_top( sprintf( _( 'Tag Details: %s' ), $t_name ) ); ?>
 
 <div id="tag-view-div" class="form-container">
-	<h2><?php echo sprintf( _( 'Tag Details: %1' ), $t_name ) ?></h2>
+	<h2><?php echo sprintf( _( 'Tag Details: %s' ), $t_name ) ?></h2>
 	<div class="section-link">
 		<?php print_bracket_link( 'search.php?tag_string='.urlencode($t_tag_row['name']), sprintf( _( 'Attached Issues (%s)' ), tag_stats_attached( $f_tag_id ) ) ); ?>
 	</div>

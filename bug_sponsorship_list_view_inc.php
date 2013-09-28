@@ -173,8 +173,7 @@ if ( $t_show_sponsorships ) {
 
 			if ( $t_total_sponsorship > 0 ) {
 				echo ' <span style="font-weight: normal;">(';
-				echo sprintf( _( 'Total Sponsorship = %1' ),
-				sponsorship_format_amount( $t_total_sponsorship ) );
+				echo sprintf( _( 'Total Sponsorship = %s' ), sponsorship_format_amount( $t_total_sponsorship ) );
 				echo ')</span>';
 			}
 ?>

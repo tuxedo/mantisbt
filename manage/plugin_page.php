@@ -139,10 +139,10 @@ foreach ( $t_plugins_installed as $t_basename => $t_plugin ) {
 			$t_author = implode( $t_author, ', ' );
 		}
 		if ( !is_blank( $t_contact ) ) {
-			$t_author = '<br/>' . sprintf( _( 'Author: %1' ),
+			$t_author = '<br/>' . sprintf( _( 'Author: %s' ),
 				'<a href="mailto:' . string_attribute( $t_contact ) . '">' . string_display_line( $t_author ) . '</a>' );
 		} else {
-			$t_author = '<br/>' . string_display_line( sprintf( _( 'Author: %1' ), $t_author ) );
+			$t_author = '<br/>' . string_display_line( sprintf( _( 'Author: %s' ), $t_author ) );
 		}
 	}
 

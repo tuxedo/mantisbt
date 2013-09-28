@@ -75,7 +75,7 @@ html_page_top( sprintf( _( 'Update Tag: %s' ), $t_name ) );
 <div class="form-container">
 	<form method="post" action="tag_update.php">
 		<fieldset>
-			<legend><span><?php echo sprintf( _( 'Update Tag: %1' ), $t_name ) ?></span></legend>
+			<legend><span><?php echo sprintf( _( 'Update Tag: %s' ), $t_name ) ?></span></legend>
 			<div class="section-link"><?php print_bracket_link( 'tag_view_page.php?tag_id='.$f_tag_id, _( 'Back to Tag' ) ); ?></div>
 			<input type="hidden" name="tag_id" value="<?php echo $f_tag_id ?>"/>
 			<?php echo form_security_field( 'tag_update' ) ?>

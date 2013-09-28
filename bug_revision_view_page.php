@@ -135,7 +135,7 @@ function show_revision( $p_revision ) {
 			$t_label = '';
 	}
 
-	$t_by_string = sprintf( _( '%1 by %2' ), string_display_line( date( config_get( 'normal_date_format' ), $p_revision['timestamp'] ) ), string_display_line( user_get_name( $p_revision['user_id'] ) ) );
+	$t_by_string = sprintf( _( '%1$s by %2$s' ), string_display_line( date( config_get( 'normal_date_format' ), $p_revision['timestamp'] ) ), string_display_line( user_get_name( $p_revision['user_id'] ) ) );
 
 ?>
 <tr class="spacer"><td><a id="revision-<?php echo $p_revision['id'] ?>"></a></td></tr>
