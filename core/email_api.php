@@ -1077,7 +1077,7 @@ function email_format_bug_message( $p_visible_bug_data ) {
 	# Sponsorship
 	if( isset( $p_visible_bug_data['sponsorship_total'] ) && ( $p_visible_bug_data['sponsorship_total'] > 0 ) ) {
 		$t_message .= $t_email_separator1 . " \n";
-		$t_message .= sprintf( _( 'Total Sponsorship = %1' ), sponsorship_format_amount( $p_visible_bug_data['sponsorship_total'] ) ) . "\n" . "\n";
+		$t_message .= sprintf( _( 'Total Sponsorship = %s' ), sponsorship_format_amount( $p_visible_bug_data['sponsorship_total'] ) ) . "\n" . "\n";
 
 		if( isset( $p_visible_bug_data['sponsorships'] ) ) {
 			foreach( $p_visible_bug_data['sponsorships'] as $t_sponsorship ) {

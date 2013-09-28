@@ -263,7 +263,7 @@ for( $i = 0;$i < $t_count; $i++ ) {
 
 	if ( $t_attachment_count > 0 ) {
 		$t_href = string_get_bug_view_url( $t_bug->id ) . '#attachments';
-		$t_href_title = sprintf( _( 'View %1 attachment(s) for issue #%2' ), $t_attachment_count, $t_bug->id );
+		$t_href_title = sprintf( _( 'View %1$d attachment(s) for issue #%2$d' ), $t_attachment_count, $t_bug->id );
 		$t_alt_text = $t_attachment_count . _( '&#32;' ) . _( 'attachment(s)' );
 		echo "<a class=\"attachments\" href=\"$t_href\" title=\"$t_href_title\"><img src=\"" . helper_mantis_url( 'themes/' . config_get( 'theme' ) . '/images/attachment.png' ) . "\" alt=\"$t_alt_text\" title=\"$t_alt_text\" /></a>";
 	}
