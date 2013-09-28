@@ -213,7 +213,7 @@ switch ( $f_action )  {
 	case 'CUSTOM' :
 		$t_custom_field_def = custom_field_get_definition( $t_custom_field_id );
 		/* TODO L10N: translation support for custom field names */
-		$t_question_title = sprintf( _('Update %1'), $t_custom_field_def['name'] );
+		$t_question_title = sprintf( _('Update %s'), $t_custom_field_def['name'] );
 		$t_button_title = $t_question_title;
 		$t_form = "custom_field_$t_custom_field_id";
 		break;

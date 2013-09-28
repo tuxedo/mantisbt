@@ -618,7 +618,7 @@ function html_footer( $p_file = null ) {
 
 		# Print the page memory usage
 		if ( config_get( 'show_memory_usage' ) ) {
-			$t_page_memory_usage = sprintf( _( 'Memory usage: %1 KiB' ), number_format( memory_get_peak_usage() / 1024 ) );
+			$t_page_memory_usage = sprintf( _( 'Memory usage: %1$d KiB' ), number_format( memory_get_peak_usage() / 1024 ) );
 			echo "\t<p id=\"page-memory-usage\">$t_page_memory_usage</p>\n";
 		}
 

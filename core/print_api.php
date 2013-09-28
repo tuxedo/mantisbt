@@ -330,7 +330,7 @@ function print_reporter_option_list( $p_user_id, $p_project_id = null ) {
  */
 function print_tag_attach_form( $p_bug_id, $p_string = '' ) {
 	?>
-		<small><?php echo sprintf( _( '(Separate by %1)' ), config_get( 'tag_separator' ) )?></small>
+		<small><?php echo sprintf( _( '(Separate by %s)' ), config_get( 'tag_separator' ) )?></small>
 		<form method="post" action="tag_attach.php">
 		<?php echo form_security_field( 'tag_attach' )?>
 		<input type="hidden" name="bug_id" value="<?php echo $p_bug_id?>" />

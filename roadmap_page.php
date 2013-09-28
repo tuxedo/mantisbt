@@ -344,7 +344,7 @@ foreach( $t_project_ids as $t_project_id ) {
 
 		if ( $t_issues_planned > 0 ) {
 			echo '<br />';
-			echo sprintf( _( '%1 of %2 issue(s) resolved. Progress (%3%%).' ), $t_issues_resolved, $t_issues_planned, $t_progress );
+			echo sprintf( _( '%1$d of %2$d issue(s) resolved. Progress (%3$d%%).' ), $t_issues_resolved, $t_issues_planned, $t_progress );
 			echo '<br /></tt>';
 		}
 	}

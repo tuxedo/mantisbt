@@ -70,7 +70,7 @@ if ( !( access_has_global_level( config_get( 'tag_edit_threshold' ) )
 	throw new MantisBT\Exception\Access\AccessDenied();
 }
 
-html_page_top( sprintf( _( 'Update Tag: %1' ), $t_name ) );
+html_page_top( sprintf( _( 'Update Tag: %s' ), $t_name ) );
 ?>
 <div class="form-container">
 	<form method="post" action="tag_update.php">

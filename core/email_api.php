@@ -427,9 +427,9 @@ function email_signup( $p_user_id, $p_password, $p_confirm_hash, $p_admin_name =
 	$t_subject = '[' . config_get( 'window_title' ) . '] ' . _( 'Account registration' );
 
 	if( !empty( $p_admin_name ) ) {
-		$intro_text = sprintf( _('The user %1 has created an account for you with username %2. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $p_admin_name, $t_username );
+		$intro_text = sprintf( _('The user %1$s has created an account for you with username %2$s. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $p_admin_name, $t_username );
 	} else {
-		$intro_text = sprintf( _('Thank you for registering. You have an account with username %1. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $t_username );
+		$intro_text = sprintf( _('Thank you for registering. You have an account with username %s. In order to complete your registration, visit the following URL (make sure it is entered as the single line) and set your own access password:'), $t_username );
 	}
 
 	$t_message = $intro_text . "\n\n" . string_get_confirm_hash_url( $p_user_id, $p_confirm_hash ) . "\n\n" . _( 'If you did not request any registration, ignore this message and nothing will happen.' ) . "\n\n" . _( 'Do not reply to this message' );

@@ -176,7 +176,7 @@ $num_notes = count( $t_bugnotes );
 			echo '<span class="small bugnote-last-modified">' . _('Last edited:') . _( '&#32;' ) . date( $t_normal_date_format, $t_bugnote->last_modified ) . '</span><br />';
 			$t_revision_count = bug_revision_count( $f_bug_id, REV_BUGNOTE, $t_bugnote->id );
 			if ( $t_revision_count >= 1) {
-				$t_view_num_revisions_text = sprintf( _( 'View %1 revisions' ), $t_revision_count );
+				$t_view_num_revisions_text = sprintf( _( 'View %s revisions' ), $t_revision_count );
 				echo '<span class="small bugnote-revisions-link"><a href="bug_revision_view_page.php?bugnote_id=' . $t_bugnote->id . '">' . $t_view_num_revisions_text . '</a></span><br />';
 			}
 		}
