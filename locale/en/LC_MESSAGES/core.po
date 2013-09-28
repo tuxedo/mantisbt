@@ -1,0 +1,4467 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MantisBT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-28 12:46+0200\n"
+"PO-Revision-Date: 2013-09-28 12:06-0000\n"
+"Last-Translator: MantisBT <mantisbt-lang@lists.sourceforge.net>\n"
+"Language-Team: MantisBT <mantisbt-lang@lists.sourceforge.net>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: roadmap_page.php:82
+msgid "Scheduled For Release"
+msgstr ""
+
+#: roadmap_page.php:88 query_store_page.php:77 print_all_bug_page_word.php:535
+#: proj_doc_delete.php:70 bug_sponsorship_list_view_inc.php:141
+#: bug_actiongroup.php:320 core/print_api.php:1625 core/print_api.php:1634
+#: core/print_api.php:1655 core/print_api.php:1663 core/print_api.php:1664
+#: core/print_api.php:1666 core/print_api.php:1671 core/print_api.php:1675
+#: core/columns_api.php:1147 proj_doc_add_page.php:90
+#: bug_actiongroup_ext.php:102 bug_file_upload_inc.php:73
+#: proj_doc_page.php:135 bug_report_page.php:517 billing_inc.php:189
+#: print_bugnote_inc.php:131 my_view_inc.php:267 my_view_inc.php:286
+#: proj_doc_edit_page.php:125 changelog_page.php:91 main_page.php:70
+#: main_page.php:75 main_page.php:80 manage/user_delete.php:80
+#: manage/proj_ver_delete.php:62 manage/user_update.php:170
+#: manage/user_update.php:173 manage/user_update.php:176
+#: manage/user_update.php:181 manage/config_revert.php:74
+#: manage/config_revert.php:75 manage/custom_field_delete.php:63
+#: manage/custom_field_delete.php:67 manage/proj_delete.php:60
+#: manage/proj_user_remove.php:76 manage/proj_custom_field_remove.php:69
+#: manage/plugin_page.php:150 manage/plugin_page.php:265
+#: manage/user_proj_delete.php:67 bugnote_view_inc.php:176
+msgid "&#32;"
+msgstr ""
+
+#: roadmap_page.php:89 view_all_bug_page.php:86 core/html_api.php:735
+#: bug_report.php:238 project_page.php:71 changelog_page.php:92
+msgid "View Issues"
+msgstr ""
+
+#: roadmap_page.php:101 roadmap_page.php:162 core/html_api.php:749
+#: project_page.php:77
+msgid "Roadmap"
+msgstr ""
+
+#: roadmap_page.php:347
+#, php-format
+msgid "%1$d of %2$d issue(s) resolved. Progress (%3$d%%)."
+msgstr ""
+
+#: tag_view_page.php:67 tag_view_page.php:70
+#, php-format
+msgid "Tag Details: %s"
+msgstr ""
+
+#: tag_view_page.php:72
+#, php-format
+msgid "Attached Issues (%s)"
+msgstr ""
+
+#: tag_view_page.php:75 tag_update_page.php:83
+msgid "Tag ID"
+msgstr ""
+
+#: tag_view_page.php:80 tag_update_page.php:88
+#: manage/custom_field_edit_page.php:75 manage/proj_page.php:91
+#: manage/tags_page.php:137 manage/tags_page.php:171
+#: manage/proj_edit_page.php:204 manage/custom_field_page.php:60
+msgid "Name"
+msgstr ""
+
+#: tag_view_page.php:85 tag_update_page.php:95 tag_update_page.php:100
+#: manage/tags_page.php:138
+msgid "Creator"
+msgstr ""
+
+#: tag_view_page.php:90 tag_update_page.php:106 manage/tags_page.php:139
+#: manage/user_page.php:281
+msgid "Date Created"
+msgstr ""
+
+#: tag_view_page.php:95 tag_update_page.php:111 manage/tags_page.php:140
+msgid "Last Updated"
+msgstr ""
+
+#: tag_view_page.php:100 tag_update_page.php:116 manage/tags_page.php:178
+msgid "Tag Description"
+msgstr ""
+
+#: tag_view_page.php:107
+msgid "Related Tags"
+msgstr ""
+
+#: tag_view_page.php:115
+#, php-format
+msgid "Shared Issues (%1$s)"
+msgstr ""
+
+#: tag_view_page.php:134 tag_update_page.php:120
+msgid "Update Tag"
+msgstr ""
+
+#: tag_view_page.php:144 tag_delete.php:51
+msgid "Delete Tag"
+msgstr ""
+
+#: admin/db_stats.php:62
+msgid "MantisBT Database Statistics"
+msgstr ""
+
+#: admin/index.php:60
+msgid "MantisBT Installation Information"
+msgstr ""
+
+#: admin/index.php:64 manage/overview_page.php:57
+msgid "MantisBT Version"
+msgstr ""
+
+#: admin/index.php:68
+msgid "MantisBT Database Information"
+msgstr ""
+
+#: admin/index.php:71 manage/overview_page.php:61
+msgid "Schema Version"
+msgstr ""
+
+#: admin/index.php:74
+msgid "MantisBT Path Information"
+msgstr ""
+
+#: admin/index.php:77 manage/overview_page.php:72
+msgid "Site Path"
+msgstr ""
+
+#: admin/index.php:78 manage/overview_page.php:76
+msgid "Core Path"
+msgstr ""
+
+#: admin/index.php:79 manage/overview_page.php:80
+msgid "Plugin Path"
+msgstr ""
+
+#: admin/email_queue.php:90 print_all_bug_page_word.php:122
+#: core/columns_api.php:468 core/email_api.php:1073 bug_view_inc.php:333
+#: print_bug_page.php:198 bug_update_page.php:182
+msgid "ID"
+msgstr ""
+
+#: admin/email_queue.php:90 lost_pwd_page.php:78 core/email_queue_api.php:98
+#: account_page.php:150 manage/proj_edit_page.php:489 manage/user_page.php:265
+#: manage/user_create_page.php:76 view_user_page.php:82
+msgid "E-mail"
+msgstr ""
+
+#: admin/email_queue.php:90 manage/proj_edit_page.php:337
+msgid "Timestamp"
+msgstr ""
+
+#: bugnote_stats_inc.php:90 bugnote_stats_inc.php:129
+#: bugnote_stats_inc.php:167 billing_inc.php:233 billing_inc.php:279
+#: bugnote_edit_page.php:127
+msgid "Time Tracking"
+msgstr ""
+
+#: bugnote_stats_inc.php:110 billing_inc.php:141
+msgid "Get Time Tracking Information"
+msgstr ""
+
+#: bugnote_stats_inc.php:126 login_page.php:157 lost_pwd_page.php:73
+#: core/authentication_api.php:715 core/email_api.php:1126 billing_inc.php:121
+#: billing_inc.php:163 billing_inc.php:230 history_inc.php:72
+#: print_bug_page.php:543 signup_page.php:79 bug_monitor_list_view_inc.php:93
+#: account_page.php:120 account_page.php:134 manage/proj_edit_page.php:488
+#: manage/proj_edit_page.php:568 manage/adm_config_report.php:135
+#: manage/adm_config_report.php:179 manage/user_page.php:257
+#: manage/user_page.php:338 manage/user_create_page.php:63
+#: view_user_page.php:77
+msgid "Username"
+msgstr ""
+
+#: bugnote_stats_inc.php:150 billing_inc.php:211 billing_inc.php:260
+#: summary_page.php:224
+msgid "Total time"
+msgstr ""
+
+#: tag_attach.php:100 tag_attach.php:134 core/bug_group_action_api.php:279
+#: bug_view_inc.php:686 bug_actiongroup_attach_tags_inc.php:52
+#: bug_actiongroup_attach_tags_inc.php:60
+msgid "Attach Tags"
+msgstr ""
+
+#: tag_attach.php:105
+msgid "Tag attachment failed."
+msgstr ""
+
+#: tag_attach.php:120 bug_actiongroup_attach_tags_inc.php:99
+msgid "Create permission denied."
+msgstr ""
+
+#: tag_attach.php:122
+msgid "Invalid tag name."
+msgstr ""
+
+#: proj_doc_add.php:63 proj_doc_update.php:72 proj_doc_add_page.php:72
+#: proj_doc_edit_page.php:94
+msgid "Title"
+msgstr ""
+
+#: news_update.php:70 set_project.php:128 core/print_api.php:163
+#: core/print_api.php:182 news_add.php:70 bug_report.php:236
+#: manage/user_update.php:200
+msgid "Operation successful"
+msgstr ""
+
+#: news_update.php:72 core/columns_api.php:1027 core/columns_api.php:1028
+#: core/html_api.php:1363 proj_doc_page.php:150 my_view_inc.php:255
+#: manage/proj_page.php:191 manage/proj_edit_page.php:235
+#: manage/proj_edit_page.php:292 manage/proj_edit_page.php:360
+#: bugnote_view_inc.php:212
+msgid "Edit"
+msgstr ""
+
+#: news_update.php:73 set_project.php:130 bug_actiongroup.php:326
+#: core/print_api.php:164 core/print_api.php:183
+#: core/authentication_api.php:774 bug_actiongroup_ext.php:108
+#: lost_pwd.php:125 news_add.php:71 signup.php:121 account_delete.php:102
+msgid "Proceed"
+msgstr ""
+
+#: bugnote_add.php:73 core/bug_revision_api.php:134 core/bugnote_api.php:192
+#: core/bugnote_api.php:196 bug_revision_view_page.php:76
+#: bug_revision_view_page.php:131 bug_actiongroup_add_note_inc.php:103
+#: bugnote_add_inc.php:75 bug_update.php:293
+msgid "Note"
+msgstr ""
+
+#: print_all_bug_options_inc.php:149
+msgid "Choose fields to print"
+msgstr ""
+
+#: print_all_bug_options_inc.php:177 account_prefs_inc.php:299
+msgid "Update Prefs"
+msgstr ""
+
+#: print_all_bug_options_inc.php:189 account_prefs_inc.php:310
+msgid "Reset Prefs"
+msgstr ""
+
+#: bug_relationship_delete.php:86
+msgid "Are you sure you wish to delete this relationship?"
+msgstr ""
+
+#: bug_relationship_delete.php:86 core/print_api.php:1667
+#: core/relationship_api.php:625 core/html_api.php:1595
+#: core/bug_group_action_api.php:227 proj_doc_page.php:152
+#: bug_monitor_list_view_inc.php:82 bug_file_delete.php:58
+#: manage/proj_page.php:193 manage/proj_edit_page.php:297
+#: manage/proj_edit_page.php:365 manage/adm_config_report.php:160
+#: manage/adm_config_delete.php:59 bugnote_view_inc.php:217
+msgid "Delete"
+msgstr ""
+
+#: bug_relationship_add.php:103
+msgid ""
+"There is already a relationship between the two issues. Are you sure you "
+"want to replace it?"
+msgstr ""
+
+#: bug_relationship_add.php:103
+msgid "Replace"
+msgstr ""
+
+#: login_page.php:117 core/authentication_api.php:697
+msgid ""
+"Your account may be disabled or blocked or the username/password you entered "
+"is incorrect."
+msgstr ""
+
+#: login_page.php:120
+msgid ""
+"Your browser either does not know how to handle cookies, or refuses to "
+"handle them."
+msgstr ""
+
+#: login_page.php:129 login_page.php:181 lost_pwd_page.php:64
+#: core/authentication_api.php:724 core/html_api.php:499 signup_page.php:67
+msgid "Login"
+msgstr ""
+
+#: login_page.php:138
+msgid "Login Anonymously"
+msgstr ""
+
+#: login_page.php:145 signup_page.php:64 signup_page.php:117
+msgid "Signup"
+msgstr ""
+
+#: login_page.php:152 signup_page.php:74
+msgid "Lost your password?"
+msgstr ""
+
+#: login_page.php:162 core/authentication_api.php:720 account_page.php:125
+#: account_page.php:139 manage/user_create_page.php:84
+msgid "Password"
+msgstr ""
+
+#: login_page.php:167
+msgid "Remember my login in this browser"
+msgstr ""
+
+#: login_page.php:173
+msgid "Secure Session"
+msgstr ""
+
+#: login_page.php:176
+msgid "Only allow your session to be used from this IP address."
+msgstr ""
+
+#: login_page.php:197
+msgid ""
+"<strong>Error:</strong> The database structure appears to be out of date "
+"(config(databaseversion) is 0 and old upgrade tables do not exist). Please "
+"check that your database is running - we can not retrieve the database "
+"schema version. Config Table did not return a valid database schema version "
+"- please ask for support on the mantis-help mailing list if required."
+msgstr ""
+
+#: login_page.php:208
+msgid ""
+"Warning: The database structure may be out of date. Please upgrade via admin/"
+"install.php before logging in."
+msgstr ""
+
+#: login_page.php:210
+msgid ""
+"Warning: The database structure is more up-to-date than the code installed. "
+"Please upgrade the code."
+msgstr ""
+
+#: query_store_page.php:67
+msgid "This particular filter appears to already exist."
+msgstr ""
+
+#: query_store_page.php:77
+msgid "Filter Name:"
+msgstr ""
+
+#: query_store_page.php:85 bugnote_view_inc.php:223
+msgid "Make Public"
+msgstr ""
+
+#: query_store_page.php:90 core/print_api.php:517 core/html_api.php:859
+#: core/project_api.php:469 proj_doc_page.php:141
+#: manage/adm_config_report.php:192
+msgid "All Projects"
+msgstr ""
+
+#: query_store_page.php:91 core/filter_api.php:3320
+msgid "Save Current Filter"
+msgstr ""
+
+#: query_store_page.php:95 query_delete_page.php:74 query_delete.php:69
+#: bugnote_edit_page.php:115 news_edit_page.php:95
+msgid "Go Back"
+msgstr ""
+
+#: print_all_bug_page_word.php:121 bug_view_inc.php:139 print_bug_page.php:190
+msgid "View Issue Details"
+msgstr ""
+
+#: print_all_bug_page_word.php:123 core/string_api.php:837
+#: core/columns_api.php:350 core/columns_api.php:777
+#: core/classes/MantisBug.class.php:504 core/history_api.php:290
+#: core/category_api.php:126 core/category_api.php:149 bug_view_inc.php:335
+#: bug_report_page.php:226 view_filters_page.php:189 print_bug_page.php:200
+#: bug_update_page.php:184 bug_update.php:197 manage/proj_cat_edit_page.php:75
+#: manage/proj_page.php:167 manage/proj_edit_page.php:268
+#: manage/proj_cat_add.php:59
+msgid "Category"
+msgstr ""
+
+#: print_all_bug_page_word.php:124 core/columns_api.php:809
+#: core/history_api.php:300 bug_view_inc.php:437 bug_report_page.php:263
+#: view_filters_page.php:190 print_bug_page.php:278 bug_update_page.php:346
+#: summary_page.php:322
+msgid "Severity"
+msgstr ""
+
+#: print_all_bug_page_word.php:125 core/columns_api.php:548
+#: core/history_api.php:305 bug_view_inc.php:445 bug_report_page.php:248
+#: print_bug_page.php:285 bug_update_page.php:356
+msgid "Reproducibility"
+msgstr ""
+
+#: print_all_bug_page_word.php:126 core/columns_api.php:746
+#: core/history_api.php:381 bug_view_inc.php:337 print_bug_page.php:202
+#: bug_update_page.php:186
+msgid "Date Submitted"
+msgstr ""
+
+#: print_all_bug_page_word.php:127 core/history_api.php:384
+#: bug_view_inc.php:338 print_bug_page.php:203 bug_update_page.php:187
+msgid "Last Update"
+msgstr ""
+
+#: print_all_bug_page_word.php:128 core/string_api.php:852
+#: core/columns_api.php:362 core/columns_api.php:500 core/history_api.php:357
+#: core/html_api.php:1452 bug_view_inc.php:377 view_filters_page.php:186
+#: print_bug_page.php:224 bug_update_page.php:249
+msgid "Reporter"
+msgstr ""
+
+#: print_all_bug_page_word.php:129 account_sponsor_page.php:157
+#: core/string_api.php:840 core/columns_api.php:354 core/columns_api.php:516
+#: core/history_api.php:354 bug_view_inc.php:396 view_filters_page.php:188
+#: print_bug_page.php:242 bug_update_page.php:277
+#: bug_change_status_page.php:210 manage/proj_cat_edit_page.php:80
+#: manage/config_work_threshold_page.php:364
+msgid "Assigned To"
+msgstr ""
+
+#: print_all_bug_page_word.php:130 core/columns_api.php:714
+#: core/history_api.php:396 core/profile_api.php:61 core/profile_api.php:131
+#: bug_view_inc.php:537 bug_report_page.php:329 account_prof_edit_page.php:98
+#: account_prof_menu_page.php:96 print_bug_page.php:362
+#: bug_update_page.php:461
+msgid "platform"
+msgstr ""
+
+#: print_all_bug_page_word.php:131 core/history_api.php:411
+#: bug_view_inc.php:403 bug_report_page.php:298 print_bug_page.php:251
+#: bug_update_page.php:293 bug_change_status_page.php:230
+msgid "Due Date"
+msgstr ""
+
+#: print_all_bug_page_word.php:132 core/columns_api.php:662
+#: core/history_api.php:387 bug_view_inc.php:545 bug_report_page.php:346
+#: print_bug_page.php:369 bug_update_page.php:479
+msgid "OS"
+msgstr ""
+
+#: print_all_bug_page_word.php:133 core/columns_api.php:358
+#: core/columns_api.php:678 core/history_api.php:390 bug_view_inc.php:553
+#: bug_report_page.php:363 account_prof_edit_page.php:114
+#: account_prof_menu_page.php:106 print_bug_page.php:376
+#: bug_update_page.php:497
+msgid "OS Version"
+msgstr ""
+
+#: print_all_bug_page_word.php:134 account_sponsor_page.php:155
+#: account_sponsor_page.php:283 core/columns_api.php:612
+#: core/history_api.php:375 bug_view_inc.php:617 bug_actiongroup_page.php:170
+#: view_filters_page.php:245 print_bug_page.php:433 bug_update_page.php:576
+#: bug_change_status_page.php:306
+msgid "Fixed in Version"
+msgstr ""
+
+#: print_all_bug_page_word.php:135 core/columns_api.php:596
+#: core/history_api.php:310 bug_view_inc.php:482 view_filters_page.php:191
+#: print_bug_page.php:315 bug_update_page.php:399
+#: bug_change_status_page.php:162 bug_update.php:206
+msgid "Resolution"
+msgstr ""
+
+#: print_all_bug_page_word.php:136 core/history_api.php:315
+#: bug_view_inc.php:429 bug_report_page.php:278 view_filters_page.php:250
+#: print_bug_page.php:271 bug_update_page.php:336 manage/plugin_page.php:114
+msgid "Priority"
+msgstr ""
+
+#: print_all_bug_page_word.php:137 bug_view_inc.php:585
+#: bug_actiongroup_update_product_build_inc.php:47
+#: bug_actiongroup_update_product_build_inc.php:58 bug_report_page.php:412
+#: view_filters_page.php:239 print_bug_page.php:406 bug_update_page.php:541
+msgid "Product Build"
+msgstr ""
+
+#: print_all_bug_page_word.php:138 core/columns_api.php:580
+#: core/history_api.php:320 bug_view_inc.php:515 print_bug_page.php:342
+#: bug_update_page.php:436
+msgid "ETA"
+msgstr ""
+
+#: print_all_bug_page_word.php:139 account_sponsor_page.php:156
+#: account_sponsor_page.php:160 account_sponsor_page.php:284
+#: account_sponsor_page.php:288 core/columns_api.php:825
+#: core/history_api.php:295 core/filter_api.php:2417 bug_view_inc.php:470
+#: view_filters_page.php:228 print_bug_page.php:308 bug_update_page.php:383
+#: bug_update.php:150 manage/config_workflow_page.php:204
+#: manage/config_workflow_page.php:463 manage/proj_page.php:95
+#: manage/proj_edit_page.php:101 manage/proj_edit_page.php:205
+#: manage/proj_create_page.php:79
+msgid "Status"
+msgstr ""
+
+#: print_all_bug_page_word.php:140 core/columns_api.php:368
+#: core/columns_api.php:730 core/history_api.php:372 bug_view_inc.php:577
+#: bug_report_page.php:398 view_filters_page.php:244 print_bug_page.php:399
+#: bug_update_page.php:532
+msgid "Product Version"
+msgstr ""
+
+#: print_all_bug_page_word.php:141 print_bugnote_inc.php:90
+#: bugnote_view_inc.php:105
+msgid "There are no notes attached to this issue."
+msgstr ""
+
+#: print_all_bug_page_word.php:142 core/columns_api.php:564
+#: core/history_api.php:330 bug_view_inc.php:507 print_bug_page.php:335
+#: bug_update_page.php:426
+msgid "Projection"
+msgstr ""
+
+#: print_all_bug_page_word.php:143 core/columns_api.php:628
+#: core/history_api.php:378 bug_view_inc.php:609 bug_report_page.php:438
+#: view_filters_page.php:252 print_bug_page.php:426 bug_update_page.php:566
+msgid "Target Version"
+msgstr ""
+
+#: print_all_bug_page_word.php:144 account_sponsor_page.php:158
+#: account_sponsor_page.php:285 core/columns_api.php:857
+#: core/classes/MantisBug.class.php:492 core/history_api.php:399
+#: core/email_api.php:1073 core/html_api.php:754 core/html_api.php:1180
+#: bug_revision_view_page.php:180 bug_view_inc.php:645 bug_report_page.php:450
+#: plugins/MantisGraph/pages/summary_jpgraph_page.php:51
+#: print_bug_page.php:463 bug_update_page.php:600 project_page.php:91
+#: summary_page.php:121 summary_page.php:132
+#: manage/adm_permissions_report.php:165
+msgid "Summary"
+msgstr ""
+
+#: print_all_bug_page_word.php:145 core/columns_api.php:889
+#: core/classes/MantisBug.class.php:498 core/bug_revision_api.php:125
+#: core/email_api.php:1061 proj_doc_add_page.php:80
+#: bug_revision_view_page.php:113 bug_view_inc.php:653 bug_report_page.php:458
+#: print_bug_page.php:470 proj_doc_edit_page.php:102 bug_update_page.php:608
+#: project_page.php:107 manage/proj_page.php:107 manage/proj_edit_page.php:137
+#: manage/proj_edit_page.php:209 manage/proj_create_page.php:123
+#: manage/proj_ver_edit_page.php:87 manage/plugin_page.php:112
+#: manage/plugin_page.php:236
+msgid "Description"
+msgstr ""
+
+#: print_all_bug_page_word.php:146 core/columns_api.php:904
+#: core/bug_revision_api.php:128 bug_revision_view_page.php:116
+#: bug_view_inc.php:661 bug_report_page.php:468 print_bug_page.php:477
+#: bug_update_page.php:617
+msgid "Steps To Reproduce"
+msgstr ""
+
+#: print_all_bug_page_word.php:147 core/columns_api.php:919
+#: core/bug_revision_api.php:131 core/email_api.php:1068
+#: bug_revision_view_page.php:119 bug_view_inc.php:669 bug_report_page.php:479
+#: print_bug_page.php:484 bug_update_page.php:626
+msgid "Additional Information"
+msgstr ""
+
+#: print_all_bug_page_word.php:148 print_bugnote_inc.php:96
+#: manage/config_work_threshold_page.php:351 bugnote_view_inc.php:96
+#: bugnote_view_inc.php:277
+msgid "Notes"
+msgstr ""
+
+#: print_all_bug_page_word.php:149
+msgid "System Description"
+msgstr ""
+
+#: print_all_bug_page_word.php:150 bug_view_inc.php:723 print_bug_page.php:504
+msgid "Attached Files"
+msgstr ""
+
+#: print_all_bug_page_word.php:193 print_all_bug_page_word.php:196
+#: print_all_bug_page_word.php:199 print_all_bug_page_word.php:202
+#: print_all_bug_page_word.php:205 print_all_bug_page_word.php:208
+#: print_all_bug_page_word.php:238 print_all_bug_page_word.php:244
+#: print_all_bug_page_word.php:251 print_all_bug_page_word.php:272
+#: print_all_bug_page_word.php:282 print_all_bug_page_word.php:291
+#: print_all_bug_page_word.php:297 print_all_bug_page_word.php:306
+#: print_all_bug_page_word.php:312 print_all_bug_page_word.php:321
+#: print_all_bug_page_word.php:327 print_all_bug_page_word.php:336
+#: print_all_bug_page_word.php:351 print_all_bug_page_word.php:357
+#: print_all_bug_page_word.php:373 print_all_bug_page_word.php:387
+#: print_all_bug_page_word.php:403 print_all_bug_page_word.php:411
+#: print_all_bug_page_word.php:419 print_all_bug_page_word.php:427
+#: print_all_bug_page_word.php:453 bug_sponsorship_list_view_inc.php:141
+#: bug_actiongroup.php:322 bug_actiongroup_ext.php:104 billing_inc.php:189
+#: my_view_inc.php:286
+#, php-format
+msgid "%1$s:"
+msgstr ""
+
+#: print_all_bug_page_word.php:548 print_bugnote_inc.php:144
+#: bugnote_view_inc.php:236
+msgid "Reminder sent to:"
+msgstr ""
+
+#: proj_doc_delete.php:69
+msgid "Are you sure you wish to delete this file?"
+msgstr ""
+
+#: proj_doc_delete.php:70
+msgid "Filename:"
+msgstr ""
+
+#: proj_doc_delete.php:71 proj_doc_edit_page.php:148
+msgid "Delete File"
+msgstr ""
+
+#: bug_set_sponsorship.php:76
+#, php-format
+msgid "Please confirm you want to sponsor issue %1$d for %2$s."
+msgstr ""
+
+#: bug_set_sponsorship.php:77 bug_sponsorship_list_view_inc.php:107
+#: manage/adm_permissions_report.php:157
+msgid "Sponsor issue"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:86 bug_sponsorship_list_view_inc.php:114
+#: account_sponsor_page.php:286
+msgid "Sponsor"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:92 bug_sponsorship_list_view_inc.php:166
+msgid "Users sponsoring this issue"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:97 bug_sponsorship_list_view_inc.php:171
+msgid "More information about sponsorship"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:125
+msgid "Sponsors List"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:128
+#, php-format
+msgid "Total Sponsorship = %d"
+msgstr ""
+
+#: bug_sponsorship_list_view_inc.php:176 core/email_api.php:1080
+#, php-format
+msgid "Total Sponsorship = %s"
+msgstr ""
+
+#: lost_pwd_page.php:62 core/email_api.php:465
+msgid "Password Reset"
+msgstr ""
+
+#: lost_pwd_page.php:65 core/html_api.php:501
+msgid "Signup for a new account"
+msgstr ""
+
+#: lost_pwd_page.php:82
+msgid ""
+"To reinstate your lost password, please supply the name and e-mail address "
+"for the account. If the data corresponds to a valid account, you will be "
+"sent a special URL via e-mail that contains a validation code for your "
+"account. Please follow this link to change your password."
+msgstr ""
+
+#: lost_pwd_page.php:83 account_prof_menu_page.php:158 news_menu_page.php:110
+msgid "Submit"
+msgstr ""
+
+#: lost_pwd_page.php:86 signup_page.php:112
+msgid ""
+"Your password is managed by another system. Please contact your system "
+"administrator."
+msgstr ""
+
+#: bug_actiongroup.php:114 bug_actiongroup.php:124 bug_actiongroup.php:134
+#: bug_actiongroup.php:143 bug_actiongroup.php:164 bug_actiongroup.php:183
+#: bug_actiongroup.php:196 bug_actiongroup.php:217 bug_actiongroup.php:231
+#: bug_actiongroup.php:249 bug_actiongroup.php:267 bug_actiongroup.php:277
+#: bug_actiongroup.php:288
+msgid "You did not have appropriate permissions to perform that action."
+msgstr ""
+
+#: bug_actiongroup.php:116 bug_actiongroup.php:166 bug_actiongroup.php:185
+#: bug_actiongroup.php:214
+msgid "This issue cannot be changed to the requested status"
+msgstr ""
+
+#: bug_actiongroup.php:228
+msgid "This issue cannot be changed to the requested category"
+msgstr ""
+
+#: account_sponsor_page.php:88 account_sponsor_page.php:96
+#: core/html_api.php:1084
+msgid "My Sponsorships"
+msgstr ""
+
+#: account_sponsor_page.php:127
+msgid "You have not sponsored any issues."
+msgstr ""
+
+#: account_sponsor_page.php:149
+msgid "Issues You have Sponsored:"
+msgstr ""
+
+#: account_sponsor_page.php:153 account_sponsor_page.php:281
+#: core/string_api.php:843
+msgid "Issue ID"
+msgstr ""
+
+#: account_sponsor_page.php:154 account_sponsor_page.php:282
+#: core/string_api.php:849 core/columns_api.php:360 core/columns_api.php:484
+#: core/history_api.php:351 core/html_api.php:539 bug_view_inc.php:334
+#: print_bug_page.php:199 bug_update_page.php:183
+msgid "Project"
+msgstr ""
+
+#: account_sponsor_page.php:159 account_sponsor_page.php:287
+msgid "Amount"
+msgstr ""
+
+#: account_sponsor_page.php:176 account_sponsor_page.php:305
+#: changelog_page.php:83 manage/proj_edit_page.php:335
+#: manage/proj_ver_edit_page.php:92
+msgid "Released"
+msgstr ""
+
+#: account_sponsor_page.php:196 account_sponsor_page.php:322
+#: core/print_api.php:407 core/print_api.php:449 core/columns_api.php:1444
+#: core/relationship_api.php:618 core/filter_api.php:2767
+#: core/filter_api.php:3707 bug_actiongroup_page.php:365
+#: bug_report_page.php:535 bugnote_add_inc.php:92 issues_rss.php:165
+#: news_list_page.php:80 my_view_inc.php:272 bug_update_page.php:672
+#: bug_update_page.php:678 bug_change_status_page.php:341
+#: bugnote_view_inc.php:170
+msgid "private"
+msgstr ""
+
+#: account_sponsor_page.php:223 account_sponsor_page.php:348
+msgid "Total Owing"
+msgstr ""
+
+#: account_sponsor_page.php:229 account_sponsor_page.php:354
+msgid "Total Paid"
+msgstr ""
+
+#: account_sponsor_page.php:253
+msgid "No sponsored issues Assigned To yourself were found."
+msgstr ""
+
+#: account_sponsor_page.php:277
+msgid "Sponsored Issues You Have Been Assigned To:"
+msgstr ""
+
+#: account_sponsor_page.php:364
+msgid "Change Payment Status"
+msgstr ""
+
+#: account_sponsor_page.php:375
+msgid "Hide Resolved and Paid"
+msgstr ""
+
+#: account_sponsor_page.php:375
+msgid "Show All"
+msgstr ""
+
+#: query_delete_page.php:63
+msgid "Are you sure you wish to delete this filter?"
+msgstr ""
+
+#: query_delete_page.php:69 query_view_page.php:89
+msgid "Delete Filter"
+msgstr ""
+
+#: account_prefs_inc.php:91
+msgid "Account Preferences"
+msgstr ""
+
+#: account_prefs_inc.php:101
+msgid "Default Project"
+msgstr ""
+
+#: account_prefs_inc.php:110
+msgid "Refresh Delay"
+msgstr ""
+
+#: account_prefs_inc.php:111
+msgid "minutes"
+msgstr ""
+
+#: account_prefs_inc.php:115
+msgid "Redirect Delay"
+msgstr ""
+
+#: account_prefs_inc.php:116
+msgid "seconds"
+msgstr ""
+
+#: account_prefs_inc.php:120
+msgid "Notes Sort Order"
+msgstr ""
+
+#: account_prefs_inc.php:122 core/filter_api.php:3241 core/filter_api.php:4005
+msgid "Descending"
+msgstr ""
+
+#: account_prefs_inc.php:124 core/filter_api.php:3239 core/filter_api.php:4004
+msgid "Ascending"
+msgstr ""
+
+#: account_prefs_inc.php:129
+msgid "E-mail on New"
+msgstr ""
+
+#: account_prefs_inc.php:131 account_prefs_inc.php:144
+#: account_prefs_inc.php:157 account_prefs_inc.php:170
+#: account_prefs_inc.php:183 account_prefs_inc.php:196
+#: account_prefs_inc.php:209 account_prefs_inc.php:222
+#: account_prefs_inc.php:235
+msgid "With Minimum Severity of"
+msgstr ""
+
+#: account_prefs_inc.php:134 account_prefs_inc.php:147
+#: account_prefs_inc.php:160 account_prefs_inc.php:173
+#: account_prefs_inc.php:186 account_prefs_inc.php:199
+#: account_prefs_inc.php:212 account_prefs_inc.php:225
+#: account_prefs_inc.php:238 core/relationship_api.php:742
+#: core/filter_api.php:2168 core/filter_api.php:2196 core/filter_api.php:2208
+#: core/filter_api.php:2234 core/filter_api.php:2246 core/filter_api.php:2273
+#: core/filter_api.php:2285 core/filter_api.php:2304 core/filter_api.php:2316
+#: core/filter_api.php:2335 core/filter_api.php:2347 core/filter_api.php:2366
+#: core/filter_api.php:2379 core/filter_api.php:2400 core/filter_api.php:2472
+#: core/filter_api.php:2491 core/filter_api.php:2541 core/filter_api.php:2563
+#: core/filter_api.php:2580 core/filter_api.php:2603 core/filter_api.php:2615
+#: core/filter_api.php:2637 core/filter_api.php:2659 core/filter_api.php:2678
+#: core/filter_api.php:2691 core/filter_api.php:2713 core/filter_api.php:2769
+#: core/filter_api.php:2846 core/filter_api.php:2968 core/filter_api.php:2974
+#: core/filter_api.php:2997 core/filter_api.php:3058 core/filter_api.php:3073
+#: core/filter_api.php:3128 core/filter_api.php:3183 core/filter_api.php:3210
+#: core/filter_api.php:3422 core/filter_api.php:3443 core/filter_api.php:3469
+#: core/filter_api.php:3493 core/filter_api.php:3508 core/filter_api.php:3526
+#: core/filter_api.php:3541 core/filter_api.php:3554 core/filter_api.php:3567
+#: core/filter_api.php:3580 core/filter_api.php:3606 core/filter_api.php:3620
+#: core/filter_api.php:3634 core/filter_api.php:3648 core/filter_api.php:3662
+#: core/filter_api.php:3675 core/filter_api.php:3701 core/filter_api.php:3858
+#: core/filter_api.php:3907 core/filter_api.php:3921 core/filter_api.php:3956
+#: core/filter_api.php:4140 core/filter_api.php:4196 core/filter_api.php:4225
+msgid "any"
+msgstr ""
+
+#: account_prefs_inc.php:142 manage/config_email_page.php:323
+msgid "E-mail on Change of Handler"
+msgstr ""
+
+#: account_prefs_inc.php:155
+msgid "E-mail on Feedback"
+msgstr ""
+
+#: account_prefs_inc.php:168
+msgid "E-mail on Resolved"
+msgstr ""
+
+#: account_prefs_inc.php:181
+msgid "E-mail on Closed"
+msgstr ""
+
+#: account_prefs_inc.php:194 manage/config_email_page.php:324
+msgid "E-mail on Reopened"
+msgstr ""
+
+#: account_prefs_inc.php:207 manage/config_email_page.php:326
+msgid "E-mail on Note Added"
+msgstr ""
+
+#: account_prefs_inc.php:220
+msgid "E-mail on Status Change"
+msgstr ""
+
+#: account_prefs_inc.php:233
+msgid "E-mail on Priority Change"
+msgstr ""
+
+#: account_prefs_inc.php:246
+msgid "E-mail Notes Limit"
+msgstr ""
+
+#: account_prefs_inc.php:272
+msgid "Time Zone"
+msgstr ""
+
+#: account_prefs_inc.php:281
+msgid "Language"
+msgstr ""
+
+#: account_prefs_inc.php:290
+msgid "Theme"
+msgstr ""
+
+#: core/string_api.php:731 bug_report_page.php:200
+msgid "Report Issue"
+msgstr ""
+
+#: core/string_api.php:834
+msgid "Attachment(s)"
+msgstr ""
+
+#: core/string_api.php:846 core/columns_api.php:356 core/columns_api.php:841
+msgid "Updated"
+msgstr ""
+
+#: core/string_api.php:855 core/columns_api.php:370 core/columns_api.php:644
+#: core/history_api.php:325 bug_view_inc.php:336
+#: bug_actiongroup_add_note_inc.php:71 bug_actiongroup_page.php:356
+#: bug_report_page.php:531 bugnote_add_inc.php:84 view_filters_page.php:310
+#: print_bug_page.php:201 bug_update_page.php:185 news_menu_page.php:74
+#: bug_change_status_page.php:332 manage/proj_page.php:103
+#: manage/proj_edit_page.php:120 manage/proj_edit_page.php:208
+#: manage/proj_create_page.php:88 news_edit_page.php:127
+msgid "View Status"
+msgstr ""
+
+#: core/string_api.php:858
+msgid "Bug Note(s)"
+msgstr ""
+
+#: core/print_api.php:333 manage/tags_page.php:173
+#, php-format
+msgid "(Separate by %s)"
+msgstr ""
+
+#: core/print_api.php:340 bug_actiongroup_attach_tags_inc.php:62
+msgid "Attach"
+msgstr ""
+
+#: core/print_api.php:368
+msgid "Existing tags"
+msgstr ""
+
+#: core/print_api.php:403 core/print_api.php:446 news_list_page.php:77
+#: news_menu_page.php:69 news_edit_page.php:122
+msgid "Announcement"
+msgstr ""
+
+#: core/print_api.php:637
+msgid "(select)"
+msgstr ""
+
+#: core/print_api.php:1012 core/print_api.php:1036
+#: manage/proj_edit_page.php:428 manage/proj_edit_page.php:535
+msgid "Remove"
+msgstr ""
+
+#: core/print_api.php:1352
+msgid "First"
+msgstr ""
+
+#: core/print_api.php:1353
+msgid "Last"
+msgstr ""
+
+#: core/print_api.php:1354
+msgid "Prev"
+msgstr ""
+
+#: core/print_api.php:1355
+msgid "Next"
+msgstr ""
+
+#: core/print_api.php:1540
+msgid "Recently Visited"
+msgstr ""
+
+#: core/print_api.php:1663 proj_doc_page.php:135
+msgid "bytes"
+msgstr ""
+
+#: core/print_api.php:1664
+#, php-format
+msgid "Downloaded %s time(s)"
+msgstr ""
+
+#: core/print_api.php:1671
+msgid "Cached"
+msgstr ""
+
+#: core/print_api.php:1675
+msgid "Attachment missing"
+msgstr ""
+
+#: core/columns_api.php:346 core/columns_api.php:1147 my_view_inc.php:267
+#: manage/adm_permissions_report.php:114
+msgid "attachment(s)"
+msgstr ""
+
+#: core/columns_api.php:532
+msgid "P"
+msgstr ""
+
+#: core/columns_api.php:695 core/columns_api.php:699 core/history_api.php:393
+msgid "Build"
+msgstr ""
+
+#: core/columns_api.php:761
+msgid "Attachment count"
+msgstr ""
+
+#: core/columns_api.php:934 core/columns_api.php:1494
+msgid "Overdue"
+msgstr ""
+
+#: core/columns_api.php:1145 my_view_inc.php:266
+#, php-format
+msgid "View %1$d attachment(s) for issue #%2$d"
+msgstr ""
+
+#: core/relationship_api.php:674
+msgid "Not all the children of this issue are yet resolved or closed."
+msgstr ""
+
+#: core/relationship_api.php:747 core/filter_api.php:2184
+#: core/filter_api.php:2253 core/filter_api.php:2504 core/filter_api.php:2527
+#: core/filter_api.php:2551 core/filter_api.php:2591 core/filter_api.php:2625
+#: core/filter_api.php:2701 core/filter_api.php:3076 core/filter_api.php:3111
+#: core/filter_api.php:3190 core/filter_api.php:3471 core/filter_api.php:3593
+#: core/filter_api.php:3607 core/filter_api.php:3621 core/filter_api.php:3635
+#: core/filter_api.php:3649 core/filter_api.php:3860 core/filter_api.php:3962
+#: core/filter_api.php:4143
+msgid "none"
+msgstr ""
+
+#: core/relationship_api.php:776 core/relationship_api.php:819
+#: core/email_api.php:1073 view_filters_page.php:317 print_bug_page.php:499
+msgid "Relationships"
+msgstr ""
+
+#: core/relationship_api.php:779 bug_relationship_graph.php:115
+msgid "Relation Graph"
+msgstr ""
+
+#: core/relationship_api.php:780 bug_relationship_graph.php:101
+#: bug_relationship_graph.php:113
+msgid "Dependency Graph"
+msgstr ""
+
+#: core/relationship_api.php:794
+msgid "New relationship"
+msgstr ""
+
+#: core/relationship_api.php:795
+msgid "Current issue"
+msgstr ""
+
+#: core/relationship_api.php:801 bug_monitor_list_view_inc.php:95
+msgid "Add"
+msgstr ""
+
+#: core/classes/Exception/Authentication/LostPasswordDisabled.class.php:41
+#: core/classes/Exception/Authentication/LostPasswordDisabled.class.php:43
+msgid "The \"lost your password\" feature is not available."
+msgstr ""
+
+#: core/classes/Exception/Authentication/LostPasswordBlankEmail.class.php:41
+#: core/classes/Exception/Authentication/LostPasswordBlankEmail.class.php:43
+msgid "You must provide an e-mail address in order to reset the password."
+msgstr ""
+
+#: core/classes/Exception/Column/ColumnInvalid.class.php:41
+#: core/classes/Exception/Column/ColumnInvalid.class.php:43
+#, php-format
+msgid "Field \"%1$s\" contains invalid field \"%2$s\"."
+msgstr ""
+
+#: core/classes/Exception/Column/ColumnDuplicate.class.php:41
+#: core/classes/Exception/Column/ColumnDuplicate.class.php:43
+#, php-format
+msgid "Field \"%1$s\" contains duplicate column \"%2$s\"."
+msgstr ""
+
+#: core/classes/Exception/User/UserProfileNotFound.class.php:41
+#: core/classes/Exception/User/UserProfileNotFound.class.php:43
+msgid "Profile not found."
+msgstr ""
+
+#: core/classes/Exception/User/ProtectedLastAdministrator.class.php:41
+#: core/classes/Exception/User/ProtectedLastAdministrator.class.php:43
+msgid ""
+"You cannot remove or demote the last administrator account. To perform the "
+"action you requested, you first need to create another administrator account."
+msgstr ""
+
+#: core/classes/Exception/User/UserNameNotUnique.class.php:41
+#: core/classes/Exception/User/UserNameNotUnique.class.php:43
+msgid ""
+"That username is already being used. Please go back and select another one."
+msgstr ""
+
+#: core/classes/Exception/User/UserPreferencesNotFound.class.php:41
+#: core/classes/Exception/User/UserPreferencesNotFound.class.php:43
+msgid "Preferences could not be found for this user."
+msgstr ""
+
+#: core/classes/Exception/User/PasswordMismatch.class.php:41
+#: core/classes/Exception/User/PasswordMismatch.class.php:43
+msgid "Password does not match verification."
+msgstr ""
+
+#: core/classes/Exception/User/UserNotFound.class.php:41
+msgid "User not found."
+msgstr ""
+
+#: core/classes/Exception/User/UserNotFound.class.php:43
+#, php-format
+msgid "User %1$d not found."
+msgstr ""
+
+#: core/classes/Exception/User/ProtectedUser.class.php:41
+#: core/classes/Exception/User/ProtectedUser.class.php:43
+msgid ""
+"This account is protected. You are not allowed to access this until the "
+"account protection is lifted."
+msgstr ""
+
+#: core/classes/Exception/Language/LanguageStringNotFound.class.php:41
+#: core/classes/Exception/Language/LanguageStringNotFound.class.php:43
+#, php-format
+msgid "String \"%1$s\" not found."
+msgstr ""
+
+#: core/classes/Exception/Email/DisposableAddressNotAllowed.class.php:41
+#: core/classes/Exception/Email/DisposableAddressNotAllowed.class.php:43
+msgid "It is not allowed to use disposable e-mail addresses."
+msgstr ""
+
+#: core/classes/Exception/Email/AddressInvalid.class.php:41
+#: core/classes/Exception/Email/AddressInvalid.class.php:43
+msgid "Invalid e-mail address."
+msgstr ""
+
+#: core/classes/Exception/UnknownException.class.php:41
+#: core/classes/Exception/UnknownException.class.php:43
+msgid ""
+"An error occurred during this action. You may wish to report this error to "
+"your local administrator."
+msgstr ""
+
+#: core/classes/Exception/Plugin/PluginUpgradeFailed.class.php:41
+#: core/classes/Exception/Plugin/PluginUpgradeFailed.class.php:43
+#, php-format
+msgid "Upgrading the plugin schema failed in block #%1$s."
+msgstr ""
+
+#: core/classes/Exception/Plugin/EventNotDeclared.class.php:41
+#: core/classes/Exception/Plugin/EventNotDeclared.class.php:43
+#, php-format
+msgid "Event \"%1$s\" has not yet been declared."
+msgstr ""
+
+#: core/classes/Exception/Plugin/PluginPageNotFound.class.php:41
+#: core/classes/Exception/Plugin/PluginPageNotFound.class.php:43
+msgid "Plugin page not found."
+msgstr ""
+
+#: core/classes/Exception/Plugin/PluginNotRegistered.class.php:41
+#: core/classes/Exception/Plugin/PluginNotRegistered.class.php:43
+msgid "Plugin is not registered with MantisBT."
+msgstr ""
+
+#: core/classes/Exception/Plugin/PluginAlreadyInstalled.class.php:41
+#: core/classes/Exception/Plugin/PluginAlreadyInstalled.class.php:43
+msgid "Plugin is already installed."
+msgstr ""
+
+#: core/classes/Exception/Plugin/PluginInstallationFailed.class.php:41
+#: core/classes/Exception/Plugin/PluginInstallationFailed.class.php:43
+#, php-format
+msgid "Plugin installation failed: %1$s."
+msgstr ""
+
+#: core/classes/Exception/Security/CSPRNGNotAvailable.class.php:41
+#: core/classes/Exception/Security/CSPRNGNotAvailable.class.php:43
+msgid ""
+"Unable to find a source of strong randomness for cryptographic purposes."
+msgstr ""
+
+#: core/classes/Exception/Security/MasterSaltInvalid.class.php:41
+#: core/classes/Exception/Security/MasterSaltInvalid.class.php:43
+msgid ""
+"For security reasons MantisBT will not operate when $g_crypto_master_salt is "
+"not specified correctly in config_inc.php."
+msgstr ""
+
+#: core/classes/Exception/Security/CSRFTokenInvalid.class.php:41
+#: core/classes/Exception/Security/CSRFTokenInvalid.class.php:43
+msgid "Invalid form security token. Did you submit the form twice by accident?"
+msgstr ""
+
+#: core/classes/Exception/PHP/HeadersAlreadySent.class.php:41
+#: core/classes/Exception/PHP/HeadersAlreadySent.class.php:43
+msgid ""
+"Page redirection error, ensure that there are no spaces outside the PHP "
+"block (&lt;?php ?&gt;) in config_inc.php or custom_*.php files."
+msgstr ""
+
+#: core/classes/Exception/PHP/TimezoneUpdateFailed.class.php:41
+#: core/classes/Exception/PHP/TimezoneUpdateFailed.class.php:43
+msgid "Unable to update timezone."
+msgstr ""
+
+#: core/classes/Exception/PHP/ExtensionNotLoaded.class.php:41
+#: core/classes/Exception/PHP/ExtensionNotLoaded.class.php:43
+#, php-format
+msgid "PHP Extension Not Loaded: %s"
+msgstr ""
+
+#: core/classes/Exception/Configuration/OptionCannotBeSetInDatabase.class.php:41
+#: core/classes/Exception/Configuration/OptionCannotBeSetInDatabase.class.php:43
+#, php-format
+msgid ""
+"Configuration option \"%1$s\" can not be set in the database. It must be set "
+"in config_inc.php."
+msgstr ""
+
+#: core/classes/Exception/Configuration/OptionNotFound.class.php:41
+#: core/classes/Exception/Configuration/OptionNotFound.class.php:43
+#, php-format
+msgid "Configuration option \"%1$s\" not found."
+msgstr ""
+
+#: core/classes/Exception/Configuration/OptionInvalidValue.class.php:41
+#: core/classes/Exception/Configuration/OptionInvalidValue.class.php:43
+#, php-format
+msgid "Configuration option \"%1$s\" has invalid value \"%2$s\"."
+msgstr ""
+
+#: core/classes/Exception/News/NewsItemNotFound.class.php:41
+#: core/classes/Exception/News/NewsItemNotFound.class.php:43
+msgid "News item not found."
+msgstr ""
+
+#: core/classes/Exception/Validation/ArrayNotExpected.class.php:41
+#: core/classes/Exception/Validation/ArrayNotExpected.class.php:43
+#, php-format
+msgid "A string was expected but an array was received for %1$s."
+msgstr ""
+
+#: core/classes/Exception/Validation/GPCNotFound.class.php:41
+#: core/classes/Exception/Validation/GPCNotFound.class.php:43
+#, php-format
+msgid "A required parameter to this page (%1$s) was not found."
+msgstr ""
+
+#: core/classes/Exception/Validation/DateFormatInvalid.class.php:41
+#: core/classes/Exception/Validation/DateFormatInvalid.class.php:43
+msgid "Invalid date format."
+msgstr ""
+
+#: core/classes/Exception/Validation/ArrayExpected.class.php:41
+#: core/classes/Exception/Validation/ArrayExpected.class.php:43
+#, php-format
+msgid "An array was expected but a string was received for %1$s."
+msgstr ""
+
+#: core/classes/Exception/Validation/NumberExpected.class.php:41
+#: core/classes/Exception/Validation/NumberExpected.class.php:43
+#, php-format
+msgid "A number was expected for %1$s."
+msgstr ""
+
+#: core/classes/Exception/Field/InvalidValue.class.php:41
+#: core/classes/Exception/Field/InvalidValue.class.php:43
+#, php-format
+msgid "Invalid value for field \"%1$s\"."
+msgstr ""
+
+#: core/classes/Exception/Field/EmptyField.class.php:41
+#: core/classes/Exception/Field/EmptyField.class.php:43
+#, php-format
+msgid "A necessary field \"%1$s\" was empty. Please recheck your inputs."
+msgstr ""
+
+#: core/classes/Exception/Database/QueryFailed.class.php:41
+#: core/classes/Exception/Database/QueryFailed.class.php:43
+#, php-format
+msgid ""
+"Database query failed. Error received from database was #%1$d: %2$s for the "
+"query: %3$s."
+msgstr ""
+
+#: core/classes/Exception/Database/FieldNotFound.class.php:41
+#: core/classes/Exception/Database/FieldNotFound.class.php:43
+#, php-format
+msgid "Database field \"%1$s\" not found."
+msgstr ""
+
+#: core/classes/Exception/Database/ConnectionFailed.class.php:41
+#: core/classes/Exception/Database/ConnectionFailed.class.php:43
+#, php-format
+msgid ""
+"Database connection failed. Error received from database was #%1$d: %2$s."
+msgstr ""
+
+#: core/classes/Exception/Token/TokenNotFound.class.php:41
+#: core/classes/Exception/Token/TokenNotFound.class.php:43
+msgid "Token could not be found."
+msgstr ""
+
+#: core/classes/Exception/Tag/TagNotFound.class.php:41
+#: core/classes/Exception/Tag/TagNotFound.class.php:43
+msgid "Could not find a tag with that name."
+msgstr ""
+
+#: core/classes/Exception/Tag/TagDuplicate.class.php:41
+#: core/classes/Exception/Tag/TagDuplicate.class.php:43
+msgid "A tag already exists with that name."
+msgstr ""
+
+#: core/classes/Exception/Tag/TagNameNotValid.class.php:41
+#: core/classes/Exception/Tag/TagNameNotValid.class.php:43
+msgid "That tag name is invalid."
+msgstr ""
+
+#: core/classes/Exception/Access/AccessDenied.class.php:41
+#: core/classes/Exception/Access/AccessDenied.class.php:43
+#: core/authentication_api.php:773
+#: bug_actiongroup_update_product_build_inc.php:78
+#: bug_actiongroup_update_severity_inc.php:83
+#: bug_actiongroup_add_note_inc.php:115 view_user_page.php:86
+#: view_user_page.php:101
+msgid "Access Denied."
+msgstr ""
+
+#: core/classes/Exception/Access/InsufficientAccessLevel.class.php:41
+#: core/classes/Exception/Access/InsufficientAccessLevel.class.php:43
+msgid "User does not have required access level."
+msgstr ""
+
+#: core/classes/Exception/CustomField/InvalidDefinition.class.php:41
+#: core/classes/Exception/CustomField/InvalidDefinition.class.php:43
+msgid "Invalid custom field definition."
+msgstr ""
+
+#: core/classes/Exception/CustomField/FieldNotFound.class.php:41
+#: core/classes/Exception/CustomField/FieldNotFound.class.php:43
+msgid "Custom field not found."
+msgstr ""
+
+#: core/classes/Exception/CustomField/NotLinkedToProject.class.php:41
+#: core/classes/Exception/CustomField/NotLinkedToProject.class.php:43
+#, php-format
+msgid "Custom field \"%1$s\" (id %2$s) not linked to currently active project."
+msgstr ""
+
+#: core/classes/Exception/CustomField/NameNotUnique.class.php:41
+#: core/classes/Exception/CustomField/NameNotUnique.class.php:43
+msgid "This is a duplicate name."
+msgstr ""
+
+#: core/classes/Exception/LDAP/QueryFailed.class.php:41
+#: core/classes/Exception/LDAP/QueryFailed.class.php:43
+msgid "LDAP Query has failed."
+msgstr ""
+
+#: core/classes/Exception/LDAP/ServerConnectFailed.class.php:41
+#: core/classes/Exception/LDAP/ServerConnectFailed.class.php:43
+msgid "LDAP Server Connection Failed."
+msgstr ""
+
+#: core/classes/Exception/File/FileTypeNotAllowed.class.php:41
+#: core/classes/Exception/File/FileTypeNotAllowed.class.php:43
+msgid "File type not allowed for uploads."
+msgstr ""
+
+#: core/classes/Exception/File/FileUploadFailed.class.php:41
+#: core/classes/Exception/File/FileUploadFailed.class.php:43
+msgid ""
+"File upload failed. File is not readable by MantisBT. Please check the "
+"project settings."
+msgstr ""
+
+#: core/classes/Exception/File/FileMoveFailed.class.php:41
+#: core/classes/Exception/File/FileMoveFailed.class.php:43
+msgid ""
+"Uploaded file could not be moved to the file storage directory. Directory "
+"either does not exist or not writable to webserver."
+msgstr ""
+
+#: core/classes/Exception/File/FileDuplicate.class.php:41
+#: core/classes/Exception/File/FileDuplicate.class.php:43
+msgid "This is a duplicate file. Please delete the file first."
+msgstr ""
+
+#: core/classes/Exception/File/FileNoUpload.class.php:41
+#: core/classes/Exception/File/FileNoUpload.class.php:43
+msgid ""
+"No file was uploaded. Please go back and Choose a file before pressing "
+"Upload."
+msgstr ""
+
+#: core/classes/Exception/File/InvalidUploadPath.class.php:41
+#: core/classes/Exception/File/InvalidUploadPath.class.php:43
+msgid ""
+"Invalid upload path. Directory either does not exist or is not writable to "
+"web server."
+msgstr ""
+
+#: core/classes/Exception/File/FileTooBig.class.php:41
+#: core/classes/Exception/File/FileTooBig.class.php:43
+msgid ""
+"File upload failed. This is likely because the filesize was larger than is "
+"currently allowed by this PHP installation."
+msgstr ""
+
+#: core/classes/Exception/Issue/Note/NoteNotFound.class.php:41
+#: core/classes/Exception/Issue/Note/NoteNotFound.class.php:43
+msgid "Note not found."
+msgstr ""
+
+#: core/classes/Exception/Issue/Category/CategoryDuplicate.class.php:41
+#: core/classes/Exception/Issue/Category/CategoryDuplicate.class.php:43
+msgid "A category with that name already exists."
+msgstr ""
+
+#: core/classes/Exception/Issue/Category/CategoryNotFound.class.php:41
+#: core/classes/Exception/Issue/Category/CategoryNotFound.class.php:43
+msgid "Category not found."
+msgstr ""
+
+#: core/classes/Exception/Issue/IssueReadOnly.class.php:41
+msgid "The action cannot be performed because the issue is read-only."
+msgstr ""
+
+#: core/classes/Exception/Issue/IssueReadOnly.class.php:43
+#, php-format
+msgid "The action cannot be performed because issue \"%1$d\" is read-only."
+msgstr ""
+
+#: core/classes/Exception/Issue/Version/VersionNotFound.class.php:41
+#: core/classes/Exception/Issue/Version/VersionNotFound.class.php:43
+#, php-format
+msgid "Version \"%1$s\" not found."
+msgstr ""
+
+#: core/classes/Exception/Issue/Version/VersionDuplicate.class.php:41
+#: core/classes/Exception/Issue/Version/VersionDuplicate.class.php:43
+msgid "A version with that name already exists."
+msgstr ""
+
+#: core/classes/Exception/Issue/IssueNotFound.class.php:41
+#: core/classes/Exception/Issue/IssueNotFound.class.php:43
+#, php-format
+msgid "Issue %1$d not found."
+msgstr ""
+
+#: core/classes/Exception/Issue/IssueDuplicateSelf.class.php:41
+#: core/classes/Exception/Issue/IssueDuplicateSelf.class.php:43
+msgid "You cannot set an issue as a duplicate of itself."
+msgstr ""
+
+#: core/classes/Exception/Issue/Tag/TagNotAttached.class.php:41
+#: core/classes/Exception/Issue/Tag/TagNotAttached.class.php:43
+msgid "That tag is not attached to that issue."
+msgstr ""
+
+#: core/classes/Exception/Issue/Tag/TagAlreadyAttached.class.php:41
+#: core/classes/Exception/Issue/Tag/TagAlreadyAttached.class.php:43
+msgid "That tag already attached to that issue."
+msgstr ""
+
+#: core/classes/Exception/Issue/Relationship/RelationshipNotFound.class.php:41
+#: core/classes/Exception/Issue/Relationship/RelationshipNotFound.class.php:43
+msgid "Relationship not found."
+msgstr ""
+
+#: core/classes/Exception/Issue/Relationship/RelationshipDuplicate.class.php:41
+#: core/classes/Exception/Issue/Relationship/RelationshipDuplicate.class.php:43
+msgid "There is already a relationship between these two issues."
+msgstr ""
+
+#: core/classes/Exception/Issue/Revision/RevisionNotFound.class.php:41
+#: core/classes/Exception/Issue/Revision/RevisionNotFound.class.php:43
+msgid "Issue revision not found."
+msgstr ""
+
+#: core/classes/Exception/Project/Category/CategoryNotFound.class.php:41
+#: core/classes/Exception/Project/Category/CategoryNotFound.class.php:43
+#, php-format
+msgid "Category \"%1$s\" not found for project \"%2$s\"."
+msgstr ""
+
+#: core/classes/Exception/Project/ProjectNameNotValid.class.php:41
+#: core/classes/Exception/Project/ProjectNameNotValid.class.php:43
+msgid "Invalid project name specified. Project names cannot be blank."
+msgstr ""
+
+#: core/classes/Exception/Project/ProjectNotFound.class.php:41
+#: core/classes/Exception/Project/ProjectNotFound.class.php:43
+#, php-format
+msgid "Project \"%1$d\" not found."
+msgstr ""
+
+#: core/classes/Exception/Project/RecursiveHierarchyNotAllowed.class.php:41
+#: core/classes/Exception/Project/RecursiveHierarchyNotAllowed.class.php:43
+msgid "That operation would create a loop in the subproject hierarchy."
+msgstr ""
+
+#: core/classes/Exception/Project/ProjectNameNotUnique.class.php:41
+#: core/classes/Exception/Project/ProjectNameNotUnique.class.php:43
+msgid ""
+"A project with that name already exists. Please go back and enter a "
+"different name."
+msgstr ""
+
+#: core/classes/Exception/FTP/ConnectionFailed.class.php:41
+#: core/classes/Exception/FTP/ConnectionFailed.class.php:43
+msgid "Unable to connect to FTP server."
+msgstr ""
+
+#: core/classes/Exception/Session/SessionVariableNotFound.class.php:41
+#: core/classes/Exception/Session/SessionVariableNotFound.class.php:43
+#, php-format
+msgid "Session variable \"%1$s\" not found."
+msgstr ""
+
+#: core/classes/Exception/Session/SessionHandlerInvalid.class.php:41
+#: core/classes/Exception/Session/SessionHandlerInvalid.class.php:43
+msgid "Invalid session handler."
+msgstr ""
+
+#: core/classes/Exception/Session/SessionInvalid.class.php:41
+#: core/classes/Exception/Session/SessionInvalid.class.php:43
+msgid "Your session has become invalidated."
+msgstr ""
+
+#: core/classes/Exception/Locale/LocaleNotProvidedByUserAgent.php:41
+#: core/classes/Exception/Locale/LocaleNotProvidedByUserAgent.php:43
+msgid ""
+"An Accept-Language header was expected from your browser, but none was "
+"received."
+msgstr ""
+
+#: core/classes/Exception/Locale/LocalesNotSupported.php:41
+#: core/classes/Exception/Locale/LocalesNotSupported.php:43
+#, php-format
+msgid ""
+"Could not set the current locale to any of the preferences provided: %1$s."
+msgstr ""
+
+#: core/classes/Exception/Filter/FilterNotFound.class.php:41
+#: core/classes/Exception/Filter/FilterNotFound.class.php:43
+#, php-format
+msgid "Filter %1$s not found."
+msgstr ""
+
+#: core/classes/Exception/Filter/FilterTooOldToUpgrade.class.php:41
+#: core/classes/Exception/Filter/FilterTooOldToUpgrade.class.php:43
+msgid ""
+"The filter you are trying to use is too old to be upgraded. Please re-create "
+"it."
+msgstr ""
+
+#: core/classes/Exception/Sponsorship/SponsorshipNotFound.class.php:41
+#: core/classes/Exception/Sponsorship/SponsorshipNotFound.class.php:43
+#, php-format
+msgid "Sponsorship %1$d not found."
+msgstr ""
+
+#: core/classes/Exception/Sponsorship/SponsorshipDisabled.class.php:41
+#: core/classes/Exception/Sponsorship/SponsorshipDisabled.class.php:43
+msgid "Sponsorship support not enabled."
+msgstr ""
+
+#: core/classes/Exception/Sponsorship/SponsorshipAmountTooLow.class.php:41
+#: core/classes/Exception/Sponsorship/SponsorshipAmountTooLow.class.php:43
+#, php-format
+msgid "Sponsorship (%1$s) is below minimum amount (%2$s)."
+msgstr ""
+
+#: core/classes/MantisError.class.php:204
+msgid ""
+"Please use the \"Back\" button in your web browser to return to the previous "
+"page. There you can correct whatever problems were identified in this error "
+"or select another action. You can also click an option from the menu bar to "
+"go directly to a new section."
+msgstr ""
+
+#: core/classes/MantisError.class.php:426
+msgid "Missing Error String"
+msgstr ""
+
+#: core/email_queue_api.php:103
+msgid "Subject"
+msgstr ""
+
+#: core/email_queue_api.php:108 core/news_api.php:63 core/news_api.php:129
+#: news_menu_page.php:64 news_edit_page.php:104
+msgid "Body"
+msgstr ""
+
+#: core/history_api.php:333 core/history_api.php:334 core/filter_api.php:2778
+msgid "Yes"
+msgstr ""
+
+#: core/history_api.php:333 core/history_api.php:334 core/filter_api.php:2778
+#: core/filter_api.php:2834
+msgid "No"
+msgstr ""
+
+#: core/history_api.php:335
+msgid "Sticky Issue"
+msgstr ""
+
+#: core/history_api.php:402
+msgid "Sponsorship Total"
+msgstr ""
+
+#: core/history_api.php:429
+msgid "New Issue"
+msgstr ""
+
+#: core/history_api.php:432
+msgid "Note Added"
+msgstr ""
+
+#: core/history_api.php:435
+msgid "Note Edited"
+msgstr ""
+
+#: core/history_api.php:445 core/history_api.php:457 core/history_api.php:466
+#: core/history_api.php:475 bug_revision_view_page.php:170
+msgid "View Revisions"
+msgstr ""
+
+#: core/history_api.php:450
+msgid "Note Deleted"
+msgstr ""
+
+#: core/history_api.php:453
+msgid "Description Updated"
+msgstr ""
+
+#: core/history_api.php:462
+msgid "Additional Information Updated"
+msgstr ""
+
+#: core/history_api.php:471
+msgid "Steps to Reproduce Updated"
+msgstr ""
+
+#: core/history_api.php:480
+msgid "File Added"
+msgstr ""
+
+#: core/history_api.php:483
+msgid "File Deleted"
+msgstr ""
+
+#: core/history_api.php:487
+msgid "Note View State"
+msgstr ""
+
+#: core/history_api.php:491
+msgid "Issue Monitored"
+msgstr ""
+
+#: core/history_api.php:497
+msgid "Issue End Monitor"
+msgstr ""
+
+#: core/history_api.php:500
+msgid "Issue Deleted"
+msgstr ""
+
+#: core/history_api.php:503
+msgid "Sponsorship Added"
+msgstr ""
+
+#: core/history_api.php:507
+msgid "Sponsorship Updated"
+msgstr ""
+
+#: core/history_api.php:511
+msgid "Sponsorship Deleted"
+msgstr ""
+
+#: core/history_api.php:515
+msgid "Sponsorship Paid"
+msgstr ""
+
+#: core/history_api.php:519
+msgid "Relationship added"
+msgstr ""
+
+#: core/history_api.php:523
+msgid "Relationship replaced"
+msgstr ""
+
+#: core/history_api.php:527
+msgid "Relationship deleted"
+msgstr ""
+
+#: core/history_api.php:537
+msgid "Issue cloned"
+msgstr ""
+
+#: core/history_api.php:541
+msgid "Issue generated from"
+msgstr ""
+
+#: core/history_api.php:545
+msgid "Tag Attached"
+msgstr ""
+
+#: core/history_api.php:548
+msgid "Tag Detached"
+msgstr ""
+
+#: core/history_api.php:551
+msgid "Tag Renamed"
+msgstr ""
+
+#: core/history_api.php:555
+msgid "Issue Revision Dropped"
+msgstr ""
+
+#: core/history_api.php:558
+msgid "Note Revision Dropped"
+msgstr ""
+
+#: core/authentication_api.php:695
+msgid ""
+"You are visiting a secure page, and your secure session has expired. Please "
+"authenticate yourself to continue."
+msgstr ""
+
+#: core/authentication_api.php:704
+msgid "Authenticate"
+msgstr ""
+
+#: core/authentication_api.php:770
+msgid "MantisBT Login"
+msgstr ""
+
+#: core/news_api.php:59 core/news_api.php:125 news_menu_page.php:59
+#: news_edit_page.php:94 news_edit_page.php:99
+msgid "Headline"
+msgstr ""
+
+#: core/email_api.php:427 core/email_api.php:497
+msgid "Account registration"
+msgstr ""
+
+#: core/email_api.php:430
+#, php-format
+msgid ""
+"The user %1$s has created an account for you with username %2$s. In order to "
+"complete your registration, visit the following URL (make sure it is entered "
+"as the single line) and set your own access password:"
+msgstr ""
+
+#: core/email_api.php:432
+#, php-format
+msgid ""
+"Thank you for registering. You have an account with username %s. In order to "
+"complete your registration, visit the following URL (make sure it is entered "
+"as the single line) and set your own access password:"
+msgstr ""
+
+#: core/email_api.php:435
+msgid ""
+"If you did not request any registration, ignore this message and nothing "
+"will happen."
+msgstr ""
+
+#: core/email_api.php:435 core/email_api.php:467 core/email_api.php:499
+msgid "Do not reply to this message"
+msgstr ""
+
+#: core/email_api.php:467
+msgid ""
+"Someone (presumably you) requested a password change through e-mail "
+"verification. If this was not you, ignore this message and nothing will "
+"happen. If you requested this verification, visit the following URL to "
+"change your password:"
+msgstr ""
+
+#: core/email_api.php:467 core/email_api.php:499 manage/user_delete.php:80
+#: manage/user_update.php:170 manage/user_edit_page.php:94
+#: manage/proj_user_remove.php:76
+msgid "Username:"
+msgstr ""
+
+#: core/email_api.php:467 core/email_api.php:499
+msgid "Remote IP address:"
+msgstr ""
+
+#: core/email_api.php:499
+msgid "The following account has been created:"
+msgstr ""
+
+#: core/email_api.php:499 signup_page.php:84 manage/user_update.php:176
+#: manage/user_edit_page.php:119 manage/user_edit_page.php:123
+msgid "E-mail:"
+msgstr ""
+
+#: core/email_api.php:935 core/filter_api.php:3091 core/filter_api.php:4155
+msgid "On"
+msgstr ""
+
+#: core/email_api.php:935
+msgid "sent you this reminder about"
+msgstr ""
+
+#: core/email_api.php:1064
+msgid "Steps to Reproduce"
+msgstr ""
+
+#: core/email_api.php:1103 bugnote_add_inc.php:106 billing_inc.php:100
+#: billing_inc.php:166 bug_update_page.php:690 bug_change_status_page.php:355
+msgid "Time tracking"
+msgstr ""
+
+#: core/email_api.php:1125 bug_view_inc.php:299 history_inc.php:64
+#: history_inc.php:109 print_bug_page.php:539
+#: manage/config_work_threshold_page.php:365
+msgid "Issue History"
+msgstr ""
+
+#: core/email_api.php:1126 history_inc.php:69 print_bug_page.php:542
+msgid "Date Modified"
+msgstr ""
+
+#: core/email_api.php:1126 history_inc.php:75 print_bug_page.php:544
+#: manage/proj_edit_page.php:407
+msgid "Field"
+msgstr ""
+
+#: core/email_api.php:1126 history_inc.php:78 print_bug_page.php:545
+msgid "Change"
+msgstr ""
+
+#: core/helper_api.php:110
+msgid ""
+"10:viewer,25:reporter,40:updater,55:developer,70:manager,90:administrator"
+msgstr ""
+
+#: core/helper_api.php:113
+msgid ""
+"0:String,1:Numeric,2:Float,3:Enumeration,4:E-mail,5:Checkbox,6:List,7:"
+"Multiselection list,8:Date,9:Radio,10:Textarea"
+msgstr ""
+
+#: core/helper_api.php:116
+msgid "10:none,20:< 1 day,30:2-3 days,40:< 1 week,50:< 1 month,60:> 1 month"
+msgstr ""
+
+#: core/helper_api.php:119
+msgid "10:none,20:low,30:normal,40:high,50:urgent,60:immediate"
+msgstr ""
+
+#: core/helper_api.php:122
+msgid "10:development,30:release,50:stable,70:obsolete"
+msgstr ""
+
+#: core/helper_api.php:125 core/helper_api.php:146
+msgid "10:public,50:private"
+msgstr ""
+
+#: core/helper_api.php:128
+msgid "10:none,30:tweak,50:minor fix,70:major rework,90:redesign"
+msgstr ""
+
+#: core/helper_api.php:131 core/helper_api.php:134
+msgid ""
+"10:always,30:sometimes,50:random,70:have not tried,90:unable to "
+"reproduce,100:N/A"
+msgstr ""
+
+#: core/helper_api.php:137
+msgid ""
+"10:feature,20:trivial,30:text,40:tweak,50:minor,60:major,70:crash,80:block"
+msgstr ""
+
+#: core/helper_api.php:140
+msgid "0:Unpaid,1:Requested,2:Paid"
+msgstr ""
+
+#: core/helper_api.php:143
+msgid ""
+"10:new,20:feedback,30:acknowledged,40:confirmed,50:assigned,80:resolved,90:"
+"closed"
+msgstr ""
+
+#: core/profile_api.php:66 core/profile_api.php:136
+#: account_prof_edit_page.php:106 account_prof_menu_page.php:101
+msgid "Operating System"
+msgstr ""
+
+#: core/profile_api.php:71 core/profile_api.php:141
+#: manage/proj_edit_page.php:334 manage/proj_ver_edit_page.php:77
+msgid "Version"
+msgstr ""
+
+#: core/date_api.php:114 core/date_api.php:116
+msgid "month_"
+msgstr ""
+
+#: core/html_api.php:345
+msgid "ltr"
+msgstr ""
+
+#: core/html_api.php:498
+msgid "Anonymous"
+msgstr ""
+
+#: core/html_api.php:504
+msgid "Logged in as"
+msgstr ""
+
+#: core/html_api.php:529 query_view_page.php:80 main_page.php:122
+msgid "RSS"
+msgstr ""
+
+#: core/html_api.php:543
+msgid "Switch"
+msgstr ""
+
+#: core/html_api.php:604
+#, php-format
+msgid ""
+"If you encounter problems accessing this bug tracker please <a href=\"mailto:"
+"%1$s\" title=\"Contact the webmaster via e-mail.\">contact us via e-mail</a> "
+"for assistance."
+msgstr ""
+
+#: core/html_api.php:615
+#, php-format
+msgid "Page execution time: %1$s seconds"
+msgstr ""
+
+#: core/html_api.php:621
+#, php-format
+msgid "Memory usage: %1$d KiB"
+msgstr ""
+
+#: core/html_api.php:640 core/logging_api.php:216
+#, php-format
+msgid "Total queries executed: %1$d"
+msgstr ""
+
+#: core/html_api.php:714 main_page.php:64
+msgid "Main"
+msgstr ""
+
+#: core/html_api.php:732 my_view_page.php:66
+msgid "My View"
+msgstr ""
+
+#: core/html_api.php:744 project_page.php:74 changelog_page.php:105
+#: changelog_page.php:167 manage/config_work_threshold_page.php:363
+msgid "Change Log"
+msgstr ""
+
+#: core/html_api.php:759 proj_doc_page.php:105 project_page.php:81
+msgid "Docs"
+msgstr ""
+
+#: core/html_api.php:764 bug_view_inc.php:253 project_page.php:86
+msgid "Wiki"
+msgstr ""
+
+#: core/html_api.php:784 core/html_api.php:798 project_page.php:96
+#: manage/overview_page.php:49
+msgid "Manage"
+msgstr ""
+
+#: core/html_api.php:807 core/html_api.php:809 news_menu_page.php:50
+#: news_edit_page.php:86
+msgid "Edit News"
+msgstr ""
+
+#: core/html_api.php:815 core/html_api.php:1075 account_page.php:96
+msgid "My Account"
+msgstr ""
+
+#: core/html_api.php:822 billing_page.php:43
+msgid "Billing"
+msgstr ""
+
+#: core/html_api.php:827
+msgid "Logout"
+msgstr ""
+
+#: core/html_api.php:834
+msgid "Jump"
+msgstr ""
+
+#: core/html_api.php:928 manage/user_page.php:111
+#: manage/adm_permissions_report.php:169
+msgid "Manage Users"
+msgstr ""
+
+#: core/html_api.php:931 manage/proj_page.php:74
+#: manage/adm_permissions_report.php:133
+msgid "Manage Projects"
+msgstr ""
+
+#: core/html_api.php:934 manage/tags_page.php:115 manage/tags_page.php:133
+msgid "Manage Tags"
+msgstr ""
+
+#: core/html_api.php:937 manage/custom_field_page.php:51
+#: manage/adm_permissions_report.php:148
+msgid "Manage Custom Fields"
+msgstr ""
+
+#: core/html_api.php:940
+msgid "Manage Global Profiles"
+msgstr ""
+
+#: core/html_api.php:943 manage/plugin_page.php:53
+msgid "Manage Plugins"
+msgstr ""
+
+#: core/html_api.php:948 core/html_api.php:950
+msgid "Manage Configuration"
+msgstr ""
+
+#: core/html_api.php:1007 manage/adm_config_report.php:57
+msgid "Configuration Report"
+msgstr ""
+
+#: core/html_api.php:1011 manage/adm_permissions_report.php:45
+msgid "Permissions Report"
+msgstr ""
+
+#: core/html_api.php:1014 manage/config_work_threshold_page.php:55
+msgid "Workflow Thresholds"
+msgstr ""
+
+#: core/html_api.php:1017 manage/config_workflow_page.php:53
+msgid "Workflow Transitions"
+msgstr ""
+
+#: core/html_api.php:1021 manage/config_workflow_graph_page.php:56
+msgid "Workflow Graph"
+msgstr ""
+
+#: core/html_api.php:1025 manage/config_email_page.php:247
+msgid "E-mail Notifications"
+msgstr ""
+
+#: core/html_api.php:1028 core/html_api.php:1077
+#: account_manage_columns_page.php:45 manage/config_columns_page.php:36
+#: manage/columns_inc.php:78
+msgid "Manage Columns"
+msgstr ""
+
+#: core/html_api.php:1076 account_prefs_page.php:62
+msgid "Preferences"
+msgstr ""
+
+#: core/html_api.php:1080 account_prof_menu_page.php:69
+msgid "Profiles"
+msgstr ""
+
+#: core/html_api.php:1133
+msgid "User Documentation"
+msgstr ""
+
+#: core/html_api.php:1134 proj_doc_page.php:112
+msgid "Project Documentation"
+msgstr ""
+
+#: core/html_api.php:1136
+msgid "Add File"
+msgstr ""
+
+#: core/html_api.php:1179 view_all_inc.php:123
+msgid "Print Reports"
+msgstr ""
+
+#: core/html_api.php:1297
+msgid "Issue Status Percentage"
+msgstr ""
+
+#: core/html_api.php:1391
+msgid "Change Status To:"
+msgstr ""
+
+#: core/html_api.php:1444 core/filter_api.php:2179 core/filter_api.php:2219
+#: core/filter_api.php:2258 core/filter_api.php:3195 core/filter_api.php:3427
+#: core/filter_api.php:3448 core/filter_api.php:3476 core/filter_api.php:3865
+msgid "Myself"
+msgstr ""
+
+#: core/html_api.php:1463
+msgid "Assign To:"
+msgstr ""
+
+#: core/html_api.php:1516 core/bug_group_action_api.php:199
+msgid "Move"
+msgstr ""
+
+#: core/html_api.php:1527
+msgid "Clone"
+msgstr ""
+
+#: core/html_api.php:1541
+msgid "Reopen"
+msgstr ""
+
+#: core/html_api.php:1552
+msgid "Monitor"
+msgstr ""
+
+#: core/html_api.php:1563
+msgid "End Monitoring"
+msgstr ""
+
+#: core/html_api.php:1573
+msgid "Stick"
+msgstr ""
+
+#: core/html_api.php:1584
+msgid "Unstick"
+msgstr ""
+
+#: core/bug_group_action_api.php:97
+msgid "Selected Issues"
+msgstr ""
+
+#: core/bug_group_action_api.php:204
+msgid "Copy"
+msgstr ""
+
+#: core/bug_group_action_api.php:212 core/bug_group_action_api.php:214
+msgid "Assign"
+msgstr ""
+
+#: core/bug_group_action_api.php:222
+msgid "Close"
+msgstr ""
+
+#: core/bug_group_action_api.php:233
+msgid "Resolve"
+msgstr ""
+
+#: core/bug_group_action_api.php:238 bug_actiongroup_page.php:143
+msgid "Set/Unset Sticky"
+msgstr ""
+
+#: core/bug_group_action_api.php:243 bug_actiongroup_page.php:178
+msgid "Update Priority"
+msgstr ""
+
+#: core/bug_group_action_api.php:248
+#: bug_actiongroup_update_severity_inc.php:48
+#: bug_actiongroup_update_severity_inc.php:64
+msgid "Update Severity"
+msgstr ""
+
+#: core/bug_group_action_api.php:253 bug_actiongroup_page.php:184
+msgid "Update Status"
+msgstr ""
+
+#: core/bug_group_action_api.php:258 bug_actiongroup_page.php:191
+#: manage/proj_cat_edit_page.php:89
+msgid "Update Category"
+msgstr ""
+
+#: core/bug_group_action_api.php:263 bug_actiongroup_page.php:197
+msgid "Update View Status"
+msgstr ""
+
+#: core/bug_group_action_api.php:269
+#: bug_actiongroup_update_product_build_inc.php:59
+msgid "Update Product Build"
+msgstr ""
+
+#: core/bug_group_action_api.php:274 bug_actiongroup_add_note_inc.php:55
+#: bug_actiongroup_add_note_inc.php:66 bug_actiongroup_add_note_inc.php:89
+#: bug_actiongroup_page.php:347 bugnote_add_inc.php:70 bugnote_add_inc.php:124
+#: bugnote_add_inc.php:136 bug_update_page.php:666
+#: bug_change_status_page.php:323
+msgid "Add Note"
+msgstr ""
+
+#: core/bug_group_action_api.php:285 bug_actiongroup_page.php:203
+msgid "Update Fixed in Version"
+msgstr ""
+
+#: core/bug_group_action_api.php:291 bug_actiongroup_page.php:209
+msgid "Update Target Version"
+msgstr ""
+
+#: core/bug_group_action_api.php:301
+#, php-format
+msgid "Update %1$s"
+msgstr ""
+
+#: core/config_api.php:680
+msgid "all_users"
+msgstr ""
+
+#: core/logging_api.php:167
+msgid "Number"
+msgstr ""
+
+#: core/logging_api.php:168
+msgid "Execution time"
+msgstr ""
+
+#: core/logging_api.php:169
+msgid "Caller"
+msgstr ""
+
+#: core/logging_api.php:170
+msgid "Event"
+msgstr ""
+
+#: core/logging_api.php:212
+#, php-format
+msgid "Unique queries executed: %1$d"
+msgstr ""
+
+#: core/logging_api.php:220
+#, php-format
+msgid "Total query execution time: %1$s seconds"
+msgstr ""
+
+#: core/twitter_api.php:104
+#, php-format
+msgid "%1$d: [%2$s] %3$s (resolved by %4$s)"
+msgstr ""
+
+#: core/twitter_api.php:109
+#, php-format
+msgid "%1$d: [%2$s] %3$s (resolved by %4$s in %5$s)"
+msgstr ""
+
+#: core/user_api.php:491
+msgid "user"
+msgstr ""
+
+#: core/category_api.php:557
+msgid "(No Category)"
+msgstr ""
+
+#: core/tag_api.php:630
+#, php-format
+msgid "Detach \"%1$s\""
+msgstr ""
+
+#: core/tag_api.php:646 bug_actiongroup_attach_tags_inc.php:104
+msgid "No tags attached."
+msgstr ""
+
+#: core/filter_api.php:2135
+msgid "Reporter:"
+msgstr ""
+
+#: core/filter_api.php:2138
+msgid "Monitored By:"
+msgstr ""
+
+#: core/filter_api.php:2141
+msgid "Assigned To:"
+msgstr ""
+
+#: core/filter_api.php:2144
+msgid "Category:"
+msgstr ""
+
+#: core/filter_api.php:2147
+msgid "Severity:"
+msgstr ""
+
+#: core/filter_api.php:2150
+msgid "Resolution:"
+msgstr ""
+
+#: core/filter_api.php:2154
+msgid "Profile:"
+msgstr ""
+
+#: core/filter_api.php:2421
+msgid "Hide Status:"
+msgstr ""
+
+#: core/filter_api.php:2427
+msgid "Product Build:"
+msgstr ""
+
+#: core/filter_api.php:2432
+msgid "Product Version:"
+msgstr ""
+
+#: core/filter_api.php:2435
+msgid "Fixed in Version:"
+msgstr ""
+
+#: core/filter_api.php:2448
+msgid "Priority:"
+msgstr ""
+
+#: core/filter_api.php:2452
+msgid "Target Version:"
+msgstr ""
+
+#: core/filter_api.php:2524
+msgid "And Above"
+msgstr ""
+
+#: core/filter_api.php:2734
+msgid "Show:"
+msgstr ""
+
+#: core/filter_api.php:2737
+msgid "View Status:"
+msgstr ""
+
+#: core/filter_api.php:2740
+msgid "Show Sticky Issues:"
+msgstr ""
+
+#: core/filter_api.php:2743
+msgid "Changed(hrs):"
+msgstr ""
+
+#: core/filter_api.php:2746
+msgid "Use Date Filters:"
+msgstr ""
+
+#: core/filter_api.php:2749
+msgid "Relationships:"
+msgstr ""
+
+#: core/filter_api.php:2758
+msgid "all"
+msgstr ""
+
+#: core/filter_api.php:2765 core/filter_api.php:3704 bug_report_page.php:534
+msgid "public"
+msgstr ""
+
+#: core/filter_api.php:2860
+msgid "Platform:"
+msgstr ""
+
+#: core/filter_api.php:2865
+msgid "OS:"
+msgstr ""
+
+#: core/filter_api.php:2870
+msgid "OS Version:"
+msgstr ""
+
+#: core/filter_api.php:2875
+msgid "Tags:"
+msgstr ""
+
+#: core/filter_api.php:3079 core/filter_api.php:4146
+msgid "Between"
+msgstr ""
+
+#: core/filter_api.php:3083 core/filter_api.php:4149
+msgid "On Or Before"
+msgstr ""
+
+#: core/filter_api.php:3087 core/filter_api.php:4152
+msgid "Before"
+msgstr ""
+
+#: core/filter_api.php:3095 core/filter_api.php:4158
+msgid "After"
+msgstr ""
+
+#: core/filter_api.php:3099 core/filter_api.php:4161
+msgid "On Or After"
+msgstr ""
+
+#: core/filter_api.php:3176
+msgid "Note By:"
+msgstr ""
+
+#: core/filter_api.php:3218 view_filters_page.php:400
+msgid "Sort by:"
+msgstr ""
+
+#: core/filter_api.php:3253 view_filters_page.php:411
+msgid "Project:"
+msgstr ""
+
+#: core/filter_api.php:3264 core/filter_api.php:3271 core/filter_api.php:4180
+msgid "current"
+msgstr ""
+
+#: core/filter_api.php:3305 view_filters_page.php:478
+msgid "Search"
+msgstr ""
+
+#: core/filter_api.php:3310 view_filters_page.php:492 manage/user_page.php:250
+msgid "Apply Filter"
+msgstr ""
+
+#: core/filter_api.php:3328
+msgid "Manage Filters"
+msgstr ""
+
+#: core/filter_api.php:3336 core/filter_api.php:3356
+msgid "Reset Filter"
+msgstr ""
+
+#: core/filter_api.php:3347
+msgid "Use Filter"
+msgstr ""
+
+#: core/filter_api.php:3366 view_filters_page.php:177
+msgid "Simple Filters"
+msgstr ""
+
+#: core/filter_api.php:3368 view_filters_page.php:179
+msgid "Advanced Filters"
+msgstr ""
+
+#: core/filter_api.php:3373
+msgid "Create Permalink"
+msgstr ""
+
+#: core/filter_api.php:3746 view_filters_page.php:314
+msgid "Use Date Filters"
+msgstr ""
+
+#: core/filter_api.php:3757
+msgid "Start Date:"
+msgstr ""
+
+#: core/filter_api.php:3785
+msgid "End Date:"
+msgstr ""
+
+#: core/filter_api.php:4052
+msgid "Last Updated Descending"
+msgstr ""
+
+#: proj_doc_add_page.php:64 proj_doc_add_page.php:102
+#: bug_file_upload_inc.php:66 bug_file_upload_inc.php:79
+#: bug_file_upload_inc.php:92 bug_report_page.php:516
+#: plugins/XmlImportExport/pages/import.php:128 proj_doc_edit_page.php:86
+msgid "Upload File"
+msgstr ""
+
+#: proj_doc_add_page.php:88 bug_file_upload_inc.php:71
+#: plugins/XmlImportExport/pages/import.php:68 proj_doc_edit_page.php:123
+msgid "Select File"
+msgstr ""
+
+#: proj_doc_add_page.php:90 bug_file_upload_inc.php:73 bug_report_page.php:517
+#: proj_doc_edit_page.php:125
+msgid "Maximum size:"
+msgstr ""
+
+#: proj_doc_add_page.php:99 bug_report_page.php:565
+#: themes/default/common_config.php:58 proj_doc_edit_page.php:134
+msgid "required"
+msgstr ""
+
+#: bug_revision_view_page.php:68 bug_revision_view_page.php:88
+#: my_view_inc.php:286
+msgid "Issue #"
+msgstr ""
+
+#: bug_revision_view_page.php:138
+#, php-format
+msgid "%1$s by %2$s"
+msgstr ""
+
+#: bug_revision_view_page.php:144
+msgid "Revision"
+msgstr ""
+
+#: bug_revision_view_page.php:148 bug_revision_drop.php:51
+msgid "Drop"
+msgstr ""
+
+#: bug_revision_view_page.php:173
+msgid "All Revisions"
+msgstr ""
+
+#: bug_revision_view_page.php:174
+msgid "Back to Issue"
+msgstr ""
+
+#: bug_view_inc.php:245
+msgid "Jump to Notes"
+msgstr ""
+
+#: bug_view_inc.php:249 bug_reminder_page.php:73
+msgid "Send a reminder"
+msgstr ""
+
+#: bug_view_inc.php:305
+msgid "Print"
+msgstr ""
+
+#: bug_view_inc.php:677 view_filters_page.php:479 print_bug_page.php:492
+msgid "Tags"
+msgstr ""
+
+#: lost_pwd.php:113
+msgid "Password Message Sent"
+msgstr ""
+
+#: lost_pwd.php:119
+msgid ""
+"If you supplied the correct username and e-mail address for your account, we "
+"will now have sent a confirmation message to that e-mail address. Once the "
+"message has been received, follow the instructions provided to change the "
+"password on your account."
+msgstr ""
+
+#: bug_actiongroup_update_product_build_inc.php:74
+#: bug_actiongroup_update_severity_inc.php:79
+#: bug_actiongroup_add_note_inc.php:111
+msgid "Issue is readonly."
+msgstr ""
+
+#: bug_actiongroup_update_severity_inc.php:60
+msgid "Choose issue severity"
+msgstr ""
+
+#: tag_delete.php:51
+msgid "Are you sure you wish to delete this tag?"
+msgstr ""
+
+#: bug_actiongroup_page.php:129
+msgid "Are you sure you wish to close these issues?"
+msgstr ""
+
+#: bug_actiongroup_page.php:130
+msgid "Close Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:136
+msgid "Are you sure you wish to delete these issues?"
+msgstr ""
+
+#: bug_actiongroup_page.php:137
+msgid "Delete Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:142
+msgid "Are you sure you wish to set/unset these issues sticky?"
+msgstr ""
+
+#: bug_actiongroup_page.php:148
+msgid "Move issues to"
+msgstr ""
+
+#: bug_actiongroup_page.php:149
+msgid "Move Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:154
+msgid "Copy issues to"
+msgstr ""
+
+#: bug_actiongroup_page.php:155
+msgid "Copy Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:160
+msgid "Assign issues to"
+msgstr ""
+
+#: bug_actiongroup_page.php:161
+msgid "Assign Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:166
+msgid "Choose issues resolution"
+msgstr ""
+
+#: bug_actiongroup_page.php:167
+msgid "Resolve Issues"
+msgstr ""
+
+#: bug_actiongroup_page.php:177
+msgid "Choose issues priority"
+msgstr ""
+
+#: bug_actiongroup_page.php:183
+msgid "Choose issues status"
+msgstr ""
+
+#: bug_actiongroup_page.php:190
+msgid "Choose issues category"
+msgstr ""
+
+#: bug_actiongroup_page.php:196
+msgid "Choose issues view status"
+msgstr ""
+
+#: bug_actiongroup_page.php:202
+msgid "Update Fixed in Version to"
+msgstr ""
+
+#: bug_actiongroup_page.php:208
+msgid "Update Target Version to"
+msgstr ""
+
+#: bug_actiongroup_page.php:216
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: bug_actiongroup_page.php:228
+msgid ""
+"The issues you have selected are from different projects. The parameters "
+"below reflect the settings for all projects. If this is incorrect, please "
+"retry your change with a smaller number of issues selected."
+msgstr ""
+
+#: print_all_bug_page.php:187 view_all_inc.php:115
+msgid "Viewing Issues"
+msgstr ""
+
+#: print_all_bug_page.php:245
+msgid "Display selected only"
+msgstr ""
+
+#: permalink_page.php:54
+msgid "Following is a permanent link to the currently configured filter:"
+msgstr ""
+
+#: permalink_page.php:63
+msgid "Create Short Link"
+msgstr ""
+
+#: bug_report_page.php:213
+msgid "Enter Report Details"
+msgstr ""
+
+#: bug_report_page.php:308 account_prof_menu_page.php:150
+msgid "Select Profile"
+msgstr ""
+
+#: bug_report_page.php:322 bug_report_page.php:325 bug_report_page.php:382
+msgid "Or Fill In"
+msgstr ""
+
+#: bug_report_page.php:423 manage/proj_page.php:168
+#: manage/proj_edit_page.php:269
+msgid "Assign To"
+msgstr ""
+
+#: bug_report_page.php:545
+msgid "Relationship with the parent issue"
+msgstr ""
+
+#: bug_report_page.php:549 changelog_page.php:330
+msgid "issue"
+msgstr ""
+
+#: bug_report_page.php:557
+msgid "Report Stay"
+msgstr ""
+
+#: bug_report_page.php:560
+msgid "check to report more issues"
+msgstr ""
+
+#: bug_report_page.php:568
+msgid "Submit Report"
+msgstr ""
+
+#: login_select_proj_page.php:57 login_select_proj_page.php:68
+msgid "Select Project"
+msgstr ""
+
+#: login_select_proj_page.php:65
+msgid "Choose Project"
+msgstr ""
+
+#: login_select_proj_page.php:77 account_prof_menu_page.php:139
+msgid "Make Default"
+msgstr ""
+
+#: bugnote_add_inc.php:111
+msgid "Start"
+msgstr ""
+
+#: bugnote_add_inc.php:112
+msgid "Reset"
+msgstr ""
+
+#: account_prof_edit_page.php:86 account_prof_menu_page.php:133
+msgid "Edit Profile"
+msgstr ""
+
+#: account_prof_edit_page.php:122 account_prof_menu_page.php:111
+msgid "Additional Description"
+msgstr ""
+
+#: account_prof_edit_page.php:130
+msgid "Update Profile"
+msgstr ""
+
+#: bug_actiongroup_attach_tags_inc.php:79
+msgid "Attach permission denied."
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_bycategory.php:42
+#: plugins/MantisGraph/pages/bug_graph_bycategory.php:201
+#: plugins/MantisGraph/pages/bug_graph_bycategory.php:231 summary_page.php:179
+msgid "By Category"
+msgstr ""
+
+#: plugins/MantisGraph/pages/config.php:176
+#: plugins/MantisCoreFormatting/pages/config.php:97
+#: manage/config_workflow_page.php:497 manage/config_email_page.php:346
+#: manage/config_work_threshold_page.php:371
+msgid "Update Configuration"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_bydeveloper.php:35
+msgid "By Developer"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_bystatus.php:42
+#: plugins/MantisGraph/pages/bug_graph_bystatus.php:162
+#: plugins/MantisGraph/pages/bug_graph_bystatus.php:237 summary_page.php:155
+msgid "By Status"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_byresolution.php:41
+#: summary_page.php:283
+msgid "By Resolution"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_byreporter.php:35
+msgid "By Reporter"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_bypriority.php:42
+#: summary_page.php:295
+msgid "By Priority"
+msgstr ""
+
+#: plugins/MantisGraph/pages/summary_graph_byseverity.php:42
+#: summary_page.php:167
+msgid "By Severity"
+msgstr ""
+
+#: plugins/MantisGraph/core/graph_api.php:519
+#: plugins/MantisGraph/core/graph_api.php:552
+#: plugins/MantisGraph/core/graph_api.php:565 summary_page.php:250
+msgid "By Date (days)"
+msgstr ""
+
+#: plugins/MantisGraph/core/Period.php:278
+msgid "From"
+msgstr ""
+
+#: plugins/MantisGraph/core/Period.php:279 bug_reminder_page.php:78
+msgid "To"
+msgstr ""
+
+#: plugins/XmlImportExport/pages/import.php:69
+msgid "Maximum size"
+msgstr ""
+
+#: plugins/XmlImportExport/pages/import.php:113 manage/proj_edit_page.php:252
+msgid "Categories"
+msgstr ""
+
+#: bug_report.php:237
+#, php-format
+msgid "View Submitted Issue %1$s"
+msgstr ""
+
+#: bug_report.php:258
+msgid "Report More Issues"
+msgstr ""
+
+#: bug_revision_drop.php:51
+msgid "Are you sure you want to drop this issue revision?"
+msgstr ""
+
+#: billing_inc.php:133
+msgid "Cost:"
+msgstr ""
+
+#: billing_inc.php:170 billing_inc.php:237
+msgid "Cost"
+msgstr ""
+
+#: bug_reminder_page.php:81
+msgid "Reminder"
+msgstr ""
+
+#: bug_reminder_page.php:106
+msgid "Send"
+msgstr ""
+
+#: bug_reminder_page.php:116
+msgid ""
+"This note will be sent to the recipients listed requesting feedback on this "
+"issue."
+msgstr ""
+
+#: bug_reminder_page.php:118
+msgid ""
+"These recipients will also begin monitoring the issue. They can unsubscribe "
+"using the Unmonitor button."
+msgstr ""
+
+#: bug_reminder_page.php:121
+msgid "This note will be stored with the issue."
+msgstr ""
+
+#: query_store.php:63
+msgid ""
+"You cannot store a filter without a name. Please give this filter a name "
+"before saving it."
+msgstr ""
+
+#: query_store.php:70
+msgid ""
+"You cannot store a filter name with more than 64 characters. Please give "
+"this filter a shorter name."
+msgstr ""
+
+#: query_store.php:80
+msgid ""
+"Another filter already has this name. Please choose a different name for "
+"this filter."
+msgstr ""
+
+#: query_store.php:99
+msgid "There was an error saving this filter."
+msgstr ""
+
+#: account_update.php:117
+msgid "E-mail address successfully updated"
+msgstr ""
+
+#: account_update.php:121
+msgid "Password successfully updated"
+msgstr ""
+
+#: account_update.php:125
+msgid "Real name successfully updated"
+msgstr ""
+
+#: query_delete.php:66
+msgid "Filter Deleted"
+msgstr ""
+
+#: view_filters_page.php:187
+msgid "Monitored By"
+msgstr ""
+
+#: view_filters_page.php:192
+msgid "Profile"
+msgstr ""
+
+#: view_filters_page.php:232
+msgid "Hide Status"
+msgstr ""
+
+#: view_filters_page.php:309
+msgid "Show"
+msgstr ""
+
+#: view_filters_page.php:311
+msgid "Show Sticky Issues"
+msgstr ""
+
+#: view_filters_page.php:312
+msgid "Changed(hrs)"
+msgstr ""
+
+#: bugnote_delete.php:76
+msgid "Are you sure you wish to delete this note?"
+msgstr ""
+
+#: bugnote_delete.php:77
+msgid "Delete Note"
+msgstr ""
+
+#: tag_update_page.php:73 tag_update_page.php:78
+#, php-format
+msgid "Update Tag: %s"
+msgstr ""
+
+#: tag_update_page.php:79
+msgid "Back to Tag"
+msgstr ""
+
+#: issues_rss.php:109 manage/config_work_threshold_page.php:323
+msgid "Issues"
+msgstr ""
+
+#: account_prof_menu_page.php:86 account_prof_menu_page.php:115
+msgid "Add Profile"
+msgstr ""
+
+#: account_prof_menu_page.php:130
+msgid "Edit or Delete Profiles"
+msgstr ""
+
+#: account_prof_menu_page.php:145
+msgid "Delete Profile"
+msgstr ""
+
+#: bugnote_edit_page.php:112
+msgid "Edit Note"
+msgstr ""
+
+#: bugnote_edit_page.php:138 bug_update_page.php:169 bug_update_page.php:700
+msgid "Update Information"
+msgstr ""
+
+#: my_view_inc.php:155
+msgid "Unassigned"
+msgstr ""
+
+#: my_view_inc.php:158
+msgid "Recently Modified"
+msgstr ""
+
+#: my_view_inc.php:161
+msgid "Reported by Me"
+msgstr ""
+
+#: my_view_inc.php:164
+msgid "Assigned to Me (Unresolved)"
+msgstr ""
+
+#: my_view_inc.php:167 summary_page.php:252
+msgid "Resolved"
+msgstr ""
+
+#: my_view_inc.php:170
+msgid "Monitored by Me"
+msgstr ""
+
+#: my_view_inc.php:173
+msgid "Awaiting Feedback from Me"
+msgstr ""
+
+#: my_view_inc.php:176
+msgid "Awaiting Confirmation of Resolution from Me"
+msgstr ""
+
+#: my_view_inc.php:179
+msgid "Issues I Have Commented On"
+msgstr ""
+
+#: bug_relationship_graph.php:99
+msgid "Relationship Graph"
+msgstr ""
+
+#: bug_relationship_graph.php:107
+msgid "View Issue"
+msgstr ""
+
+#: bug_relationship_graph.php:125
+msgid "Vertical"
+msgstr ""
+
+#: bug_relationship_graph.php:127
+msgid "Horizontal"
+msgstr ""
+
+#: bug_relationship_graph.php:161
+msgid "related to"
+msgstr ""
+
+#: bug_relationship_graph.php:165
+msgid "child of"
+msgstr ""
+
+#: bug_relationship_graph.php:169
+msgid "duplicate of"
+msgstr ""
+
+#: proj_doc_edit_page.php:110
+msgid "Filename"
+msgstr ""
+
+#: proj_doc_edit_page.php:137
+msgid "Update File"
+msgstr ""
+
+#: bug_update_page.php:161
+msgid "Updating Issue Information"
+msgstr ""
+
+#: bug_update_page.php:163
+msgid "Back To Issue"
+msgstr ""
+
+#: project_page.php:117
+msgid "Development Team"
+msgstr ""
+
+#: signup_page.php:98
+msgid "Enter the code as it is shown in the box on the right:"
+msgstr ""
+
+#: signup_page.php:116
+msgid ""
+"On completion of this form and verification of your answers, you will be "
+"sent a confirmation e-mail to the e-mail address you specified. Using the "
+"confirmation e-mail, you will be able to activate your account. If you fail "
+"to activate your account within seven days, it will be purged. You must "
+"specify a valid e-mail address in order to receive the account confirmation "
+"e-mail."
+msgstr ""
+
+#: news_rss.php:81 manage/adm_permissions_report.php:107
+msgid "News"
+msgstr ""
+
+#: view_all_inc.php:125
+msgid "CSV Export"
+msgstr ""
+
+#: view_all_inc.php:127
+msgid "Excel Export"
+msgstr ""
+
+#: view_all_inc.php:227
+msgid "Select All"
+msgstr ""
+
+#: view_all_inc.php:235
+msgid "Ok"
+msgstr ""
+
+#: changelog_page.php:85
+msgid "Not Yet Released"
+msgstr ""
+
+#: changelog_page.php:333
+msgid "issues"
+msgstr ""
+
+#: changelog_page.php:346
+msgid "No Change Log information available"
+msgstr ""
+
+#: main_page.php:70
+msgid "Open and assigned to me:"
+msgstr ""
+
+#: main_page.php:75
+msgid "Open and reported by me:"
+msgstr ""
+
+#: main_page.php:80
+msgid "Last Visit:"
+msgstr ""
+
+#: main_page.php:108 news_view_page.php:66
+msgid "Archives"
+msgstr ""
+
+#: main_page.php:114
+msgid "Newer News"
+msgstr ""
+
+#: main_page.php:118
+msgid "Older News"
+msgstr ""
+
+#: signup.php:106
+msgid "Account registration processed."
+msgstr ""
+
+#: signup.php:113
+msgid ""
+"Congratulations. You have registered successfully. You are now being sent a "
+"confirmation e-mail to verify your e-mail address. Visiting the link sent to "
+"you in this e-mail will activate your account."
+msgstr ""
+
+#: signup.php:115
+msgid ""
+"You will have seven days to complete the account confirmation process; if "
+"you fail to complete account confirmation within seven days, this newly-"
+"registered account may be purged."
+msgstr ""
+
+#: news_menu_page.php:56
+msgid "Add News"
+msgstr ""
+
+#: news_menu_page.php:69 news_edit_page.php:122
+msgid "Stays on Top"
+msgstr ""
+
+#: news_menu_page.php:82
+msgid "Post News"
+msgstr ""
+
+#: news_menu_page.php:93
+msgid "Edit or Delete News"
+msgstr ""
+
+#: news_menu_page.php:97
+msgid "Edit Post"
+msgstr ""
+
+#: news_menu_page.php:99
+msgid "Delete Post"
+msgstr ""
+
+#: news_menu_page.php:102
+msgid "Select Post"
+msgstr ""
+
+#: summary_page.php:112
+msgid "(open/resolved/closed/total)"
+msgstr ""
+
+#: summary_page.php:142
+msgid "By Project"
+msgstr ""
+
+#: summary_page.php:191
+msgid "Time Stats For Resolved Issues (days)"
+msgstr ""
+
+#: summary_page.php:196
+msgid "Longest open issue"
+msgstr ""
+
+#: summary_page.php:208 summary_page.php:272
+msgid "Longest open"
+msgstr ""
+
+#: summary_page.php:216
+msgid "Average time"
+msgstr ""
+
+#: summary_page.php:237
+msgid "Developer Stats"
+msgstr ""
+
+#: summary_page.php:251
+msgid "Opened"
+msgstr ""
+
+#: summary_page.php:253
+msgid "Balance"
+msgstr ""
+
+#: summary_page.php:262
+msgid "Most Active"
+msgstr ""
+
+#: summary_page.php:263
+msgid "Score"
+msgstr ""
+
+#: summary_page.php:273
+msgid "Days"
+msgstr ""
+
+#: summary_page.php:307
+msgid "Reporter Stats"
+msgstr ""
+
+#: summary_page.php:319
+msgid "Reporter Effectiveness"
+msgstr ""
+
+#: summary_page.php:325
+msgid "False"
+msgstr ""
+
+#: summary_page.php:328
+msgid "Total"
+msgstr ""
+
+#: summary_page.php:341
+msgid "Reporter By Resolution"
+msgstr ""
+
+#: summary_page.php:350
+msgid "% False"
+msgstr ""
+
+#: summary_page.php:363
+msgid "Developer By Resolution"
+msgstr ""
+
+#: summary_page.php:372
+msgid "% Fixed"
+msgstr ""
+
+#: bug_change_status_page.php:143
+msgid "Change Status: "
+msgstr ""
+
+#: bug_change_status_page.php:150
+msgid ""
+"Attention: Not all the children of this issue are yet resolved or closed. "
+"Before resolving/closing a parent issue, all the issues related as child "
+"with this one should be resolved or closed."
+msgstr ""
+
+#: bug_change_status_page.php:191
+msgid "Duplicate ID"
+msgstr ""
+
+#: account_delete.php:82
+msgid "Are you sure you wish to delete your account?"
+msgstr ""
+
+#: account_delete.php:83 account_page.php:228 manage/user_delete.php:81
+msgid "Delete Account"
+msgstr ""
+
+#: account_delete.php:101
+msgid "Your account has been removed..."
+msgstr ""
+
+#: bug_monitor_list_view_inc.php:65 bug_monitor_list_view_inc.php:107
+#: manage/config_email_page.php:206
+msgid "Users monitoring this issue"
+msgstr ""
+
+#: bug_monitor_list_view_inc.php:70
+msgid "User List"
+msgstr ""
+
+#: bug_monitor_list_view_inc.php:75
+msgid "There are no users monitoring this issue."
+msgstr ""
+
+#: account_page.php:101
+msgid ""
+"Your account information has been verified. The account confirmation message "
+"you have received is now invalid."
+msgstr ""
+
+#: account_page.php:103
+msgid "You must set a password here to allow you to log in again."
+msgstr ""
+
+#: account_page.php:113
+msgid "Edit Account"
+msgstr ""
+
+#: account_page.php:126
+msgid ""
+"The password is controlled by another system, hence cannot be edited here."
+msgstr ""
+
+#: account_page.php:144
+msgid "Confirm Password"
+msgstr ""
+
+#: account_page.php:166 account_page.php:175 manage/user_page.php:261
+#: manage/user_create_page.php:69 view_user_page.php:98
+msgid "Real Name"
+msgstr ""
+
+#: account_page.php:183 manage/proj_edit_page.php:490
+#: manage/proj_edit_page.php:579 manage/adm_config_report.php:140
+#: manage/user_page.php:269 manage/user_create_page.php:95
+msgid "Access Level"
+msgstr ""
+
+#: account_page.php:188
+msgid "Project Access Level"
+msgstr ""
+
+#: account_page.php:196
+msgid "Assigned Projects"
+msgstr ""
+
+#: account_page.php:215 manage/user_edit_page.php:164
+msgid "Update User"
+msgstr ""
+
+#: bug_file_delete.php:58
+msgid "Are you sure you wish to delete this attachment?"
+msgstr ""
+
+#: manage/user_prune.php:69
+msgid "Are you sure you want to delete old accounts that have never logged in?"
+msgstr ""
+
+#: manage/user_prune.php:69
+msgid "Prune"
+msgstr ""
+
+#: manage/user_delete.php:79
+msgid "Are you sure you wish to delete this account?"
+msgstr ""
+
+#: manage/config_workflow_page.php:135
+msgid "Current Status"
+msgstr ""
+
+#: manage/config_workflow_page.php:137
+msgid "Next Status"
+msgstr ""
+
+#: manage/config_workflow_page.php:144 manage/custom_field_edit_page.php:94
+#: manage/custom_field_page.php:64
+msgid "Default Value"
+msgstr ""
+
+#: manage/config_workflow_page.php:203
+msgid "Threshold"
+msgstr ""
+
+#: manage/config_workflow_page.php:205
+#: manage/config_work_threshold_page.php:91
+msgid "Who can alter this value"
+msgstr ""
+
+#: manage/config_workflow_page.php:236
+#: manage/config_work_threshold_page.php:325
+msgid "Status to which a new issue is set"
+msgstr ""
+
+#: manage/config_workflow_page.php:239
+msgid "Status to which reopened issues are set"
+msgstr ""
+
+#: manage/config_workflow_page.php:242
+#: manage/config_work_threshold_page.php:337
+msgid "Status where an issue is considered resolved"
+msgstr ""
+
+#: manage/config_workflow_page.php:245
+msgid "Status where an issue is considered closed"
+msgstr ""
+
+#: manage/config_workflow_page.php:281
+msgid "Minimum Access Level to Change to this Status"
+msgstr ""
+
+#: manage/config_workflow_page.php:386 manage/config_workflow_page.php:399
+#: manage/config_workflow_page.php:412 manage/config_workflow_page.php:425
+msgid "0:non-existent"
+msgstr ""
+
+#: manage/config_workflow_page.php:390
+msgid "Arc from status to itself is implied, and need not be given explicitly"
+msgstr ""
+
+#: manage/config_workflow_page.php:403 manage/config_workflow_page.php:429
+msgid "You cannot move an issue into this status"
+msgstr ""
+
+#: manage/config_workflow_page.php:416 manage/config_workflow_page.php:429
+msgid "You cannot move an issue out of this status"
+msgstr ""
+
+#: manage/config_workflow_page.php:439 manage/config_email_page.php:310
+#: manage/config_work_threshold_page.php:308
+#: manage/config_workflow_graph_page.php:64
+msgid ""
+"Note: These configurations affect all projects, unless overridden at the "
+"project level."
+msgstr ""
+
+#: manage/config_workflow_page.php:441 manage/config_email_page.php:312
+#: manage/config_work_threshold_page.php:310
+#: manage/config_workflow_graph_page.php:66
+#, php-format
+msgid "Note: These configurations affect only the %s project."
+msgstr ""
+
+#: manage/config_workflow_page.php:444 manage/config_email_page.php:315
+#: manage/config_work_threshold_page.php:313
+msgid "In the table below, the following color code applies:"
+msgstr ""
+
+#: manage/config_workflow_page.php:446 manage/config_email_page.php:317
+#: manage/config_work_threshold_page.php:315
+msgid "Project setting overrides others."
+msgstr ""
+
+#: manage/config_workflow_page.php:448 manage/config_email_page.php:319
+#: manage/config_work_threshold_page.php:317
+msgid "All Project settings override default configuration."
+msgstr ""
+
+#: manage/config_workflow_page.php:451
+msgid "Thresholds that Affect Workflow"
+msgstr ""
+
+#: manage/config_workflow_page.php:462
+msgid "Workflow Validation"
+msgstr ""
+
+#: manage/config_workflow_page.php:464
+msgid "Validation Comment"
+msgstr ""
+
+#: manage/config_workflow_page.php:471
+msgid "Workflow"
+msgstr ""
+
+#: manage/config_workflow_page.php:478
+msgid "Who can change workflow:"
+msgstr ""
+
+#: manage/config_workflow_page.php:485 manage/config_email_page.php:208
+#: manage/config_work_threshold_page.php:90
+msgid "Access Levels"
+msgstr ""
+
+#: manage/config_workflow_page.php:490
+msgid "Who can change access levels:"
+msgstr ""
+
+#: manage/config_workflow_page.php:509 manage/config_email_page.php:357
+#: manage/config_work_threshold_page.php:384
+msgid "Delete All Projects Settings"
+msgstr ""
+
+#: manage/config_workflow_page.php:511 manage/config_email_page.php:359
+#: manage/config_work_threshold_page.php:386
+msgid "Delete Project Specific Settings"
+msgstr ""
+
+#: manage/config_email_page.php:203
+msgid "Message"
+msgstr ""
+
+#: manage/config_email_page.php:204
+msgid "User who reported issue"
+msgstr ""
+
+#: manage/config_email_page.php:205
+msgid "User who is handling the issue"
+msgstr ""
+
+#: manage/config_email_page.php:207
+msgid "Users who added Issue Notes"
+msgstr ""
+
+#: manage/config_email_page.php:321
+msgid "E-mail notification"
+msgstr ""
+
+#: manage/config_email_page.php:325
+msgid "E-mail on Deleted"
+msgstr ""
+
+#: manage/config_email_page.php:328
+msgid "E-mail on Sponsorship changed"
+msgstr ""
+
+#: manage/config_email_page.php:331
+msgid "E-mail on Relationship changed"
+msgstr ""
+
+#: manage/config_email_page.php:335
+msgid "Status changes to"
+msgstr ""
+
+#: manage/config_email_page.php:341
+msgid "Who can change notifications:"
+msgstr ""
+
+#: manage/proj_cat_edit_page.php:70
+msgid "Edit Project Category"
+msgstr ""
+
+#: manage/proj_cat_edit_page.php:100 manage/proj_cat_delete.php:73
+msgid "Delete Category"
+msgstr ""
+
+#: manage/plugin_uninstall.php:61
+#, php-format
+msgid "Are you sure you want to uninstall the %s plugin?"
+msgstr ""
+
+#: manage/plugin_uninstall.php:61 manage/plugin_page.php:198
+msgid "Uninstall"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:70
+msgid "Edit custom field"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:80 manage/adm_config_report.php:138
+#: manage/adm_config_report.php:204 manage/custom_field_page.php:62
+msgid "Type"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:89 manage/custom_field_page.php:63
+msgid "Possible Values"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:99
+msgid "Regular Expression"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:104
+msgid "Read Access"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:113
+msgid "Write Access"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:122
+msgid "Min. Length"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:127
+msgid "Max. Length"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:132
+msgid "Add to Filter"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:137
+msgid "Display When Reporting Issues"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:142
+msgid "Display When Updating Issues"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:147
+msgid "Display When Resolving Issues"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:152
+msgid "Display When Closing Issues"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:157
+msgid "Required On Report"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:162
+msgid "Required On Update"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:167
+msgid "Required On Resolve"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:172
+msgid "Required On Close"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:176
+msgid "Update Custom Field"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:189
+msgid "Delete Custom Field"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:200
+msgid "Link custom field to project"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:211
+msgid "Projects:"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:220
+msgid "Sequence:"
+msgstr ""
+
+#: manage/custom_field_edit_page.php:224
+msgid "Link Custom Field"
+msgstr ""
+
+#: manage/proj_ver_delete.php:61
+msgid "Are you sure you want to delete this version?"
+msgstr ""
+
+#: manage/proj_ver_delete.php:62
+msgid "Version:"
+msgstr ""
+
+#: manage/proj_ver_delete.php:63 manage/proj_ver_edit_page.php:113
+msgid "Delete Version"
+msgstr ""
+
+#: manage/proj_page.php:81 manage/adm_permissions_report.php:130
+msgid "Projects"
+msgstr ""
+
+#: manage/proj_page.php:85
+msgid "Create New Project"
+msgstr ""
+
+#: manage/proj_page.php:99 manage/proj_edit_page.php:110
+#: manage/proj_edit_page.php:206 manage/user_page.php:273
+#: manage/user_create_page.php:104
+msgid "Enabled"
+msgstr ""
+
+#: manage/proj_page.php:162
+msgid "Global Categories"
+msgstr ""
+
+#: manage/proj_page.php:169 manage/proj_edit_page.php:210
+#: manage/proj_edit_page.php:270 manage/proj_edit_page.php:338
+#: manage/proj_edit_page.php:409 manage/proj_edit_page.php:491
+#: manage/adm_config_report.php:142 manage/plugin_page.php:116
+#: manage/plugin_page.php:238
+msgid "Actions"
+msgstr ""
+
+#: manage/proj_page.php:205 manage/proj_edit_page.php:310
+msgid "Add Category"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:89
+#: manage/adm_permissions_report.php:60
+msgid "Capability"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:324
+msgid "Report an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:326
+msgid "Update an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:327
+msgid "Allow Reporter to close Issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:328
+msgid "Monitor an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:329
+msgid "Handle an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:330
+msgid "Assign an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:331
+msgid "Move an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:332
+msgid "Delete an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:333
+msgid "Reopen an issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:334
+msgid "Allow Reporter to re-open Issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:335
+msgid "Status to which a reopened issue is set"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:336
+msgid "Resolution to which a reopened issue is set"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:338
+msgid "Status where an issue becomes read only"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:339
+msgid "Update readonly issues"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:340
+msgid "Update issue status"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:341
+msgid "View private issues"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:342
+msgid "Set view state when reporting a new issue or note"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:343
+msgid "Change view state of existing issue or note"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:344
+msgid "Show list of users monitoring issue"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:345
+msgid "Set status on assignment of Handler"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:346
+msgid "Status to set auto-assigned issues to"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:347
+msgid "Limit reporter's access to their own issues"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:352
+msgid "Add notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:353
+msgid "Edit others' notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:354
+msgid "Edit own notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:355
+msgid "Delete others' notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:356
+msgid "Delete own notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:357
+msgid "View others' private notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:358
+msgid "Change view state of own notes"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:362
+#: manage/adm_permissions_report.php:164
+msgid "Others"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:363
+#: manage/config_work_threshold_page.php:364
+#: manage/config_work_threshold_page.php:365
+#: manage/adm_permissions_report.php:165
+msgid "View"
+msgstr ""
+
+#: manage/config_work_threshold_page.php:366
+#: manage/adm_permissions_report.php:167
+msgid "Send reminders"
+msgstr ""
+
+#: manage/tags_page.php:121 manage/user_page.php:137
+msgid "All"
+msgstr ""
+
+#: manage/tags_page.php:134 manage/tags_page.php:168 manage/tags_page.php:182
+msgid "Create Tag"
+msgstr ""
+
+#: manage/user_update.php:173 manage/user_edit_page.php:103
+#: manage/user_edit_page.php:109
+msgid "Real Name:"
+msgstr ""
+
+#: manage/user_update.php:181 manage/user_edit_page.php:132
+#: manage/user_edit_page.php:229
+msgid "Access Level:"
+msgstr ""
+
+#: manage/user_update.php:184
+msgid "Account updated"
+msgstr ""
+
+#: manage/user_update.php:185
+msgid ""
+"Your account has been updated by an administrator. A list of these changes "
+"is provided below. You can update your account details and preferences at "
+"any time by visiting the following URL:"
+msgstr ""
+
+#: manage/user_update.php:198
+msgid ""
+"Account protected. Access level and enabled protected. Otherwise, account "
+"has been updated..."
+msgstr ""
+
+#: manage/proj_edit_page.php:92
+msgid "Edit Project"
+msgstr ""
+
+#: manage/proj_edit_page.php:96 manage/adm_config_report.php:136
+#: manage/adm_config_report.php:189 manage/proj_create_page.php:74
+msgid "Project Name"
+msgstr ""
+
+#: manage/proj_edit_page.php:115 manage/proj_create_page.php:97
+msgid "Inherit Global Categories"
+msgstr ""
+
+#: manage/proj_edit_page.php:131 manage/proj_create_page.php:117
+msgid "Upload File Path"
+msgstr ""
+
+#: manage/proj_edit_page.php:144
+msgid "Update Project"
+msgstr ""
+
+#: manage/proj_edit_page.php:158 manage/proj_delete.php:61
+msgid "Delete Project"
+msgstr ""
+
+#: manage/proj_edit_page.php:166
+msgid "Subprojects"
+msgstr ""
+
+#: manage/proj_edit_page.php:170
+msgid "Create New Subproject"
+msgstr ""
+
+#: manage/proj_edit_page.php:191
+msgid "Add as Subproject"
+msgstr ""
+
+#: manage/proj_edit_page.php:207
+msgid "Inherit Categories"
+msgstr ""
+
+#: manage/proj_edit_page.php:238
+msgid "Unlink"
+msgstr ""
+
+#: manage/proj_edit_page.php:244
+msgid "Update Subproject Inheritance"
+msgstr ""
+
+#: manage/proj_edit_page.php:260
+msgid "Copy Categories From"
+msgstr ""
+
+#: manage/proj_edit_page.php:261
+msgid "Copy Categories To"
+msgstr ""
+
+#: manage/proj_edit_page.php:317
+msgid "Versions"
+msgstr ""
+
+#: manage/proj_edit_page.php:325
+msgid "Copy Versions From"
+msgstr ""
+
+#: manage/proj_edit_page.php:326
+msgid "Copy Versions To"
+msgstr ""
+
+#: manage/proj_edit_page.php:336 manage/proj_ver_edit_page.php:97
+msgid "Obsolete"
+msgstr ""
+
+#: manage/proj_edit_page.php:377
+msgid "Add Version"
+msgstr ""
+
+#: manage/proj_edit_page.php:378
+msgid "Add and Edit Version"
+msgstr ""
+
+#: manage/proj_edit_page.php:390 manage/custom_field_page.php:57
+#: manage/adm_permissions_report.php:147
+msgid "Custom Fields"
+msgstr ""
+
+#: manage/proj_edit_page.php:398
+msgid "Copy From"
+msgstr ""
+
+#: manage/proj_edit_page.php:399
+msgid "Copy To"
+msgstr ""
+
+#: manage/proj_edit_page.php:408
+msgid "Sequence"
+msgstr ""
+
+#: manage/proj_edit_page.php:422 manage/plugin_page.php:204
+msgid "Update"
+msgstr ""
+
+#: manage/proj_edit_page.php:453
+msgid "Add This Existing Custom Field"
+msgstr ""
+
+#: manage/proj_edit_page.php:465
+msgid "This project is public. All users have access."
+msgstr ""
+
+#: manage/proj_edit_page.php:467
+msgid ""
+"This project is private. Only administrators and manually added users have "
+"access."
+msgstr ""
+
+#: manage/proj_edit_page.php:472 manage/user_page.php:239
+msgid "Manage Accounts"
+msgstr ""
+
+#: manage/proj_edit_page.php:481
+msgid "Copy Users From"
+msgstr ""
+
+#: manage/proj_edit_page.php:482
+msgid "Copy Users To"
+msgstr ""
+
+#: manage/proj_edit_page.php:547
+msgid "Show Users with Global Access"
+msgstr ""
+
+#: manage/proj_edit_page.php:549
+msgid "Hide Users with Global Access"
+msgstr ""
+
+#: manage/proj_edit_page.php:554
+msgid "Remove all"
+msgstr ""
+
+#: manage/proj_edit_page.php:564 manage/user_edit_page.php:209
+msgid "Add user to project"
+msgstr ""
+
+#: manage/proj_edit_page.php:588 manage/user_edit_page.php:237
+msgid "Add User"
+msgstr ""
+
+#: manage/config_revert.php:74
+msgid "Are you sure you want to delete the settings for:"
+msgstr ""
+
+#: manage/config_revert.php:75
+msgid "in project"
+msgstr ""
+
+#: manage/config_revert.php:76
+msgid "Delete Settings"
+msgstr ""
+
+#: manage/config_workflow_set.php:94
+#, php-format
+msgid ""
+"The default status of %1$s is not selected in the next statuses for %2$s. It "
+"will be ignored."
+msgstr ""
+
+#: manage/adm_config_report.php:116
+msgid "The configuration in database is corrupted."
+msgstr ""
+
+#: manage/adm_config_report.php:132
+msgid "Database Configuration"
+msgstr ""
+
+#: manage/adm_config_report.php:137 manage/adm_config_report.php:199
+msgid "Configuration Option"
+msgstr ""
+
+#: manage/adm_config_report.php:139 manage/adm_config_report.php:216
+msgid "Value"
+msgstr ""
+
+#: manage/adm_config_report.php:149 manage/adm_config_report.php:182
+msgid "All Users"
+msgstr ""
+
+#: manage/adm_config_report.php:176 manage/adm_config_report.php:220
+msgid "Set Configuration Option"
+msgstr ""
+
+#: manage/user_edit_page.php:87
+msgid "Edit User"
+msgstr ""
+
+#: manage/user_edit_page.php:146
+msgid "Enabled:"
+msgstr ""
+
+#: manage/user_edit_page.php:152
+msgid "Protected:"
+msgstr ""
+
+#: manage/user_edit_page.php:158
+msgid "Notify User"
+msgstr ""
+
+#: manage/user_edit_page.php:175
+msgid "Reset Password"
+msgstr ""
+
+#: manage/user_edit_page.php:186
+msgid "Delete User"
+msgstr ""
+
+#: manage/user_edit_page.php:196
+msgid "Reset Password sends the confirmation URL via e-mail."
+msgstr ""
+
+#: manage/user_edit_page.php:198
+msgid "Reset Password resets the password to be blank."
+msgstr ""
+
+#: manage/user_edit_page.php:211
+msgid "Assigned Projects:"
+msgstr ""
+
+#: manage/user_edit_page.php:220
+msgid "Unassigned Projects:"
+msgstr ""
+
+#: manage/custom_field_delete.php:62
+msgid ""
+"This field is currently linked to at least one project. If you continue all "
+"values for this field will be permanently deleted. This action cannot be "
+"undone. If you do not want to delete this field, hit the Back button in your "
+"browser. To proceed, click the button below"
+msgstr ""
+
+#: manage/custom_field_delete.php:63 manage/custom_field_delete.php:67
+#: manage/proj_custom_field_remove.php:69
+msgid "Field:"
+msgstr ""
+
+#: manage/custom_field_delete.php:64 manage/custom_field_delete.php:68
+msgid "Delete Field"
+msgstr ""
+
+#: manage/custom_field_delete.php:66
+msgid ""
+"Are you sure you want to delete this custom field and all associated values?"
+msgstr ""
+
+#: manage/proj_delete.php:59
+msgid ""
+"Are you sure you want to delete this project and all attached issue reports?"
+msgstr ""
+
+#: manage/proj_delete.php:60 manage/user_proj_delete.php:67
+msgid "Project Name:"
+msgstr ""
+
+#: manage/overview_page.php:54
+msgid "Site Information"
+msgstr ""
+
+#: manage/proj_cat_delete.php:72
+#, php-format
+msgid ""
+"Are you sure you want to delete this category? Category %1$s contains %2$s "
+"issues."
+msgstr ""
+
+#: manage/columns_inc.php:89
+msgid "All Available Columns"
+msgstr ""
+
+#: manage/columns_inc.php:94
+msgid "View Issues Columns"
+msgstr ""
+
+#: manage/columns_inc.php:99
+msgid "Print Issues Columns"
+msgstr ""
+
+#: manage/columns_inc.php:104
+msgid "Export Issues Columns"
+msgstr ""
+
+#: manage/columns_inc.php:111
+msgid "Update Columns as Default for All Projects"
+msgstr ""
+
+#: manage/columns_inc.php:113
+msgid "Update Columns For Current Project"
+msgstr ""
+
+#: manage/columns_inc.php:119
+msgid "Update Columns as Global Default for All Projects"
+msgstr ""
+
+#: manage/columns_inc.php:138
+msgid "Copy Columns From"
+msgstr ""
+
+#: manage/columns_inc.php:140
+msgid "Copy Columns To"
+msgstr ""
+
+#: manage/columns_inc.php:152
+msgid "Reset Columns Configuration"
+msgstr ""
+
+#: manage/user_reset.php:70
+msgid "Account protected. Cannot reset the password."
+msgstr ""
+
+#: manage/user_reset.php:75
+msgid ""
+"A confirmation request has been sent to the selected user's e-mail address. "
+"Using this, the user will be able to change their password."
+msgstr ""
+
+#: manage/user_reset.php:78
+msgid "Account password has been set to blank..."
+msgstr ""
+
+#: manage/proj_create_page.php:68
+msgid "Add Subproject"
+msgstr ""
+
+#: manage/proj_create_page.php:70 manage/proj_create_page.php:130
+msgid "Add Project"
+msgstr ""
+
+#: manage/proj_create_page.php:103
+msgid "Inherit Parent Categories"
+msgstr ""
+
+#: manage/user_page.php:67 manage/user_create_page.php:109
+#: manage/plugin_page.php:115
+msgid "Protected"
+msgstr ""
+
+#: manage/user_page.php:146
+msgid "Unused"
+msgstr ""
+
+#: manage/user_page.php:147
+msgid "New"
+msgstr ""
+
+#: manage/user_page.php:154
+msgid "Never Logged In"
+msgstr ""
+
+#: manage/user_page.php:156
+msgid "1 Week"
+msgstr ""
+
+#: manage/user_page.php:240 manage/user_create_page.php:60
+msgid "Create New Account"
+msgstr ""
+
+#: manage/user_page.php:241
+msgid "Prune Accounts"
+msgstr ""
+
+#: manage/user_page.php:249
+msgid "Hide Inactive"
+msgstr ""
+
+#: manage/user_page.php:285 view_user_page.php:110
+msgid "Last Visit"
+msgstr ""
+
+#: manage/user_page.php:342 view_user_page.php:119
+msgid "Manage User"
+msgstr ""
+
+#: manage/adm_config_delete.php:59
+msgid "Are you sure you wish to delete this configuration option?"
+msgstr ""
+
+#: manage/user_create_page.php:89
+msgid "Verify Password"
+msgstr ""
+
+#: manage/user_create_page.php:113
+msgid "Create User"
+msgstr ""
+
+#: manage/user_create.php:100
+msgid "The user has an empty password. Are you sure that is what you want?"
+msgstr ""
+
+#: manage/user_create.php:101
+msgid "Use Empty Password"
+msgstr ""
+
+#: manage/user_create.php:131
+msgid "Created user"
+msgstr ""
+
+#: manage/user_create.php:131
+msgid "with an access level of"
+msgstr ""
+
+#: manage/proj_ver_edit_page.php:73
+msgid "Edit Project Version"
+msgstr ""
+
+#: manage/proj_ver_edit_page.php:82
+msgid "Date Order"
+msgstr ""
+
+#: manage/proj_ver_edit_page.php:103
+msgid "Update Version"
+msgstr ""
+
+#: manage/proj_user_remove.php:65
+msgid "Are you sure you wish to remove all the users of this project?"
+msgstr ""
+
+#: manage/proj_user_remove.php:65
+msgid "Remove All Users"
+msgstr ""
+
+#: manage/proj_user_remove.php:75 manage/user_proj_delete.php:66
+msgid "Are you sure you wish to remove this user?"
+msgstr ""
+
+#: manage/proj_user_remove.php:77 manage/user_proj_delete.php:68
+msgid "Remove User"
+msgstr ""
+
+#: manage/proj_custom_field_remove.php:68
+msgid ""
+"Are you sure you want to remove (unlink) this custom field from the project "
+"and delete all associated values?"
+msgstr ""
+
+#: manage/proj_custom_field_remove.php:70
+msgid "Remove Field"
+msgstr ""
+
+#: manage/custom_field_page.php:61
+msgid "Project Count"
+msgstr ""
+
+#: manage/custom_field_page.php:84
+msgid "New Custom Field"
+msgstr ""
+
+#: manage/adm_permissions_report.php:108
+msgid "View private news"
+msgstr ""
+
+#: manage/adm_permissions_report.php:109
+msgid "Manage news"
+msgstr ""
+
+#: manage/adm_permissions_report.php:115
+msgid "View list of attachments"
+msgstr ""
+
+#: manage/adm_permissions_report.php:116
+msgid "Download attachments"
+msgstr ""
+
+#: manage/adm_permissions_report.php:117
+msgid "Delete attachments"
+msgstr ""
+
+#: manage/adm_permissions_report.php:118
+msgid "Upload issue attachments"
+msgstr ""
+
+#: manage/adm_permissions_report.php:123
+msgid "filters"
+msgstr ""
+
+#: manage/adm_permissions_report.php:124
+msgid "Save filters"
+msgstr ""
+
+#: manage/adm_permissions_report.php:125
+msgid "Save filters as shared"
+msgstr ""
+
+#: manage/adm_permissions_report.php:126
+msgid "Use saved filters"
+msgstr ""
+
+#: manage/adm_permissions_report.php:131
+msgid "Create project"
+msgstr ""
+
+#: manage/adm_permissions_report.php:132
+msgid "Delete project"
+msgstr ""
+
+#: manage/adm_permissions_report.php:134
+msgid "Manage user access to a project"
+msgstr ""
+
+#: manage/adm_permissions_report.php:135
+msgid "Automatically included in private projects"
+msgstr ""
+
+#: manage/adm_permissions_report.php:140
+msgid "Project Documents"
+msgstr ""
+
+#: manage/adm_permissions_report.php:141
+msgid "View project documents"
+msgstr ""
+
+#: manage/adm_permissions_report.php:142
+msgid "Upload project documents"
+msgstr ""
+
+#: manage/adm_permissions_report.php:149
+msgid "Link custom fields to projects"
+msgstr ""
+
+#: manage/adm_permissions_report.php:154
+msgid "Sponsorships"
+msgstr ""
+
+#: manage/adm_permissions_report.php:155
+msgid "View sponsorship details"
+msgstr ""
+
+#: manage/adm_permissions_report.php:156
+msgid "View sponsorship total"
+msgstr ""
+
+#: manage/adm_permissions_report.php:158
+msgid "Assign sponsored issue"
+msgstr ""
+
+#: manage/adm_permissions_report.php:159
+msgid "Handle sponsored issue"
+msgstr ""
+
+#: manage/adm_permissions_report.php:166
+msgid "See e-mail addresses of other users"
+msgstr ""
+
+#: manage/adm_permissions_report.php:168
+msgid "Add profiles"
+msgstr ""
+
+#: manage/adm_permissions_report.php:170
+msgid "Notify of new user created"
+msgstr ""
+
+#: manage/plugin_page.php:104
+msgid "Installed Plugins"
+msgstr ""
+
+#: manage/plugin_page.php:111 manage/plugin_page.php:235
+msgid "Plugin"
+msgstr ""
+
+#: manage/plugin_page.php:113 manage/plugin_page.php:237
+msgid "Dependencies"
+msgstr ""
+
+#: manage/plugin_page.php:142 manage/plugin_page.php:145
+#: manage/plugin_page.php:257 manage/plugin_page.php:260
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: manage/plugin_page.php:150 manage/plugin_page.php:265
+msgid "Website:"
+msgstr ""
+
+#: manage/plugin_page.php:176 manage/plugin_page.php:287
+msgid "No dependencies"
+msgstr ""
+
+#: manage/plugin_page.php:197
+msgid "Upgrade"
+msgstr ""
+
+#: manage/plugin_page.php:228
+msgid "Available Plugins"
+msgstr ""
+
+#: manage/plugin_page.php:295
+msgid "Install"
+msgstr ""
+
+#: manage/plugin_page.php:302
+msgid "Key:"
+msgstr ""
+
+#: manage/plugin_page.php:303
+msgid "plugin ready"
+msgstr ""
+
+#: manage/plugin_page.php:304
+msgid "unmet dependencies"
+msgstr ""
+
+#: manage/plugin_page.php:305
+msgid "outdated dependencies"
+msgstr ""
+
+#: manage/plugin_page.php:306
+msgid "upgrade needed"
+msgstr ""
+
+#: account_sponsor_update.php:82
+msgid "Payment information updated."
+msgstr ""
+
+#: bugnote_view_inc.php:155
+msgid "Direct link to note"
+msgstr ""
+
+#: bugnote_view_inc.php:176
+msgid "Last edited:"
+msgstr ""
+
+#: bugnote_view_inc.php:179
+#, php-format
+msgid "View %s revisions"
+msgstr ""
+
+#: bugnote_view_inc.php:225
+msgid "Make Private"
+msgstr ""
+
+#: bugnote_view_inc.php:268
+#, php-format
+msgid "Total time for issue = %s"
+msgstr ""
+
+#: news_edit_page.php:66
+msgid "Are you sure you wish to delete this news item?"
+msgstr ""
+
+#: news_edit_page.php:66
+msgid "Delete News Item"
+msgstr ""
+
+#: news_edit_page.php:109
+msgid "Post to"
+msgstr ""
+
+#: news_edit_page.php:135
+msgid "Update News"
+msgstr ""
+
+#: view_user_page.php:75
+msgid "User Information"
+msgstr ""
