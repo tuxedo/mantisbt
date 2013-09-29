@@ -86,7 +86,7 @@ if ( !access_has_bug_level( $t_access_level_needed, $t_bug ) ) {
 		<?php echo $t_item['date'] ?>
 	</td>
 	<td class="small-caption">
-		<?php print_user( $t_item['userid'] ) ?>
+		<?php echo get_user( $t_item['userid'] ) ?>
 	</td>
 	<td class="small-caption">
 		<?php echo string_display( $t_item['note'] ) ?>

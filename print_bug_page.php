@@ -549,7 +549,7 @@ foreach ( $t_history as $t_item ) {
 	echo '<tr class="print">';
 	echo '<td class="print">', $t_item['date'], '</td>';
 	echo '<td class="print">';
-	print_user( $t_item['userid'] );
+	echo get_user( $t_item['userid'] );
 	echo '</td>';
 	echo '<td class="print">', string_display( $t_item['note'] ), '</td>';
 	echo '<td class="print">', string_display_line_links( $t_item['change'] ), '</td>';

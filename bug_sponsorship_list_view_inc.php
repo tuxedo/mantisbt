@@ -139,7 +139,7 @@ if ( $t_show_sponsorships ) {
 					$i++;
 
 					echo sprintf( _( '%1$s:' ), $t_date_added ) . _( '&#32;' );
-					print_user( $t_sponsorship->user_id );
+					echo get_user( $t_sponsorship->user_id );
 					echo ' (' . sponsorship_format_amount( $t_sponsorship->amount ) . ')';
 					if ( access_has_bug_level( config_get( 'handle_sponsored_bugs_threshold' ), $t_bug ) ) {
 						echo ' ' . get_enum_element( 'sponsorship', $t_sponsorship->paid );

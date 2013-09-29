@@ -156,7 +156,7 @@ $num_notes = count( $t_bugnotes );
 
 		<span class="bugnote-reporter">
 		<?php
-			print_user( $t_bugnote->reporter_id );
+			echo get_user( $t_bugnote->reporter_id );
 		?>
 		<span class="small access-level"><?php
 			if ( user_exists( $t_bugnote->reporter_id ) ) {

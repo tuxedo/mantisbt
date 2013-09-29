@@ -120,7 +120,7 @@ $t_note_count = count( $t_notes );
 		<tr>
 			<td class="print">
 				<?php
-				print_user( $v3_reporter_id );
+				echo get_user( $v3_reporter_id );
 				?>&#160;&#160;&#160;
 			</td>
 		</tr>
