@@ -213,7 +213,18 @@ function print_avatar( $p_user_id, $p_size = 80 ) {
  * @param int $p_user_id User ID
  */
 function get_user_name( $p_user_id ) {
-	echo prepare_user_name( $p_user_id );
+	# Catch a user_id of NO_USER (like when a handler hasn't been assigned)
+	if( NO_USER == $p_user_id ) {
+		return '';
+	}
+
+	$t_username = user_get_name( $p_user_id );
+	$t_username = string_display_line( $t_username );
+	if( user_exists( $p_user_id ) && user_get_field( $p_user_id, 'enabled' ) ) {
+		return '<a class="user" href="' . string_sanitize_url( 'view_user_page.php?id=' . $p_user_id, true ) . '">' . $t_username . '</a>';
+	} else {
+		return '<del class="user">' . $t_username . '</del>';
+	}
 }
 
 /**
@@ -440,7 +451,7 @@ function print_news_entry( $p_headline, $p_body, $p_poster_id, $p_view_state, $p
 		<h3 class="<?php echo $t_news_css; ?>">
 			<span class="news-title"><?php echo $t_headline; ?></span>
 			<span class="news-date-posted"><?php echo $t_date_posted; ?></span>
-			<span class="news-author"><?php echo prepare_user_name( $p_poster_id ); ?></span><?php
+			<span class="news-author"><?php echo get_user_name( $p_poster_id ); ?></span><?php
 
 			if( 1 == $p_announcement ) { ?>
 				<span class="news-announcement"><?php echo _( 'Announcement' ); ?></span><?php

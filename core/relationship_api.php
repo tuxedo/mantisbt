@@ -603,7 +603,7 @@ function relationship_get_details( $p_bug_id, $p_relationship, $p_html = false, 
 		# get the handler name of the related bug
 		$t_relationship_info .= $t_td;
 		if( $t_bug->handler_id > 0 ) {
-			$t_relationship_info .= string_no_break( prepare_user_name( $t_bug->handler_id ) );
+			$t_relationship_info .= string_no_break( get_user_name( $t_bug->handler_id ) );
 		}
 		$t_relationship_info .= '&#160;</td>';
 

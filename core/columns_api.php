@@ -1260,7 +1260,7 @@ function print_column_status( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_PA
 
 	# print username instead of status
 	if(( ON == config_get( 'show_assigned_names' ) ) && ( $p_bug->handler_id > 0 ) && ( access_has_project_level( config_get( 'view_handler_threshold' ), $p_bug->project_id ) ) ) {
-		printf( ' (%s)', prepare_user_name( $p_bug->handler_id ) );
+		printf( ' (%s)', get_user_name( $p_bug->handler_id ) );
 	}
 	echo '</td>';
 }
@@ -1279,7 +1279,7 @@ function print_column_handler_id( $p_bug, $p_columns_target = COLUMNS_TARGET_VIE
 	# In case of a specific project, if the current user has no access to the field, then it would have been excluded from the
 	# list of columns to view.  In case of ALL_PROJECTS, then we need to check the access per row.
 	if( $p_bug->handler_id > 0 && ( helper_get_current_project() != ALL_PROJECTS || access_has_project_level( config_get( 'view_handler_threshold' ), $p_bug->project_id ) ) ) {
-		echo prepare_user_name( $p_bug->handler_id );
+		echo get_user_name( $p_bug->handler_id );
 	}
 
 	echo '</td>';
@@ -1295,7 +1295,7 @@ function print_column_handler_id( $p_bug, $p_columns_target = COLUMNS_TARGET_VIE
  */
 function print_column_reporter_id( $p_bug, $p_columns_target = COLUMNS_TARGET_VIEW_PAGE ) {
 	echo '<td class="center column-reporter">';
-	echo prepare_user_name( $p_bug->reporter_id );
+	echo get_user_name( $p_bug->reporter_id );
 	echo '</td>';
 }
 

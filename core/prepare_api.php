@@ -40,22 +40,3 @@ require_api( 'string_api.php' );
 require_api( 'user_api.php' );
 require_api( 'version_api.php' );
 
-/**
- * prepares the name of the user given the id.  also makes it an email link.
- * @param int $p_user_id
- * @return string
- */
-function prepare_user_name( $p_user_id ) {
-	# Catch a user_id of NO_USER (like when a handler hasn't been assigned)
-	if( NO_USER == $p_user_id ) {
-		return '';
-	}
-
-	$t_username = user_get_name( $p_user_id );
-	$t_username = string_display_line( $t_username );
-	if( user_exists( $p_user_id ) && user_get_field( $p_user_id, 'enabled' ) ) {
-		return '<a class="user" href="' . string_sanitize_url( 'view_user_page.php?id=' . $p_user_id, true ) . '">' . $t_username . '</a>';
-	} else {
-		return '<del class="user">' . $t_username . '</del>';
-	}
-}

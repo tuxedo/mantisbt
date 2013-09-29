@@ -549,7 +549,7 @@ foreach( $t_related_custom_field_ids as $t_custom_field_id ) {
 							$t_note_attr = mb_substr( $t_bugnote->note_attr, 1, mb_strlen( $t_bugnote->note_attr ) - 2 );
 							$t_to = array();
 							foreach ( explode( '|', $t_note_attr ) as $t_recipient ) {
-								$t_to[] = prepare_user_name( $t_recipient );
+								$t_to[] = get_user_name( $t_recipient );
 							}
 							echo implode( ', ', $t_to ) . '<br />';
 						default:

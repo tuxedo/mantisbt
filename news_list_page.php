@@ -72,7 +72,7 @@ if ( $t_count > 0 ) { ?>
 		<li>
 			<span class="news-date-posted"><?php echo $v_date_posted; ?></span>
 			<span class="news-headline"><a href="news_view_page.php?news_id=<?php echo $v_id; ?>"><?php echo $v_headline; ?></a></span>
-			<span class="news-author"><?php echo prepare_user_name( $v_poster_id ); ?></span><?php
+			<span class="news-author"><?php echo get_user_name( $v_poster_id ); ?></span><?php
 			if( 1 == $v_announcement ) { ?>
 				<span class="news-announcement"><?php echo _( 'Announcement' ); ?></span><?php
 			}

@@ -96,7 +96,7 @@ function custom_function_default_changelog_print_issue( $p_issue_id, $p_issue_le
 	echo mb_str_pad( '', $p_issue_level * 6, '&#160;' ), '- ', string_get_bug_view_link( $p_issue_id ), ': ', $t_category, string_display_line_links( $t_bug->summary );
 
 	if( $t_bug->handler_id != 0 ) {
-		echo ' (', prepare_user_name( $t_bug->handler_id ), ')';
+		echo ' (', get_user_name( $t_bug->handler_id ), ')';
 	}
 
 	if( !isset( $t_status[$t_bug->status] ) ) {
@@ -145,7 +145,7 @@ function custom_function_default_roadmap_print_issue( $p_issue_id, $p_issue_leve
 	echo mb_str_pad( '', $p_issue_level * 6, '&#160;' ), '- ', $t_strike_start, string_get_bug_view_link( $p_issue_id ), ': ', $t_category, string_display_line_links( $t_bug->summary );
 
 	if( $t_bug->handler_id != 0 ) {
-		echo ' (', prepare_user_name( $t_bug->handler_id ), ')';
+		echo ' (', get_user_name( $t_bug->handler_id ), ')';
 	}
 
 	if( !isset( $t_status[$t_bug->status] ) ) {
