@@ -304,7 +304,7 @@ function session_clean() {
 }
 
 # Initialize the session
-if ( PHP_CGI == php_mode() ) {
+if( php_sapi_name() != 'cli' ) {
 	$t_session_id = gpc_get_string( 'session_id', '' );
 
 	if ( empty( $t_session_id ) ) {
