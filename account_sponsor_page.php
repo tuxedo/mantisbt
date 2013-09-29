@@ -187,7 +187,7 @@ if ( $t_sponsor_count === 0 ) {
 		echo '<td class="right">' . $t_released_label . '&#160;</td>';
 		echo '<td><span class="issue-status" title="' . $t_resolution . '">' . $t_status . '</span></td>';
 		echo '<td>';
-		echo get_user( $t_bug->handler_id );
+		echo get_user_name( $t_bug->handler_id );
 		echo '</td>';
 
 		# summary
@@ -325,7 +325,7 @@ if ( $t_sponsor_count === 0 ) {
 
 		# describe sponsorship amount
 		echo '<td>';
-		echo get_user( $t_sponsor->user_id );
+		echo get_user_name( $t_sponsor->user_id );
 		echo '</td>';
 		echo '<td class="right">' . sponsorship_format_amount( $t_sponsor->amount ) . '</td>';
 		echo '<td><select name="sponsor_' . $row['bug'] . '_' . $t_sponsor->id . '">';

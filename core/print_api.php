@@ -212,12 +212,12 @@ function print_avatar( $p_user_id, $p_size = 80 ) {
  *
  * @param int $p_user_id User ID
  */
-function get_user( $p_user_id ) {
+function get_user_name( $p_user_id ) {
 	echo prepare_user_name( $p_user_id );
 }
 
 /**
- * same as echo get_user() but fills in the subject with the bug summary
+ * same as echo get_user_name() but fills in the subject with the bug summary
  *
  * @param int $p_user_id User ID
  * @param int $p_bug_id Bug ID

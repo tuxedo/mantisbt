@@ -525,7 +525,7 @@ foreach( $t_related_custom_field_ids as $t_custom_field_id ) {
 		</tr>
 		<tr>
 			<td class="print">
-				<?php echo get_user( $t_bugnote->reporter_id ) ?>&#160;&#160;&#160;
+				<?php echo get_user_name( $t_bugnote->reporter_id ) ?>&#160;&#160;&#160;
 			</td>
 		</tr>
 		<tr>
