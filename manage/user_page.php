@@ -310,7 +310,7 @@ $t_user_count = count( $t_users );
 			<td><?php echo string_display_line( $u_realname ) ?></td>
 			<td><?php print_email_link( $u_email, $u_email ) ?></td>
 			<td><?php echo $t_access_level[$u_access_level] ?></td>
-			<td><?php echo trans_bool( $u_enabled ) ?></td>
+			<td><?php echo string_prepare_bool( $u_enabled ) ?></td>
 			<td class="center"><?php
 				if ( $u_protected ) {
 					echo " $t_lock_image";

@@ -220,7 +220,7 @@ if ( access_has_global_level ( config_get( 'delete_project_threshold' ) ) ) { ?>
 						<?php echo get_enum_element( 'project_status', $t_subproject['status'] ) ?>
 					</td>
 					<td class="center">
-						<?php echo trans_bool( $t_subproject['enabled'] ) ?>
+						<?php echo string_prepare_bool( $t_subproject['enabled'] ) ?>
 					</td>
 					<td class="center">
 						<input type="checkbox" name="inherit_child_<?php echo $t_subproject_id ?>" <?php echo ( $t_inherit_parent ? 'checked="checked"' : '' ) ?> />
@@ -351,8 +351,8 @@ if ( access_has_global_level ( config_get( 'delete_project_threshold' ) ) ) { ?>
 
 		<tr>
 			<td><?php echo string_display( $t_name ) ?></td>
-			<td><?php echo trans_bool( $t_released ) ?></td>
-			<td><?php echo trans_bool( $t_obsolete ) ?></td>
+			<td><?php echo string_prepare_bool( $t_released ) ?></td>
+			<td><?php echo string_prepare_bool( $t_obsolete ) ?></td>
 			<td><?php echo $t_date_formatted ?></td>
 			<td><?php
 				$t_version_id = version_get_id( $t_name, $f_project_id );

@@ -897,3 +897,19 @@ function string_prepare_header( $p_string ) {
 	$t_string= explode( "\r", $t_string[0], 2 );
 	return $t_string[0];
 }
+
+
+/**
+ * converts a 1 value to X
+ * converts a 0 value to a space
+ * @param int $p_num boolean numeric
+ * @return string X or space
+ * @access public
+ */
+function string_prepare_bool( $p_num ) {
+	if( 0 == $p_num ) {
+		return '&#160;';
+	} else {
+		return 'X';
+	}
+}

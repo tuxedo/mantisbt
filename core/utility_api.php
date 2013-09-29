@@ -39,21 +39,6 @@ require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 
 /**
- * converts a 1 value to X
- * converts a 0 value to a space
- * @param int $p_num boolean numeric
- * @return string X or space
- * @access public
- */
-function trans_bool( $p_num ) {
-	if( 0 == $p_num ) {
-		return '&#160;';
-	} else {
-		return 'X';
-	}
-}
-
-/**
  * Add a trailing / to a string if it isn't present
  * @param string $p_path
  * @return string

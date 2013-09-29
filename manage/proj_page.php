@@ -135,7 +135,7 @@ print_manage_menu( 'proj_page.php' );
 					<a href="proj_edit_page.php?project_id=<?php echo $t_project['id'] ?>"><?php echo str_repeat( "&raquo; ", $t_level ) . string_display( $t_project['name'] ) ?></a>
 				</td>
 				<td><?php echo get_enum_element( 'project_status', $t_project['status'] ) ?></td>
-				<td><?php echo trans_bool( $t_project['enabled'] ) ?></td>
+				<td><?php echo string_prepare_bool( $t_project['enabled'] ) ?></td>
 				<td><?php echo get_enum_element( 'project_view_state', $t_project['view_state'] ) ?></td>
 				<td><?php echo string_display_links( $t_project['description'] ) ?></td>
 			</tr><?php
