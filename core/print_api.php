@@ -764,7 +764,7 @@ function print_version_option_list( $p_version = '', $p_project_id = null, $p_re
 			echo '<option value="' . $t_version . '"';
 			check_selected( string_attribute( $p_version ), $t_version );
 
-			$t_version_string = string_attribute( prepare_version_string( $c_project_id, $version['id'] ) );
+			$t_version_string = string_attribute( version_prepare_string( $c_project_id, $version['id'] ) );
 
 			echo '>', string_shorten( $t_version_string , $t_max_length ), '</option>';
 		}

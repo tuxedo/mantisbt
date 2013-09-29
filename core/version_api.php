@@ -672,3 +672,28 @@ function version_get_project_where_clause( $p_project_id, $p_inherit ) {
 
 	return $t_project_where;
 }
+
+/**
+ * A function that prepares the version string for outputting to the user on view / print issue pages.
+ * This function would add the version date, if appropriate.
+ *
+ * @param integer $p_project_id The project id.
+ * @param integer $p_version_id The version id.  If false then this method will return an empty string.
+ * @return string The formatted version string.
+ */
+function version_prepare_string( $p_project_id, $p_version_id ) {
+	if ( $p_version_id === false ) {
+		return '';
+	}
+
+	$t_version_text = version_full_name( $p_version_id, /* showProject */ null, $p_project_id );
+
+	if ( access_has_project_level( config_get( 'show_version_dates_threshold' ), $p_project_id ) ) {
+		$t_short_date_format = config_get( 'short_date_format' );
+
+		$t_version = version_get( $p_version_id );
+		$t_version_text .= ' (' . date( $t_short_date_format, $t_version->date_order ) . ')';
+	}
+
+	return $t_version_text;
+}

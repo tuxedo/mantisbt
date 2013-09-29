@@ -158,15 +158,15 @@ if ( $t_show_due_date ) {
 
 $t_product_version  =
 	$t_show_product_version ?
-		string_display_line( prepare_version_string( $t_bug->project_id, version_get_id( $t_bug->version, $t_bug->project_id ) ) ) : '';
+		string_display_line( version_prepare_string( $t_bug->project_id, version_get_id( $t_bug->version, $t_bug->project_id ) ) ) : '';
 
 $t_target_version =
 	$t_show_target_version ?
-		string_display_line( prepare_version_string( $t_bug->project_id, version_get_id( $t_bug->target_version, $t_bug->project_id ) ) ) : '';
+		string_display_line( version_prepare_string( $t_bug->project_id, version_get_id( $t_bug->target_version, $t_bug->project_id ) ) ) : '';
 
 $t_fixed_in_version =
 	$t_show_fixed_in_version ?
-		string_display_line( prepare_version_string( $t_bug->project_id, version_get_id( $t_bug->fixed_in_version, $t_bug->project_id ) ) ) : '';
+		string_display_line( version_prepare_string( $t_bug->project_id, version_get_id( $t_bug->fixed_in_version, $t_bug->project_id ) ) ) : '';
 
 html_page_top1( bug_format_summary( $f_bug_id, SUMMARY_CAPTION ) );
 html_head_end();
