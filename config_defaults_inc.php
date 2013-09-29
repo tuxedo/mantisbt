@@ -3180,26 +3180,6 @@ $MantisConfig->manage_global_profile_threshold = MANAGER;
  */
 $MantisConfig->allow_freetext_in_profile_fields = ON;
 
-/********************
- * Twitter Settings *
- ********************/
-
-/**
- * The integration with twitter allows for a MantisBT installation to post
- * updates to a twitter account.  This feature will be disabled if username
- * is empty or if the curl extension is not enabled.
- *
- * The twitter account user name.
- * @global string $g_twitter_username
- */
-$MantisConfig->twitter_username = '';
-
-/**
- * The twitter account password.
- * @global string $g_twitter_password
- */
-$MantisConfig->twitter_password = '';
-
 /*****************
  * Plugin System *
  *****************/

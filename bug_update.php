@@ -39,7 +39,6 @@
 
  * @uses print_api.php
  * @uses relationship_api.php
- * @uses twitter_api.php
  */
 
 require_once( 'core.php' );
@@ -58,7 +57,6 @@ require_api( 'helper_api.php' );
 require_api( 'history_api.php' );
 require_api( 'print_api.php' );
 require_api( 'relationship_api.php' );
-require_api( 'twitter_api.php' );
 
 form_security_validate( 'bug_update' );
 
@@ -372,8 +370,6 @@ helper_call_custom_function( 'issue_update_notify', array( $f_bug_id ) );
 if ( $t_resolve_issue ) {
 	email_generic( $f_bug_id, 'resolved', 'The following issue has been RESOLVED.' );
 	email_relationship_child_resolved( $f_bug_id );
-
-	twitter_issue_resolved( $f_bug_id );
 } else if ( $t_close_issue ) {
 	email_generic( $f_bug_id, 'closed', 'The following issue has been CLOSED' );
 	email_relationship_child_closed( $f_bug_id );

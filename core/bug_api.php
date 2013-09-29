@@ -42,7 +42,6 @@
  * @uses relationship_api.php
  * @uses sponsorship_api.php
  * @uses tag_api.php
- * @uses twitter_api.php
  * @uses user_api.php
  * @uses utility_api.php
  */
@@ -65,7 +64,6 @@ require_api( 'history_api.php' );
 require_api( 'relationship_api.php' );
 require_api( 'sponsorship_api.php' );
 require_api( 'tag_api.php' );
-require_api( 'twitter_api.php' );
 require_api( 'user_api.php' );
 require_api( 'utility_api.php' );
 
@@ -876,8 +874,6 @@ function bug_resolve( $p_bug, $p_resolution, $p_fixed_in_version = '', $p_bugnot
 
 	email_generic( $p_bug->id, 'resolved', 'The following issue has been RESOLVED.' );
 	email_relationship_child_resolved( $p_bug->id );
-
-	twitter_issue_resolved( $p_bug->id );
 }
 
 /**
