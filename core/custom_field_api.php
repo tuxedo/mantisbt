@@ -750,7 +750,7 @@ function custom_field_get_id_from_name( $p_field_name, $p_truncated_length = nul
 		 * we are getting the custom field name from the history logs, since history is 32 and custom field name is 64.
 		 * This fix will handle entries already in the database, future entries should be handled by making the field name max lengths match.
 		 */
-		$t_query = "SELECT id FROM {custom_field} WHERE name LIKE %s";
+		$t_query = 'SELECT id FROM {custom_field} WHERE ' . db_helper_like( 'name' );
 	}
 
 	$t_result = db_query( $t_query, array( $p_field_name ) );
