@@ -27,7 +27,6 @@
  * @uses constant_inc.php
  * @uses helper_api.php
  * @uses html_api.php
-
  */
 
 require_api( 'config_api.php' );
