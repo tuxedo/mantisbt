@@ -1140,7 +1140,6 @@ function user_reset_password( $p_user_id, $p_send_email = true ) {
 	#     Should we just have two functions? (user_reset_password_random()
 	#     and user_reset_password() )?
 	if(( ON == config_get( 'send_reset_password' ) ) && ( ON == config_get( 'enable_email_notification' ) ) ) {
-
 		# Create random password
 		$t_email = user_get_field( $p_user_id, 'email' );
 		$t_password = auth_generate_random_password( $t_email );
@@ -1154,7 +1153,6 @@ function user_reset_password( $p_user_id, $p_send_email = true ) {
 			email_send_confirm_hash_url( $p_user_id, $t_confirm_hash );
 		}
 	} else {
-
 		# use blank password, no emailing
 		$t_password = auth_process_plain_password( '' );
 		user_set_field( $p_user_id, 'password', $t_password );
