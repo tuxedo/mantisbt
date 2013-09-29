@@ -72,7 +72,6 @@
  * @uses database_api.php
  * @uses form_api.php
  * @uses helper_api.php
- * @uses prepare_api.php
  * @uses print_api.php
  * @uses project_api.php
  * @uses string_api.php
@@ -87,7 +86,6 @@ require_api( 'constant_inc.php' );
 require_api( 'database_api.php' );
 require_api( 'form_api.php' );
 require_api( 'helper_api.php' );
-require_api( 'prepare_api.php' );
 require_api( 'print_api.php' );
 require_api( 'project_api.php' );
 require_api( 'string_api.php' );

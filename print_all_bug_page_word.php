@@ -41,7 +41,6 @@
  * @uses html_api.php
  * @uses http_api.php
 
- * @uses prepare_api.php
  * @uses print_api.php
  * @uses profile_api.php
  * @uses project_api.php
@@ -64,7 +63,6 @@ require_api( 'gpc_api.php' );
 require_api( 'helper_api.php' );
 require_api( 'html_api.php' );
 require_api( 'http_api.php' );
-require_api( 'prepare_api.php' );
 require_api( 'print_api.php' );
 require_api( 'profile_api.php' );
 require_api( 'project_api.php' );
