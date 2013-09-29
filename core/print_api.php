@@ -1426,7 +1426,17 @@ function print_email_link( $p_email, $p_text ) {
  * @return string
  */
 function get_email_link( $p_email, $p_text ) {
-	return prepare_email_link( $p_email, $p_text );
+	if( !access_has_project_level( config_get( 'show_user_email_threshold' ) ) ) {
+		return string_display_line( $p_text );
+	}
+
+	# If we apply string_url() to the whole mailto: link then the @
+	#  gets turned into a %40 and you can't right click in browsers to
+	#  do Copy Email Address.
+	$t_mailto = string_attribute( 'mailto:' . $p_email );
+	$p_text = string_display_line( $p_text );
+
+	return '<a href="' . $t_mailto . '">' . $p_text . '</a>';
 }
 
 /**
