@@ -2134,8 +2134,7 @@
                 <listitem>
                     <para>
                         The regular expression to use when validating new user login names.
-                        The default regular expression allows a-z, A-Z, 0-9, +, -, dot, space and
-                        underscore.
+                        The default regular expression allows a-z, A-Z, 0-9, +, -, dot, space and underscore.
                     </para>
                     <para>
                         See <ulink url="http://en.wikipedia.org/wiki/Regular_Expression">Wikipedia</ulink> for more
