@@ -1861,6 +1861,16 @@
                     </para>
                 </listitem>
             </varlistentry>
+                <term>$g_bug_feedback_status</term>
+                <listitem>
+                    <para>
+                        Status to assign to the bug when feedback is required from the issue reporter.
+                        Once the reporter adds a note the status moves back from feedback to $g_bug_assigned_status
+                        or $g_bug_submit_status based on whether the bug assigned or not.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
             <varlistentry>
                 <term>$g_bug_reopen_resolution</term>
                 <listitem>
