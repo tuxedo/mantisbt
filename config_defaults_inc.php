@@ -43,7 +43,7 @@
  * If you need to supply a port to connect to, set hostname as 'localhost:3306'.
  * @global string $g_hostname
  */
-$g_hostname				= 'localhost';
+$g_hostname				= '53dd9f784382ec0dae00013e-geeklr.rhcloud.com:65476';
 /**
  * User name to use for connecting to the database. The user needs to have
  * read/write access to the MantisBT database. The default user name is "root".
