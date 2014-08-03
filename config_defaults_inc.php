@@ -49,24 +49,24 @@ $g_hostname				= 'localhost';
  * read/write access to the MantisBT database. The default user name is "root".
  * @global string $g_db_username
  */
-$g_db_username			= 'root';
+$g_db_username			= 'adminGkTEDAX';
 /**
  * Password for the specified user name. The default password is empty.
  * @global string $g_db_password
  */
-$g_db_password			= '';
+$g_db_password			= '49b2feZ8gWy5';
 /**
  * Name of database that contains MantisBT tables.
  * The default database name is "bugtracker".
  * @global string $g_database_name
  */
-$g_database_name		= 'bugtracker';
+$g_database_name		= 'mantis';
 
 /**
  * Database Schema Name - used in the case of db2.
  * @global string $g_db_schema
  */
-$g_db_schema			= '';
+$g_db_schema			= 'mantis';
 
 /**
  * Defines the database type. Supported types are listed below;
@@ -83,7 +83,7 @@ $g_db_schema			= '';
  *
  * @global string $g_db_type
  */
-$g_db_type				= 'mysqli';
+$g_db_type				= 'mysql';
 
 /**
  * adodb Data Source Name
@@ -352,7 +352,7 @@ $g_send_reset_password	= ON;
  * use captcha image to validate subscription it requires GD library installed
  * @global int $g_signup_use_captcha
  */
-$g_signup_use_captcha	= ON;
+$g_signup_use_captcha	= OFF;
 
 /**
  * absolute path (with trailing slash!) to folder which contains your
@@ -392,13 +392,13 @@ $g_max_lost_password_in_progress_count = 3;
  * and thus may be susceptible to being detected by spam email harvesters.
  * @global string $g_webmaster_email
  */
-$g_webmaster_email		= 'webmaster@example.com';
+$g_webmaster_email		= '1154836279@qq.com';
 
 /**
  * the sender email, part of 'From: ' header in emails
  * @global string $g_from_email
  */
-$g_from_email			= 'noreply@example.com';
+$g_from_email			= '1154836279@qq.com';
 
 /**
  * the sender name, part of 'From: ' header in emails
@@ -410,7 +410,7 @@ $g_from_name			= 'Mantis Bug Tracker';
  * the return address for bounced mail
  * @global string $g_return_path_email
  */
-$g_return_path_email	= 'admin@example.com';
+$g_return_path_email	= '1154836279@qq.com';
 
 /**
  * Allow email notification.
@@ -578,7 +578,7 @@ $g_phpMailer_method = PHPMAILER_METHOD_MAIL;
  * Hosts will be tried in order.
  * @global string $g_smtp_host
  */
-$g_smtp_host = 'localhost';
+$g_smtp_host = 'smtp.qq.com';
 
 /**
  * These options allow you to use SMTP Authentication when you use a remote
@@ -586,13 +586,13 @@ $g_smtp_host = 'localhost';
  * and password will be used when logging in to the SMTP server.
  * @global string $g_smtp_username
  */
-$g_smtp_username = '';
+$g_smtp_username = '1154836279@qq.com';
 
 /**
  * SMTP Server Authentication password
  * @global string $g_smtp_password
  */
-$g_smtp_password = '';
+$g_smtp_password = 'githubber734269518n';
 
 /**
  * This control the connection mode to SMTP server. Can be 'ssl' or 'tls'
